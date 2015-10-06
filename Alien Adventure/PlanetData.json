@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "Preshan",
+    "CommonItemsDetected": 77,
+    "UncommonItemsDetected": 33,
+    "RareItemsDetected": 20,
+    "LegendaryItemsDetected": 8
+  },
+  {
+    "Name": "Strov",
+    "CommonItemsDetected": 82,
+    "UncommonItemsDetected": 39,
+    "RareItemsDetected": 19,
+    "LegendaryItemsDetected": 5
+  },
+  {
+    "Name": "Vawhuna",
+    "CommonItemsDetected": 67,
+    "UncommonItemsDetected": 24,
+    "RareItemsDetected": 22,
+    "LegendaryItemsDetected": 6
+  },
+  {
+    "Name": "Ziothea",
+    "CommonItemsDetected": 87,
+    "UncommonItemsDetected": 18,
+    "RareItemsDetected": 12,
+    "LegendaryItemsDetected": 3
+  },
+  {
+    "Name": "Skuna",
+    "CommonItemsDetected": 94,
+    "UncommonItemsDetected": 15,
+    "RareItemsDetected": 18,
+    "LegendaryItemsDetected": 4
+  },
+  {
+    "Name": "Greon",
+    "CommonItemsDetected": 91,
+    "UncommonItemsDetected": 12,
+    "RareItemsDetected": 13,
+    "LegendaryItemsDetected": 2
+  }
+]
