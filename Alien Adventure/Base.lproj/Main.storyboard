@@ -2,12 +2,95 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="PPT-2D-aid">
+            <objects>
+                <viewController storyboardIdentifier="SettingsViewController" id="7QL-lp-rfg" customClass="SettingsViewController" customModule="Alien_Adventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SA5-4K-RsW"/>
+                        <viewControllerLayoutGuide type="bottom" id="E3d-eg-vgO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TsR-re-sKe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Fr8-0d-ouT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="TZI-vy-bY5">
+                                <rect key="frame" x="20" y="40" width="560" height="176"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alien Adventure" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKH-so-GbX">
+                                        <rect key="frame" x="175.5" y="0.0" width="209.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="e7e-L9-0yc">
+                                        <rect key="frame" x="162.5" y="51" width="235" height="29"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <segments>
+                                            <segment title="Level 1"/>
+                                            <segment title="Level 2"/>
+                                            <segment title="Level 3"/>
+                                            <segment title="Level 4"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4C-qF-hba">
+                                        <rect key="frame" x="201" y="94" width="158" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Badges " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O38-PY-jwV">
+                                                <rect key="frame" x="0.0" y="0.0" width="109" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3cJ-mP-lOd">
+                                                <rect key="frame" x="109" y="0.0" width="51" height="31"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkD-Jb-J5Y">
+                                        <rect key="frame" x="255.5" y="140" width="49" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Start!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="TZI-vy-bY5" secondAttribute="trailing" id="1CQ-u4-KO6"/>
+                            <constraint firstItem="E3d-eg-vgO" firstAttribute="top" secondItem="Fr8-0d-ouT" secondAttribute="bottom" id="5Kc-ey-EjB"/>
+                            <constraint firstItem="TZI-vy-bY5" firstAttribute="top" secondItem="SA5-4K-RsW" secondAttribute="bottom" constant="20" id="CzG-wO-fs3"/>
+                            <constraint firstItem="TZI-vy-bY5" firstAttribute="leading" secondItem="TsR-re-sKe" secondAttribute="leadingMargin" id="LxU-DM-ZPG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fr8-0d-ouT" secondAttribute="trailing" constant="-20" id="TVB-ao-y8v"/>
+                            <constraint firstItem="Fr8-0d-ouT" firstAttribute="top" secondItem="TsR-re-sKe" secondAttribute="topMargin" id="agV-YZ-vqm"/>
+                            <constraint firstItem="Fr8-0d-ouT" firstAttribute="leading" secondItem="TsR-re-sKe" secondAttribute="leadingMargin" constant="-20" id="dzh-Kp-7pO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="levelSegmentedControl" destination="e7e-L9-0yc" id="4Gt-ex-66w"/>
+                        <outlet property="showBadgesLabel" destination="O38-PY-jwV" id="oVW-7U-Ab0"/>
+                        <outlet property="showBadgesSwitch" destination="3cJ-mP-lOd" id="VVI-he-pIB"/>
+                        <outlet property="startGameButton" destination="fkD-Jb-J5Y" id="ekK-Nj-cYr"/>
+                        <outlet property="titleLabel" destination="XKH-so-GbX" id="zT7-T4-4nu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKT-Qc-rTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119" y="324"/>
+        </scene>
         <!--Alien Adventure View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="AlienAdventureViewController" customModule="Alien_Adventure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlienAdventureViewController" id="BV1-FR-VrT" customClass="AlienAdventureViewController" customModule="Alien_Adventure" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8aa-yV-Osq"/>
                         <viewControllerLayoutGuide type="bottom" id="qHh-Mt-9TT"/>
@@ -23,6 +106,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="841" y="325"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="2208" height="621"/>
+    </resources>
 </document>

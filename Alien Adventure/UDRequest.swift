@@ -27,6 +27,22 @@ enum UDRequestType: String {
     case PlanetData = "PlanetData"
     case MostCommonCharacter = "MostCommonCharacter"
     
+    // Alien Adventure 3
+    case BasicCheck = "BasicCheck"
+    case AdvancedCheck = "AdvancedCheck"
+    case ExpertCheck = "ExpertCheck"
+    case CheckBadges = "CheckBadges"
+    
+    // Alien Adventure 4
+    case PolicingItems = "PolicingItems"
+    case FindTheLasers = "FindTheLasers"
+    case RedefinePolicingItems = "RedefinePolicingItems"
+    case BoostItemValue = "BoostItemValue"
+    case SortLeastToGreatest = "SortLeastToGreatest"
+    case GetCommonItems = "GetCommonItems"
+    case TotalBaseValue = "TotalBaseValue"
+    case RemoveDuplicates = "RemoveDuplicates"
+    
     case Undefined = "Undefined"
 }
 
@@ -34,6 +50,7 @@ enum UDRequestType: String {
 
 protocol UDRequestDelegate {
     var inventory: [UDItem] {get set}
+    var badgeManager: BadgeManager? {get set}
     // Alien Adventure 1
     func handleReverseLongestName(inventory: [UDItem]) -> String
     func handleMatchMoonRocks(inventory: [UDItem]) -> [UDItem]
@@ -49,6 +66,20 @@ protocol UDRequestDelegate {
     func handleBannedItems(dataFile: String) -> [Int]
     func handlePlanetData(dataFile: String) -> String
     func handleMostCommonCharacter(inventory: [UDItem]) -> Character?
+    // Alien Adventure 3
+    func handleBasicCheck() -> Bool
+    func handleAdvancedCheck() -> Bool
+    func handleExpertCheck() -> Bool
+    func handleCheckBadges(badges: [Badge], requestTypes: [UDRequestType]) -> Bool
+    // Alien Adventure 4
+    func handlePolicingItems(inventory: [UDItem], policingFilter: UDItem throws -> Void) -> [UDPolicingError:Int]
+    func handleFindTheLasers() -> (UDItem -> Bool)
+    func handleRedefinePolicingItems() -> (UDItem throws -> Void)
+    func handleBoostItemValue(inventory: [UDItem]) -> [UDItem]
+    func handleSortLeastToGreatest(inventory: [UDItem]) -> [UDItem]
+    func handleGetCommonItems(inventory: [UDItem]) -> [UDItem]
+    func handleTotalBaseValue(inventory: [UDItem]) -> Int
+    func handleRemoveDuplicates(inventory: [UDItem]) -> [UDItem]
 }
 
 // MARK: - UDRequest

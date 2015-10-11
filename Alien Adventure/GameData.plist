@@ -171,9 +171,149 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>Animations</key>
+	<dict>
+		<key>Hero</key>
+		<dict>
+			<key>BaseFrame</key>
+			<string>Hero</string>
+			<key>RestingAtlasFile</key>
+			<string>hero</string>
+			<key>RestingFrames</key>
+			<array>
+				<string>RR1</string>
+				<string>RR2</string>
+				<string>RR3</string>
+				<string>RR4</string>
+				<string>RR5</string>
+			</array>
+			<key>RestingTPF</key>
+			<real>0.3</real>
+			<key>MovingAtlasFile</key>
+			<string>hero</string>
+			<key>MovingFrames</key>
+			<array>
+				<string>RM1</string>
+				<string>RM2</string>
+				<string>RM3</string>
+				<string>RM4</string>
+			</array>
+			<key>MovingTPF</key>
+			<real>0.1</real>
+			<key>CelebratingAtlasFile</key>
+			<string>hero</string>
+			<key>CelebratingFrames</key>
+			<array>
+				<string>RC1</string>
+				<string>RC2</string>
+				<string>RC3</string>
+				<string>RC4</string>
+				<string>RC5</string>
+			</array>
+			<key>CelebratingTPF</key>
+			<real>0.1</real>
+		</dict>
+		<key>MagentaAlien</key>
+		<dict>
+			<key>BaseFrame</key>
+			<string>MagentaAlien</string>
+			<key>RestingAtlasFile</key>
+			<string>magentaAlien</string>
+			<key>RestingFrames</key>
+			<array>
+				<string>AR1</string>
+				<string>AR2</string>
+				<string>AR3</string>
+				<string>AR4</string>
+			</array>
+			<key>RestingTPF</key>
+			<real>0.4</real>
+			<key>TalkingAtlasFile</key>
+			<string>magentaAlien</string>
+			<key>TalkingFrames</key>
+			<array>
+				<string>A-turn-1</string>
+				<string>A-turn-2</string>
+				<string>A-turn-3</string>
+				<string>A-turn-2</string>
+			</array>
+			<key>TalkingTPF</key>
+			<real>0.8</real>
+			<key>AngryAtlasFile</key>
+			<string>magentaAlien</string>
+			<key>AngryFrames</key>
+			<array>
+				<string>a-anger-1</string>
+				<string>a-anger-2</string>
+				<string>a-anger-3</string>
+				<string>a-anger-4</string>
+				<string>a-anger-5</string>
+			</array>
+			<key>AngryTPF</key>
+			<real>0.4</real>
+		</dict>
+		<key>TealAlien</key>
+		<dict>
+			<key>BaseFrame</key>
+			<string>TealAlien</string>
+			<key>RestingAtlasFile</key>
+			<string>tealAlien</string>
+			<key>RestingFrames</key>
+			<array>
+				<string>BAR1</string>
+				<string>BAR2</string>
+				<string>BAR3</string>
+				<string>BAR4</string>
+			</array>
+			<key>RestingTPF</key>
+			<real>0.4</real>
+			<key>TalkingAtlasFile</key>
+			<string>tealAlien</string>
+			<key>TalkingFrames</key>
+			<array>
+				<string>BAT1</string>
+				<string>BAT2</string>
+				<string>BAT3</string>
+				<string>BAT2</string>
+			</array>
+			<key>TalkingTPF</key>
+			<real>0.8</real>
+			<key>AngryAtlasFile</key>
+			<string>tealAlien</string>
+			<key>AngryFrames</key>
+			<array>
+				<string>BAA1</string>
+				<string>BAA2</string>
+				<string>BAA3</string>
+				<string>BAA4</string>
+				<string>BAA5</string>
+			</array>
+			<key>AngryTPF</key>
+			<real>0.4</real>
+		</dict>
+		<key>Treasure</key>
+		<dict>
+			<key>BaseFrame</key>
+			<string>Treasure</string>
+			<key>OpeningAtlasFile</key>
+			<string>treasure</string>
+			<key>OpeningFrames</key>
+			<array>
+				<string>chest-01</string>
+				<string>chest-02</string>
+				<string>chest-03</string>
+				<string>chest-04</string>
+				<string>chest-05</string>
+			</array>
+			<key>OpeningTPF</key>
+			<real>0.2</real>
+		</dict>
+	</dict>
 	<key>Levels</key>
 	<array>
 		<dict>
+			<key>ShowBadges</key>
+			<false/>
 			<key>StartingDialogue</key>
 			<string>Hero: &quot;Hey friend! Will you help me explore this strange planet?&quot;</string>
 			<key>RequestingDialogue</key>
@@ -190,43 +330,6 @@
 				<string>Hero</string>
 				<key>Position</key>
 				<string>{ 0, -124 }</string>
-				<key>BaseFrame</key>
-				<string>Hero</string>
-				<key>RestingAtlasFile</key>
-				<string>hero</string>
-				<key>RestingFrames</key>
-				<array>
-					<string>RR1</string>
-					<string>RR2</string>
-					<string>RR3</string>
-					<string>RR4</string>
-					<string>RR5</string>
-				</array>
-				<key>RestingTPF</key>
-				<real>0.3</real>
-				<key>MovingAtlasFile</key>
-				<string>hero</string>
-				<key>MovingFrames</key>
-				<array>
-					<string>RM1</string>
-					<string>RM2</string>
-					<string>RM3</string>
-					<string>RM4</string>
-				</array>
-				<key>MovingTPF</key>
-				<real>0.1</real>
-				<key>CelebratingAtlasFile</key>
-				<string>hero</string>
-				<key>CelebratingFrames</key>
-				<array>
-					<string>RC1</string>
-					<string>RC2</string>
-					<string>RC3</string>
-					<string>RC4</string>
-					<string>RC5</string>
-				</array>
-				<key>CelebratingTPF</key>
-				<real>0.1</real>
 				<key>Inventory</key>
 				<array>
 					<string>LaserCannon</string>
@@ -240,411 +343,368 @@
 				</array>
 			</dict>
 			<key>Aliens</key>
-			<dict>
-				<key>BaseFrame</key>
-				<string>Alien</string>
-				<key>RestingAtlasFile</key>
-				<string>alien</string>
-				<key>RestingFrames</key>
-				<array>
-					<string>AR1</string>
-					<string>AR2</string>
-					<string>AR3</string>
-					<string>AR4</string>
-				</array>
-				<key>RestingTPF</key>
-				<real>0.4</real>
-				<key>TalkingAtlasFile</key>
-				<string>alien</string>
-				<key>TalkingFrames</key>
-				<array>
-					<string>A-turn-1</string>
-					<string>A-turn-2</string>
-					<string>A-turn-3</string>
-					<string>A-turn-2</string>
-				</array>
-				<key>TalkingTPF</key>
-				<real>0.8</real>
-				<key>AngryAtlasFile</key>
-				<string>alien</string>
-				<key>AngryFrames</key>
-				<array>
-					<string>a-anger-1</string>
-					<string>a-anger-2</string>
-					<string>a-anger-3</string>
-					<string>a-anger-4</string>
-					<string>a-anger-5</string>
-				</array>
-				<key>AngryTPF</key>
-				<real>0.4</real>
-				<key>Instances</key>
-				<array>
-					<dict>
-						<key>Name</key>
-						<string>Alien 1</string>
-						<key>Position</key>
-						<string>{ 1000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>ReverseLongestName</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Hello Mr. Alien, may I pass?&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“I&apos;ll let you pass if you tell me a funny word!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“That&apos;s a good one!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Not. Funny. At. All. Now I am angry...”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You won&apos;t like me when I&apos;m angry!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>RequestType</key>
-								<string>MatchMoonRocks</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“I&apos;ll only let you pass if you hand over all your MoonRocks!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Wow, thanks! This is just what I needed!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You may pass along...”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Whew! Thanks!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“You don&apos;t have any MoonRocks? Well I don&apos;t have any patience!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You&apos;re not going nowhere!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 2</string>
-						<key>Position</key>
-						<string>{ 2000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>InscriptionEternalStar</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Umm... let me guess, you want something?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“That&apos;s right. I am looking for a mysterious relic with the inscription THE ETERNAL STAR. Do you have such a relic?”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Wow! This is incredible!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Please go right ahead, there is something of greater value if you continue further.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Sweet! I wonder what it is?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“This isn&apos;t it. This is an ETERNAL FAILURE!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“I&apos;m afraid you cannot pass, you&apos;ll be stuck here forever.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 3</string>
-						<key>Position</key>
-						<string>{ 3000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>LeastValuableItem</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“What will it take to let me pass?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“I&apos;m not like the other aliens. How about your least valuable item?”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Yeah... this looks cheap. That&apos;s just my style.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You can move right along.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Yes! I can see something in the distance!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“I wanted something cheap... but instead you played a cheap trick!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Prepare for your doom!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 4</string>
-						<key>Position</key>
-						<string>{ 4000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>ShuffleStrings</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Can I pass? I just need to go a little further...”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You can pass, but only if you can answer my tricky problem!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Tricky problem? Hmm... why not!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Here&apos;s the problem... if I give you a group of three strings, can you tell me if the third string is a valid shuffle of the first two?”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Maybe? What&apos;s a valid shuffle?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“A valid shuffle combines two strings together where the left-to-right order of the characters in both strings is maintained.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“For example, if I give you (“ab”, “cd”, “cabd”), then “cabd” is a valid shuffle because characters “ab” and “cd” still occur in the same order.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“However, if I give you (&quot;ab&quot;, &quot;cd&quot;, “bacd”), then “bacd” IS NOT a valid shuffle because characters “ab” don&apos;t occur in the same order.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Alright, I can do it. Give me a group of strings!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Here you go, good luck...”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Nice! I&apos;m impressed!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Please... continue forward.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Wahoo! Let&apos;s go!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;m sorry, but that&apos;s wrong!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Thus, you cannot pass...”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-				</array>
-			</dict>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>Alien 1</string>
+					<key>Position</key>
+					<string>{ 1000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>ReverseLongestName</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Hello Mr. Alien, may I pass?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"I&apos;ll let you pass if you tell me a funny word!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"That&apos;s a good one!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Not. Funny. At. All. Now I am angry..."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"You won&apos;t like me when I&apos;m angry!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>RequestType</key>
+							<string>MatchMoonRocks</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"I&apos;ll only let you pass if you hand over all your MoonRocks!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Wow, thanks! This is just what I needed!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"You may pass along..."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Whew! Thanks!"</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"You don&apos;t have any MoonRocks? Well I don&apos;t have any patience!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"You&apos;re not going anywhere!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 2</string>
+					<key>Position</key>
+					<string>{ 2000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>InscriptionEternalStar</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Umm... let me guess, you want something?"</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"That&apos;s right. I am looking for a mysterious relic with the inscription THE ETERNAL STAR. Do you have such a relic?"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Wow! This is incredible!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Please go right ahead, there is something of greater value if you continue further."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Sweet! I wonder what it is?"</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"This isn&apos;t it. This is an ETERNAL FAILURE!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"I&apos;m afraid you cannot pass, you&apos;ll be stuck here forever."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 3</string>
+					<key>Position</key>
+					<string>{ 3000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>LeastValuableItem</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"What will it take to let me pass?"</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"I&apos;m not like the other aliens. How about your least valuable item?"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Yeah... this looks cheap. That&apos;s just my style."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"You can move right along."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Yes! I can see something in the distance!"</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"I wanted something cheap... but instead you played a cheap trick!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Prepare for your doom!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 4</string>
+					<key>Position</key>
+					<string>{ 4000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>ShuffleStrings</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Can I pass? I just need to go a little further..."</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"You can pass, but only if you can answer my tricky problem!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Tricky problem? Hmm... why not!"</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Here&apos;s the problem... if I give you a group of three strings, can you tell me if the third string is a valid shuffle of the first two?"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Maybe? What&apos;s a valid shuffle?"</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"A valid shuffle combines two strings together where the left-to-right order of the characters in both strings is maintained."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"For example, if I give you ("ab", "cd", "cabd"), then "cabd" is a valid shuffle because characters "ab" and "cd" still occur in the same order."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"However, if I give you (&quot;ab&quot;, &quot;cd&quot;, "bacd"), then "bacd" IS NOT a valid shuffle because characters "ab" don&apos;t occur in the same order."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Alright, I can do it. Give me a group of strings!"</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Here you go, good luck..."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Nice! I&apos;m impressed!"</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Please... continue forward."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Wahoo! Let&apos;s go!"</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m sorry, but that&apos;s wrong!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Thus, you cannot pass..."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+			</array>
 			<key>Treasure</key>
 			<dict>
 				<key>Name</key>
 				<string>Treasure</string>
 				<key>Position</key>
 				<string>{ 5000, -110 }</string>
-				<key>BaseFrame</key>
-				<string>Treasure</string>
-				<key>OpeningAtlasFile</key>
-				<string>treasure</string>
-				<key>OpeningFrames</key>
-				<array>
-					<string>chest-01</string>
-					<string>chest-02</string>
-					<string>chest-03</string>
-					<string>chest-04</string>
-					<string>chest-05</string>
-				</array>
-				<key>OpeningTPF</key>
-				<real>0.2</real>
 			</dict>
 		</dict>
 		<dict>
+			<key>ShowBadges</key>
+			<false/>
 			<key>StartingDialogue</key>
 			<string>Hero: &quot;Hey friend! Will you help me explore this strange planet?&quot;</string>
 			<key>RequestingDialogue</key>
@@ -661,43 +721,6 @@
 				<string>Hero</string>
 				<key>Position</key>
 				<string>{ 0, -124 }</string>
-				<key>BaseFrame</key>
-				<string>Hero</string>
-				<key>RestingAtlasFile</key>
-				<string>hero</string>
-				<key>RestingFrames</key>
-				<array>
-					<string>RR1</string>
-					<string>RR2</string>
-					<string>RR3</string>
-					<string>RR4</string>
-					<string>RR5</string>
-				</array>
-				<key>RestingTPF</key>
-				<real>0.3</real>
-				<key>MovingAtlasFile</key>
-				<string>hero</string>
-				<key>MovingFrames</key>
-				<array>
-					<string>RM1</string>
-					<string>RM2</string>
-					<string>RM3</string>
-					<string>RM4</string>
-				</array>
-				<key>MovingTPF</key>
-				<real>0.1</real>
-				<key>CelebratingAtlasFile</key>
-				<string>hero</string>
-				<key>CelebratingFrames</key>
-				<array>
-					<string>RC1</string>
-					<string>RC2</string>
-					<string>RC3</string>
-					<string>RC4</string>
-					<string>RC5</string>
-				</array>
-				<key>CelebratingTPF</key>
-				<real>0.1</real>
 				<key>Inventory</key>
 				<array>
 					<string>LaserCannon</string>
@@ -713,652 +736,615 @@
 				</array>
 			</dict>
 			<key>Aliens</key>
-			<dict>
-				<key>BaseFrame</key>
-				<string>Alien</string>
-				<key>RestingAtlasFile</key>
-				<string>alien</string>
-				<key>RestingFrames</key>
-				<array>
-					<string>AR1</string>
-					<string>AR2</string>
-					<string>AR3</string>
-					<string>AR4</string>
-				</array>
-				<key>RestingTPF</key>
-				<real>0.4</real>
-				<key>TalkingAtlasFile</key>
-				<string>alien</string>
-				<key>TalkingFrames</key>
-				<array>
-					<string>A-turn-1</string>
-					<string>A-turn-2</string>
-					<string>A-turn-3</string>
-					<string>A-turn-2</string>
-				</array>
-				<key>TalkingTPF</key>
-				<real>0.8</real>
-				<key>AngryAtlasFile</key>
-				<string>alien</string>
-				<key>AngryFrames</key>
-				<array>
-					<string>a-anger-1</string>
-					<string>a-anger-2</string>
-					<string>a-anger-3</string>
-					<string>a-anger-4</string>
-					<string>a-anger-5</string>
-				</array>
-				<key>AngryTPF</key>
-				<real>0.4</real>
-				<key>Instances</key>
-				<array>
-					<dict>
-						<key>Name</key>
-						<string>Alien 1</string>
-						<key>Position</key>
-						<string>{ 1000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>ItemsFromPlanet</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Hello, little robot. What brings you to my planet?&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;m a treasure hunter!&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;That&apos;s fine, but before I can let you look for treasure, I need any items you have from the planet Glinda.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Thanks. I needed those.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Are you hiding something from me?&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I can&apos;t trust you. I&apos;m calling the reinforcements!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>RequestType</key>
-								<string>OldestItemFromPlanet</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;ve been looking for an ancient item. The oldest artifact from the planet Cunia.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Can I take a look at the oldest item you have from Cunia?&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Only if you let me pass.&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Very well.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Wow. Very interesting. Thanks for letting me see this.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Now, as you requested, you may pass.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Are you sure this is the oldest thing you have? What&apos;s that sticking out of your compartment?&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Uhh... I don&apos;t know what you&apos;re talking about...&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Something is fishy. I am going to keep you here until further notice.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 2</string>
-						<key>Position</key>
-						<string>{ 2000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>XORCipherKeySearch</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Howdy stranger. How&apos;s it going?&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;m doing alright, but I could use some help. They&apos;ve asked me to step up security along this path.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I guess I could help. What do you need?&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;m trying to crack a code that is being used by interplanetary pirates.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;They&apos;ve been encrypting their messages using a number between 0 and 255.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;m just not sure which number it is... but I do know this encrypted message means &quot;udacity&quot;!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>[Hands over encrypted message]</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Haha! That&apos;s it! It works!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Heh. Yeah, I&apos;m pretty good with encryption. Not because I&apos;m a pirate or anything...&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Aww man... it isn&apos;t working. Wait a minute!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“How do I know you&apos;re not a pirate?!?&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Guards! Seize this robot at once!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>RequestType</key>
-								<string>RarityOfItems</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I need a quick way to report the rarity of items.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I won&apos;t take your items, but could you show me how to quickly report the rarity of items?&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;If it gets me closer to some treasure, then why not? Let me think...&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;That&apos;s awesome! I really like that approach.</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;This is going to cause seriously delays.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;m sorry. I can&apos;t let you pass until I figure this out.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>RequestType</key>
-								<string>ItemComparison</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Since you know so much about rarity... could you quickly determine if one item is more valuable than another?&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;And I don&apos;t just mean by an item&apos;s value. An item should be more valuable if it is more rare than another item.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;But... if they have the same rarity, then compare their base values.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Yeah I can do that.&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“You&apos;re right. I would have never thought of that!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Yeah, it is pretty elegant when you think about it.&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;This is so great. Please go ahead, I&apos;m sorry for the delay!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Finally!&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“That won&apos;t work. I&apos;ve tried it already and it failed.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Until I figure this out, I can&apos;t let you pass. Those are direct orders!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 3</string>
-						<key>Position</key>
-						<string>{ 3000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>BannedItems</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Ooo... a traveler. I could use your help.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Not this again...&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;m having trouble reading this list of items. Some of them need to be banned from this planet.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;So how can I help?&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Could you look through the list and tell me items that mention a &quot;laser&quot; and are less than 30 carbon years old?&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;There is a recall on such items, and I need to get rid of them.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Sure, hand me the list.&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>[Hands over list of items]</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Wonderful. Thanks for your help.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Hmm... I&apos;m not sure about this. I think I need a second opinion.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;ll have another alien handle my watch. You&apos;ll need to wait here.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-							<dict>
-								<key>RequestType</key>
-								<string>PlanetData</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I think I have something that could help you.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;It is a list of planets with information about items detected on their surface.&quot; </string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;ll let you have it if you tell me the planet that has the most intriguing items.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Alright. Sounds like a fair trade.&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>[Hands over list with planet information]</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Interesting. Maybe I&apos;ll plan my next visit there.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Now, please. Go ahead.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;That isn&apos;t what the last robot told me.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I think I&apos;ll have you wait here until someone comes along and gives us another opinion.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Which might be another 50,000 carbon years...&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 4</string>
-						<key>Position</key>
-						<string>{ 4000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>MostCommonCharacter</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Please tell me you&apos;re the last alien on this path.&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;You&apos;ve got it. And I will let you pass if you can answer my question.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Fine. What is it?&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“If you take the names of all the items in your inventory... what is the most common character?&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Whoa! Not to shabby.&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Please... continue forward.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Yes! Treasure, here we come!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;m sorry, but that&apos;s wrong!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;No treasure for you!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-				</array>
-			</dict>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>Alien 1</string>
+					<key>Position</key>
+					<string>{ 1000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>ItemsFromPlanet</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Hello, little robot. What brings you to my planet?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m a treasure hunter!&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;That&apos;s fine, but before I can let you look for treasure, I need any items you have from the planet Glinda.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Thanks. I needed those.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Are you hiding something from me?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I can&apos;t trust you. I&apos;m calling the reinforcements!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>RequestType</key>
+							<string>OldestItemFromPlanet</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;ve been looking for an ancient item. The oldest artifact from the planet Cunia.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Can I take a look at the oldest item you have from Cunia?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Only if you let me pass.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Very well.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Wow. Very interesting. Thanks for letting me see this.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Now, as you requested, you may pass.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Are you kidding me? What&apos;s that sticking out of your compartment?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Uhh... I don&apos;t know what you&apos;re talking about...&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Something is fishy. I am going to keep you here until further notice.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 2</string>
+					<key>Position</key>
+					<string>{ 2000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>XORCipherKeySearch</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Howdy stranger. How&apos;s it going?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m doing alright, but I could use some help. They&apos;ve asked me to step up security along this path.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I guess I could help. What do you need?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m trying to crack a code that is being used by interplanetary pirates.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;They&apos;ve been encrypting their messages using a number between 0 and 255.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m just not sure which number it is... but I do know this encrypted message means &quot;udacity&quot;!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>[Hands over encrypted message]</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Haha! That&apos;s it! It works!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Heh. Yeah, I&apos;m pretty good with encryption. Not because I&apos;m a pirate or anything...&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Aww man... it isn&apos;t working. Wait a minute!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"How do I know you&apos;re not a pirate?!?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Guards! Seize this robot at once!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>RequestType</key>
+							<string>RarityOfItems</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I need a quick way to report the rarity of items.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I want to know how many common, uncommon, rare, and legendary items are in an inventory.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Can you help me?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;If it gets me closer to some treasure, then why not? Let me think...&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;That&apos;s awesome! I really like that approach.</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;This is going to cause seriously delays.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m sorry. I can&apos;t let you pass until I figure this out.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>RequestType</key>
+							<string>ItemComparison</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Since you know so much about rarity... could you quickly determine if one item is more valuable than another?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;And I don&apos;t just mean by an item&apos;s value. An item should be more valuable if it is more rare than another item.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;But... if they have the same rarity, then compare their base values.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Yeah I can do that.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"You&apos;re right. I would have never thought of that!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Yeah, it is pretty elegant when you think about it.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;This is so great. Please go ahead, I&apos;m sorry for the delay!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Finally!&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"That won&apos;t work. I&apos;ve tried it already and it failed.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Until I figure this out, I can&apos;t let you pass. Those are direct orders!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 3</string>
+					<key>Position</key>
+					<string>{ 3000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>BannedItems</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Ooo... a traveler. I could use your help.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Not this again...&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m having trouble reading this list of items. Some of them need to be banned from this planet.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;So how can I help?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Could you look through the list and tell me items that mention a &quot;laser&quot; and are less than 30 carbon years old?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;There is a recall on such items, and I need to get rid of them.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Sure, hand me the list.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>[Hands over list of items]</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Wonderful. Thanks for your help.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Hmm... I&apos;m not sure about this. I think I need a second opinion.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;ll have another alien handle my watch. You&apos;ll need to wait here.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>RequestType</key>
+							<string>PlanetData</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I think I have something that could help you.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;It is a list of planets and information about the items detected on their surfaces.&quot; </string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;ll let you have it if you tell me the planet that has the most intriguing items.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Alright. Sounds like a fair trade.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>[Hands over list with planet information]</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Interesting. Maybe I&apos;ll plan my next visit there.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Now, please. Go ahead.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;That isn&apos;t what the last robot told me.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I think I&apos;ll have you wait here until someone comes along and gives us another opinion.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Which might be another 50,000 carbon years...&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 4</string>
+					<key>Position</key>
+					<string>{ 4000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>MostCommonCharacter</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Please tell me you&apos;re the last alien on this path.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;You&apos;ve got it. And I will let you pass if you can answer my question.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Fine. What is it?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"If you take the names of all the items in your inventory... what is the most common character?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>"Whoa! Not to shabby.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Please... continue forward."</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>"Yes! Treasure, here we come!"</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m sorry, but that&apos;s wrong!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;No treasure for you!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+			</array>
 			<key>Treasure</key>
 			<dict>
 				<key>Name</key>
 				<string>Treasure</string>
 				<key>Position</key>
 				<string>{ 5000, -110 }</string>
-				<key>BaseFrame</key>
-				<string>Treasure</string>
-				<key>OpeningAtlasFile</key>
-				<string>treasure</string>
-				<key>OpeningFrames</key>
-				<array>
-					<string>chest-01</string>
-					<string>chest-02</string>
-					<string>chest-03</string>
-					<string>chest-04</string>
-					<string>chest-05</string>
-				</array>
-				<key>OpeningTPF</key>
-				<real>0.2</real>
 			</dict>
 		</dict>
 		<dict>
+			<key>ShowBadges</key>
+			<true/>
 			<key>StartingDialogue</key>
 			<string>Hero: &quot;Hey friend! Will you help me explore this strange planet?&quot;</string>
 			<key>RequestingDialogue</key>
-			<string>Hero: &quot;Hmm...&quot;</string>
+			<string>Hero: [Anxiously waits...]</string>
 			<key>TransitioningDialogue</key>
 			<string>&quot;But, I&apos;m not finished yet...&quot;</string>
 			<key>WinningDialogue</key>
@@ -1371,43 +1357,424 @@
 				<string>Hero</string>
 				<key>Position</key>
 				<string>{ 0, -124 }</string>
-				<key>BaseFrame</key>
+				<key>Inventory</key>
+				<array/>
+			</dict>
+			<key>Aliens</key>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>Alien 1</string>
+					<key>Position</key>
+					<string>{ 1000, -80 }</string>
+					<key>Variant</key>
+					<string>Teal</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>BasicCheck</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Hello Mr. Alien, may I pass?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;In a second, but first you need to pass a basic check.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;To pass, all you have to do is get someone to tap the screen.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Hey! Anybody out there? Will you please tap the screen?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Nice! Here, take a badge for this basic check.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m not sure how you could have failed this...&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Better talk to the developers!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 2</string>
+					<key>Position</key>
+					<string>{ 2000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>BasicCheck</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;You made it past the first basic check, but how about one more?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Will someone tap the screen again?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I hope so... Is there anyone out there?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;You did it again! You must be quite persuasive!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m not sure how you could have failed this...&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Better talk to the developers!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>RequestType</key>
+							<string>AdvancedCheck</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;This time, I will do a more advanced check!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Well... actually I&apos;m just kidding. It is the same as the basic check. Someone just needs to tap the screen again...&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;BUT, if you can pass this check, then I&apos;ll give you another badge for an &quot;advanced check&quot; because of the trouble I&apos;m causing you.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I can do it. I have faith in the people beyond the screen!&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Nice! Here&apos;s your badge.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m not sure how you could have failed this...&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Better talk to the developers!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 3</string>
+					<key>Position</key>
+					<string>{ 3000, -80 }</string>
+					<key>Variant</key>
+					<string>Teal</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>ExpertCheck</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Stop right there!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m stopping! I&apos;m stopping! I&apos;m just a friendly robot trying to pass through. What&apos;s going on here?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m on expert check duty, and I&apos;m afraid you&apos;ll have to pass an expert check or I&apos;ll hand you over to the alien authorities.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;What&apos;s an expert check? I&apos;ll do it.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Uhh... well actually I&apos;m not quite sure. Most of the time when I say &quot;expert check&quot; everyone goes away.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;How about you let me pass if I can convince someone to tap the screen?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;What?!? You know how to communicate with those from across the screen? Incredible!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Sure. Absolutely. If someone taps the screen, then you can be on your way.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Here goes nothing...&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Hello, world! Is there anybody out there? Will someone please tap the screen?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Wow! That was amazing!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Here&apos;s your expert badge, but watch out for the alien at the end of this pass. You&apos;ll need all of your badges to get through!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Nothing I can&apos;t handle... I hope...&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m not sure how you could have failed this...&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Better talk to the developers!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 4</string>
+					<key>Position</key>
+					<string>{ 4000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>CheckBadges</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Hold it right there robot!</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Okay. I&apos;m holding.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m afraid I can only let you pass if you have the proper badges.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Badges... I have plenty of those. Which ones are you talking about?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Well... here is my list. It says I need to see badges for two basic checks, an advanced check, and an expert check.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Yeah I can check if have those... somebody just needs to tap the screen.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;You&apos;re right. That&apos;s all of them.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;As much as I want to detain you, I guess I&apos;ll have to let you through.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Sweet! I knew I&apos;d make it!&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;That&apos;s it! I&apos;ve had enough of the shenanigans!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;You&apos;re coming with me to the alien authorities!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>Treasure</key>
+			<dict>
+				<key>Name</key>
+				<string>Treasure</string>
+				<key>Position</key>
+				<string>{ 5000, -110 }</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>ShowBadges</key>
+			<true/>
+			<key>StartingDialogue</key>
+			<string>Hero: &quot;Hey friend! Will you help me explore this strange planet?&quot;</string>
+			<key>RequestingDialogue</key>
+			<string>Hero: &quot;Alright... I can do that.&quot;</string>
+			<key>TransitioningDialogue</key>
+			<string>&quot;Let&apos;s talk about the next thing...&quot;</string>
+			<key>WinningDialogue</key>
+			<string>Hero: &quot;Awesome! We found some treasure!&quot;</string>
+			<key>LosingDialogue</key>
+			<string>Hero: &quot;Well... that ended poorly.&quot;</string>
+			<key>Hero</key>
+			<dict>
+				<key>Name</key>
 				<string>Hero</string>
-				<key>RestingAtlasFile</key>
-				<string>hero</string>
-				<key>RestingFrames</key>
-				<array>
-					<string>RR1</string>
-					<string>RR2</string>
-					<string>RR3</string>
-					<string>RR4</string>
-					<string>RR5</string>
-				</array>
-				<key>RestingTPF</key>
-				<real>0.3</real>
-				<key>MovingAtlasFile</key>
-				<string>hero</string>
-				<key>MovingFrames</key>
-				<array>
-					<string>RM1</string>
-					<string>RM2</string>
-					<string>RM3</string>
-					<string>RM4</string>
-				</array>
-				<key>MovingTPF</key>
-				<real>0.1</real>
-				<key>CelebratingAtlasFile</key>
-				<string>hero</string>
-				<key>CelebratingFrames</key>
-				<array>
-					<string>RC1</string>
-					<string>RC2</string>
-					<string>RC3</string>
-					<string>RC4</string>
-					<string>RC5</string>
-				</array>
-				<key>CelebratingTPF</key>
-				<real>0.1</real>
+				<key>Position</key>
+				<string>{ 0, -124 }</string>
 				<key>Inventory</key>
 				<array>
 					<string>LaserCannon</string>
@@ -1421,781 +1788,534 @@
 				</array>
 			</dict>
 			<key>Aliens</key>
-			<dict>
-				<key>BaseFrame</key>
-				<string>Alien</string>
-				<key>RestingAtlasFile</key>
-				<string>alien</string>
-				<key>RestingFrames</key>
-				<array>
-					<string>AR1</string>
-					<string>AR2</string>
-					<string>AR3</string>
-					<string>AR4</string>
-				</array>
-				<key>RestingTPF</key>
-				<real>0.4</real>
-				<key>TalkingAtlasFile</key>
-				<string>alien</string>
-				<key>TalkingFrames</key>
-				<array>
-					<string>A-turn-1</string>
-					<string>A-turn-2</string>
-					<string>A-turn-3</string>
-					<string>A-turn-2</string>
-				</array>
-				<key>TalkingTPF</key>
-				<real>0.8</real>
-				<key>AngryAtlasFile</key>
-				<string>alien</string>
-				<key>AngryFrames</key>
-				<array>
-					<string>a-anger-1</string>
-					<string>a-anger-2</string>
-					<string>a-anger-3</string>
-					<string>a-anger-4</string>
-					<string>a-anger-5</string>
-				</array>
-				<key>AngryTPF</key>
-				<real>0.4</real>
-				<key>Instances</key>
-				<array>
-					<dict>
-						<key>Name</key>
-						<string>Alien 1</string>
-						<key>Position</key>
-						<string>{ 1000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>ReverseLongestName</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Hello Mr. Alien, may I pass?&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“I&apos;ll let you pass if you tell me a funny word!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“That&apos;s a good one!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Not. Funny. At. All. Now I am angry...”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You won&apos;t like me when I&apos;m angry!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 2</string>
-						<key>Position</key>
-						<string>{ 2000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>InscriptionEternalStar</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Umm... let me guess, you want something?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“That&apos;s right. I am looking for a mysterious relic with the inscription THE ETERNAL STAR. Do you have such a relic?”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Wow! This is incredible!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Please go right ahead, there is something of greater value if you continue further.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Sweet! I wonder what it is?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“This isn&apos;t it. This is an ETERNAL FAILURE!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“I&apos;m afraid you cannot pass, you&apos;ll be stuck here forever.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 3</string>
-						<key>Position</key>
-						<string>{ 3000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>LeastValuableItem</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“What will it take to let me pass?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“I&apos;m not like the other aliens. How about your least valuable item?”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Yeah... this looks cheap. That&apos;s just my style.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You can move right along.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Yes! I can see something in the distance!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“I wanted something cheap... but instead you played a cheap trick!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Prepare for your doom!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 4</string>
-						<key>Position</key>
-						<string>{ 4000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>ShuffleStrings</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Can I pass? I just need to go a little further...”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You can pass, but only if you can answer my tricky problem!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Tricky problem? Hmm... why not!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Here&apos;s the problem... if I give you a group of three strings, can you tell me if the third string is a valid shuffle of the first two?”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Maybe? What&apos;s a valid shuffle?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“A valid shuffle combines two strings together where the left-to-right order of the characters in both strings is maintained.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“For example, if I give you (“ab”, “cd”, “cabd”), then “cabd” is a valid shuffle because characters “ab” and “cd” still occur in the same order.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“However, if I give you (&quot;ab&quot;, &quot;cd&quot;, “bacd”), then “bacd” IS NOT a valid shuffle because characters “ab” don&apos;t occur in the same order.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Alright, I can do it. Give me a group of strings!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Here you go, good luck...”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Nice! I&apos;m impressed!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Please... continue forward.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Wahoo! Let&apos;s go!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;I&apos;m sorry, but that&apos;s wrong!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Thus, you cannot pass...”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-				</array>
-			</dict>
+			<array>
+				<dict>
+					<key>Name</key>
+					<string>Alien 1</string>
+					<key>Position</key>
+					<string>{ 1000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>PolicingItems</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;ve made it this far... how can I pass?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;ll make it easy for you. Here is a method I use to ensure no prohibited items pass through on my watch.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;You can use it to check how many prohibited items are in an inventory by looking at the errors it throws.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;When the method throws an errors, that means a prohibited item was found.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;If you report all the errors to me, then I&apos;ll be nice to you. But if not, there&apos;s no guarantees.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Thanks for reporting all the errors.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Hmm... I don&apos;t think your being completely honest with me. I can&apos;t let you pass.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>RequestType</key>
+							<string>FindTheLasers</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I need a new, more simple method.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;It should return true if an item contains the word &quot;laser&quot; in its name.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Thanks. This will be extremely useful!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;No problem.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Nope. This just won&apos;t cut it.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I can&apos;t let you pass.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 2</string>
+					<key>Position</key>
+					<string>{ 2000, -80 }</string>
+					<key>Variant</key>
+					<string>Magenta</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>RedefinePolicingItems</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Hello... how&apos;s it going?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Things are well. But I need some help.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;The alien you just passed gave you a method for checking prohibited items, right?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Yes, that&apos;s true.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Well... I need you to make me a method for doing the same thing.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;The method should check items in the following order...&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;First, if the item&apos;s name contains &quot;laser&quot;, then throw an error.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Second, if the item is from Cunia, then throw an error.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Last, if the item has a base value of less than 10, then throw an error.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Make sure you check the items in this order!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Wonderful. Now I won&apos;t get fired.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Glad I could help.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Oh no... this isn&apos;t going to work. It doesn&apos;t pass my command&apos;s acceptance test.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m going to have to keep you here until we figure it out.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 3</string>
+					<key>Position</key>
+					<string>{ 3000, -80 }</string>
+					<key>Variant</key>
+					<string>Teal</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>BoostItemValue</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I hope you&apos;re ready for some fun.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Some fun? What kind of fun?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;ll let you pass if you can complete four tasks.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;What&apos;s fun about four tasks? That sounds like a lot of work. There must be some catch.&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;There is a catch. If you&apos;re clever, each task can be solved in just one line of code!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;But... even if you use more than one line of code, I&apos;ll let you pass as long as each solution works.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;ALSO, if your solutions do not use either the map, sort, filter, or reduce method, then we may have problems later!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m ready for this. What&apos;s the first task?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;For each item in your inventory, add 100 to its base value.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;That works!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;That doesn&apos;t work. So I can&apos;t let you pass.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>RequestType</key>
+							<string>SortLeastToGreatest</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I want you to sort the items in your inventory.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;How do you want them sorted?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Great question. I want them sorted in a special manner.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;An item should be considered less than another item if it is less rare.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;But, if an item has the same rarity as another item, then you should check to see which item has a lower base value.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Nice job!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;That doesn&apos;t work. So I can&apos;t let you pass.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>RequestType</key>
+							<string>GetCommonItems</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I want you to show me how to reduce an inventory to only the items that are common.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Way to go!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;That doesn&apos;t work. So I can&apos;t let you pass.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>RequestType</key>
+							<string>TotalBaseValue</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I want you to tell me what the combined base value is for all your items.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;You did it!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Since you completed all four tasks, you may pass!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;That doesn&apos;t work. So I can&apos;t let you pass.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>Name</key>
+					<string>Alien 4</string>
+					<key>Position</key>
+					<string>{ 4000, -80 }</string>
+					<key>Variant</key>
+					<string>Teal</string>
+					<key>Requests</key>
+					<array>
+						<dict>
+							<key>RequestType</key>
+							<string>RemoveDuplicates</string>
+							<key>InitialConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Well...well...well... what do we have here?&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;It is I! The robot you&apos;ve heard so much about!&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Indeed. Your reputation proceeds you, but you must still fulfill one final request before you can pass.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;This request will test your wits! Use any means necessary to fulfill it!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I can do it! What&apos;s the request?&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I need you to remove all the duplicates items from an inventory.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+							<key>PassConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;Way to go! You did it!&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;YES! LET&apos;S GOOOO!!!&quot;</string>
+									<key>LineSource</key>
+									<integer>0</integer>
+								</dict>
+							</array>
+							<key>FailConversation</key>
+							<array>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;I&apos;m sorry. That&apos;s not correct.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+								<dict>
+									<key>LineText</key>
+									<string>&quot;You&apos;re so close, but I cannot let you pass.&quot;</string>
+									<key>LineSource</key>
+									<integer>1</integer>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+			</array>
 			<key>Treasure</key>
 			<dict>
 				<key>Name</key>
 				<string>Treasure</string>
 				<key>Position</key>
 				<string>{ 5000, -110 }</string>
-				<key>BaseFrame</key>
-				<string>Treasure</string>
-				<key>OpeningAtlasFile</key>
-				<string>treasure</string>
-				<key>OpeningFrames</key>
-				<array>
-					<string>chest-01</string>
-					<string>chest-02</string>
-					<string>chest-03</string>
-					<string>chest-04</string>
-					<string>chest-05</string>
-				</array>
-				<key>OpeningTPF</key>
-				<real>0.2</real>
-			</dict>
-		</dict>
-		<dict>
-			<key>StartingDialogue</key>
-			<string>Hero: &quot;Hey friend! Will you help me explore this strange planet?&quot;</string>
-			<key>RequestingDialogue</key>
-			<string>Hero: &quot;Hmm...&quot;</string>
-			<key>TransitioningDialogue</key>
-			<string>&quot;But, I&apos;m not finished yet...&quot;</string>
-			<key>WinningDialogue</key>
-			<string>Hero: &quot;Awesome! We found some treasure!&quot;</string>
-			<key>LosingDialogue</key>
-			<string>Hero: &quot;Well... that ended poorly.&quot;</string>
-			<key>Hero</key>
-			<dict>
-				<key>Name</key>
-				<string>Hero</string>
-				<key>Position</key>
-				<string>{ 0, -124 }</string>
-				<key>BaseFrame</key>
-				<string>Hero</string>
-				<key>RestingAtlasFile</key>
-				<string>hero</string>
-				<key>RestingFrames</key>
-				<array>
-					<string>RR1</string>
-					<string>RR2</string>
-					<string>RR3</string>
-					<string>RR4</string>
-					<string>RR5</string>
-				</array>
-				<key>RestingTPF</key>
-				<real>0.3</real>
-				<key>MovingAtlasFile</key>
-				<string>hero</string>
-				<key>MovingFrames</key>
-				<array>
-					<string>RM1</string>
-					<string>RM2</string>
-					<string>RM3</string>
-					<string>RM4</string>
-				</array>
-				<key>MovingTPF</key>
-				<real>0.1</real>
-				<key>CelebratingAtlasFile</key>
-				<string>hero</string>
-				<key>CelebratingFrames</key>
-				<array>
-					<string>RC1</string>
-					<string>RC2</string>
-					<string>RC3</string>
-					<string>RC4</string>
-					<string>RC5</string>
-				</array>
-				<key>CelebratingTPF</key>
-				<real>0.1</real>
-				<key>Inventory</key>
-				<array>
-					<string>LaserCannon</string>
-					<string>BeamRifle</string>
-					<string>MoonRubble</string>
-					<string>MoonRock</string>
-					<string>MoonRock</string>
-					<string>GlowSphere</string>
-					<string>MoonRubble</string>
-					<string>MoonRubble</string>
-				</array>
-			</dict>
-			<key>Aliens</key>
-			<dict>
-				<key>BaseFrame</key>
-				<string>Alien</string>
-				<key>RestingAtlasFile</key>
-				<string>alien</string>
-				<key>RestingFrames</key>
-				<array>
-					<string>AR1</string>
-					<string>AR2</string>
-					<string>AR3</string>
-					<string>AR4</string>
-				</array>
-				<key>RestingTPF</key>
-				<real>0.4</real>
-				<key>TalkingAtlasFile</key>
-				<string>alien</string>
-				<key>TalkingFrames</key>
-				<array>
-					<string>A-turn-1</string>
-					<string>A-turn-2</string>
-					<string>A-turn-3</string>
-					<string>A-turn-2</string>
-				</array>
-				<key>TalkingTPF</key>
-				<real>0.8</real>
-				<key>AngryAtlasFile</key>
-				<string>alien</string>
-				<key>AngryFrames</key>
-				<array>
-					<string>a-anger-1</string>
-					<string>a-anger-2</string>
-					<string>a-anger-3</string>
-					<string>a-anger-4</string>
-					<string>a-anger-5</string>
-				</array>
-				<key>AngryTPF</key>
-				<real>0.4</real>
-				<key>Instances</key>
-				<array>
-					<dict>
-						<key>Name</key>
-						<string>Alien 1</string>
-						<key>Position</key>
-						<string>{ 1000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>ReverseLongestName</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Hello Mr. Alien, may I pass?&quot;</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“I&apos;ll let you pass if you tell me a funny word!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“That&apos;s a good one!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Not. Funny. At. All. Now I am angry...”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You won&apos;t like me when I&apos;m angry!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 2</string>
-						<key>Position</key>
-						<string>{ 2000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>InscriptionEternalStar</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Umm... let me guess, you want something?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“That&apos;s right. I am looking for a mysterious relic with the inscription THE ETERNAL STAR. Do you have such a relic?”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Wow! This is incredible!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Please go right ahead, there is something of greater value if you continue further.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Sweet! I wonder what it is?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“This isn&apos;t it. This is an ETERNAL FAILURE!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“I&apos;m afraid you cannot pass, you&apos;ll be stuck here forever.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 3</string>
-						<key>Position</key>
-						<string>{ 3000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>LeastValuableItem</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“What will it take to let me pass?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“I&apos;m not like the other aliens. How about your least valuable item?”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Yeah... this looks cheap. That&apos;s just my style.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You can move right along.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Yes! I can see something in the distance!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“I wanted something cheap... but instead you played a cheap trick!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Prepare for your doom!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-					<dict>
-						<key>Name</key>
-						<string>Alien 4</string>
-						<key>Position</key>
-						<string>{ 4000, -80 }</string>
-						<key>Requests</key>
-						<array>
-							<dict>
-								<key>RequestType</key>
-								<string>ShuffleStrings</string>
-								<key>InitialConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Can I pass? I just need to go a little further...”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“You can pass, but only if you can answer my tricky problem!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Tricky problem? Hmm... why not!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Here&apos;s the problem... if I give you a group of three strings, can you tell me if the third string is a valid shuffle of the first two?”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Maybe? What&apos;s a valid shuffle?”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“A valid shuffle combines two strings together where the left-to-right order of the characters in both strings is maintained.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“For example, if I give you (“ab”, “cd”, “cabd”), then “cabd” is a valid shuffle because characters “ab” and “cd” still occur in the same order.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“However, if I give you (&quot;ab&quot;, &quot;cd&quot;, “bacd”), then “bacd” IS NOT a valid shuffle because characters “ab” don&apos;t occur in the same order.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Alright, I can do it. Give me a group of strings!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Here you go, good luck...”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-								<key>PassConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>“Nice! I&apos;m impressed!”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Please... continue forward.”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Wahoo! Let&apos;s go!”</string>
-										<key>LineSource</key>
-										<integer>0</integer>
-									</dict>
-								</array>
-								<key>FailConversation</key>
-								<array>
-									<dict>
-										<key>LineText</key>
-										<string>&quot;Maybe is incorrect!&quot;</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-									<dict>
-										<key>LineText</key>
-										<string>“Thus, you cannot pass...”</string>
-										<key>LineSource</key>
-										<integer>1</integer>
-									</dict>
-								</array>
-							</dict>
-						</array>
-					</dict>
-				</array>
-			</dict>
-			<key>Treasure</key>
-			<dict>
-				<key>Name</key>
-				<string>Treasure</string>
-				<key>Position</key>
-				<string>{ 5000, -110 }</string>
-				<key>BaseFrame</key>
-				<string>Treasure</string>
-				<key>OpeningAtlasFile</key>
-				<string>treasure</string>
-				<key>OpeningFrames</key>
-				<array>
-					<string>chest-01</string>
-					<string>chest-02</string>
-					<string>chest-03</string>
-					<string>chest-04</string>
-					<string>chest-05</string>
-				</array>
-				<key>OpeningTPF</key>
-				<real>0.2</real>
 			</dict>
 		</dict>
 	</array>

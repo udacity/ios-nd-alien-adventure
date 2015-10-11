@@ -8,6 +8,13 @@
 
 import SpriteKit
 
+// MARK: - AlienColor
+
+enum AlienColor: String {
+    case Magenta = "Magenta"
+    case Teal = "Teal"
+}
+
 // MARK: - Alien: SKSpriteNode
 
 class Alien: SKSpriteNode {
@@ -16,6 +23,7 @@ class Alien: SKSpriteNode {
     
     private var currentRequestIndex = 0
     var requests: [UDRequest]!
+    var colorVariant: AlienColor
     var getFirstRequest: UDRequest {
         return requests[0]
     }
@@ -32,9 +40,18 @@ class Alien: SKSpriteNode {
     
     // MARK: Initializers
     
-    init(name: String, position: CGPoint, requests: [UDRequest]) {
+    init(name: String, position: CGPoint, variant: AlienColor, requests: [UDRequest]) {
         
-        super.init(texture: UDAnimation.baseFrameForSprite[.Alien], color: UIColor.blueColor(), size: CGSize(width: 172.5, height: 254))
+        var spriteKey: UDSpriteKey
+        switch(variant) {
+        case .Magenta:
+            spriteKey = .MagentaAlien
+        case .Teal:
+            spriteKey = .TealAlien
+        }
+        
+        self.colorVariant = variant
+        super.init(texture: UDAnimation.baseFrameForSprite[spriteKey], color: UIColor.blueColor(), size: CGSize(width: 172.5, height: 254))
         
         self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSize(width: 650.0, height: 254))
         if let alienPhysicsBody = self.physicsBody {

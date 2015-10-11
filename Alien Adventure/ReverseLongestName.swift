@@ -13,14 +13,13 @@ extension Hero {
         var longestString = ""
         
         if inventory.count > 0 {
-            
             for item in inventory {
                 if item.name.characters.count > longestString.characters.count {
                     longestString = item.name
                 }
             }
         }
-
+        
         return String(longestString.characters.reverse())
     }
     

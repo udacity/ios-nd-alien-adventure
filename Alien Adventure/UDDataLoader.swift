@@ -12,7 +12,7 @@ import Foundation
 // MARK: - UDDataError
 
 enum UDDataError: ErrorType {
-    case KeyError(String, String)
+    case KeyError(String, String, String)
     case UnknownError
 }
 
@@ -33,21 +33,6 @@ class UDDataLoader {
     // MARK: GameDataKeys
     
     struct GameDataKeys {
-        static let Hero = "Hero"
-        static let Name = "Name"
-        static let Position = "Position"
-        static let Inventory = "Inventory"
-        static let Aliens = "Aliens"
-        static let Instances = "Instances"
-        static let Requests = "Requests"
-        static let Treasure = "Treasure"
-        static let InitialConversation = "InitialConversation"
-        static let PassConversation = "PassConversation"
-        static let FailConversation = "FailConversation"
-        static let RequestType = "RequestType"
-        static let HeroSpriteKey = "Hero"
-        static let AlienSpriteKey = "Aliens"
-        static let TreasureSpriteKey = "Treasure"
         static let Items = "Items"
         static let ItemID = "ItemID"
         static let ItemType = "ItemType"
@@ -57,9 +42,26 @@ class UDDataLoader {
         static let ItemHistoricalData = "HistoricalData"
         static let ItemPlanetOfOrigin = "PlanetOfOrigin"
         static let ItemCarbonAge = "CarbonAge"
+        static let Animations = "Animations"
+        static let Hero = "Hero"
+        static let Name = "Name"
+        static let Position = "Position"
+        static let Variant = "Variant"
+        static let Inventory = "Inventory"
+        static let Aliens = "Aliens"
+        static let Requests = "Requests"
+        static let Treasure = "Treasure"
+        static let InitialConversation = "InitialConversation"
+        static let PassConversation = "PassConversation"
+        static let FailConversation = "FailConversation"
+        static let RequestType = "RequestType"
+        static let HeroSpriteKey = "Hero"
+        static let AlienSpriteKey = "Alien"
+        static let TreasureSpriteKey = "Treasure"
         static let LineText = "LineText"
         static let LineSource = "LineSource"
         static let Levels = "Levels"
+        static let ShowBadges = "ShowBadges"
     }
     
     struct KeyPostfixes {
@@ -73,7 +75,7 @@ class UDDataLoader {
     class func LevelDictionaryFromGameDictionary(dictionary: [String: AnyObject], level: Int) throws -> [String:AnyObject] {
         
         guard let levelArray = dictionary[GameDataKeys.Levels] as? [[String:AnyObject]] else {
-            throw UDDataError.KeyError("\(level)", "\(dictionary)")
+            throw UDDataError.KeyError("\(level)", "\(dictionary)", __FUNCTION__)
         }
         return levelArray[level]
     }
@@ -83,13 +85,13 @@ class UDDataLoader {
     class func ItemsIndexFromGameDictionary(dictionary: [String:AnyObject]) throws -> [String:UDItem] {
         
         guard let itemsDictionaries = dictionary[GameDataKeys.Items] as? [String:AnyObject] else {
-            throw UDDataError.KeyError(GameDataKeys.Items, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Items, "\(dictionary)", __FUNCTION__)
         }
         
         var itemsIndex = [String:UDItem]()
         for (itemKey, itemDictionary) in itemsDictionaries {
             guard let itemDictionary = itemDictionary as? [String:AnyObject] else {
-                throw UDDataError.KeyError(GameDataKeys.Items, "\(itemsDictionaries)")
+                throw UDDataError.KeyError(GameDataKeys.Items, "\(itemsDictionaries)", __FUNCTION__)
             }
             
             do {
@@ -105,25 +107,25 @@ class UDDataLoader {
     class func ItemFromDictionary(dictionary: [String:AnyObject], name: String) throws -> UDItem {
         
         guard let itemID = dictionary[GameDataKeys.ItemID] as? Int else {
-            throw UDDataError.KeyError(GameDataKeys.ItemID, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.ItemID, "\(dictionary)", __FUNCTION__)
         }
         
         guard let itemTypeInt = dictionary[GameDataKeys.ItemType] as? Int,
             let itemType = UDItemType(rawValue: itemTypeInt) else {
-            throw UDDataError.KeyError(GameDataKeys.ItemType, "\(dictionary)")
+                throw UDDataError.KeyError(GameDataKeys.ItemType, "\(dictionary)", __FUNCTION__)
         }
         
         guard let baseValue = dictionary[GameDataKeys.ItemBaseValue] as? Int else {
-            throw UDDataError.KeyError(GameDataKeys.ItemBaseValue, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.ItemBaseValue, "\(dictionary)", __FUNCTION__)
         }
         
         guard let rarityInt = dictionary[GameDataKeys.ItemRarity] as? Int,
             let rarity = UDItemRarity(rawValue: rarityInt) else {
-                throw UDDataError.KeyError(GameDataKeys.ItemRarity, "\(dictionary)")
+                throw UDDataError.KeyError(GameDataKeys.ItemRarity, "\(dictionary)", __FUNCTION__)
         }
         
         guard let historicalData = dictionary[GameDataKeys.ItemHistoricalData] as? [String:AnyObject] else {
-            throw UDDataError.KeyError(GameDataKeys.ItemHistoricalData, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.ItemHistoricalData, "\(dictionary)", __FUNCTION__)
         }
         
         if let inscription = dictionary[GameDataKeys.ItemInscription] as? String {
@@ -133,12 +135,16 @@ class UDDataLoader {
         }
     }
     
-    // MARK: Load Animation
+    // MARK: Load Animations
     
-    class func AnimationFromLevelDictionary(dictionary: [String:AnyObject], spriteKey: String, animationKeyPrefix: String) throws -> UDAnimationData {
+    class func AnimationFromGameDictionary(dictionary: [String:AnyObject], spriteKey: String, animationKeyPrefix: String) throws -> UDAnimationData {
         
-        guard let spriteDictionary = dictionary[spriteKey] as? [String:AnyObject] else {
-            throw UDDataError.KeyError("\(spriteKey)", "\(dictionary)")
+        guard let animationsDictionary = dictionary[GameDataKeys.Animations] as? [String:AnyObject] else {
+            throw UDDataError.KeyError(GameDataKeys.Animations, "\(dictionary)", __FUNCTION__)
+        }
+        
+        guard let spriteDictionary = animationsDictionary[spriteKey] as? [String:AnyObject] else {
+            throw UDDataError.KeyError("\(spriteKey)", "\(animationsDictionary)", __FUNCTION__)
         }
         
         let atlasfileKey = animationKeyPrefix + KeyPostfixes.AtlasFile
@@ -146,15 +152,15 @@ class UDDataLoader {
         let timePerFrameKey = animationKeyPrefix + KeyPostfixes.TimePerFrame
         
         guard let atlasFile = spriteDictionary[atlasfileKey] as? String else {
-            throw UDDataError.KeyError("\(atlasfileKey)", "\(spriteDictionary)")
+            throw UDDataError.KeyError("\(atlasfileKey)", "\(spriteDictionary)", __FUNCTION__)
         }
         
         guard let frameStrings = spriteDictionary[framesKey] as? [String] else {
-            throw UDDataError.KeyError("\(framesKey)", "\(spriteDictionary)")
+            throw UDDataError.KeyError("\(framesKey)", "\(spriteDictionary)", __FUNCTION__)
         }
         
         guard let timePerFrame = spriteDictionary[timePerFrameKey] as? Double else {
-            throw UDDataError.KeyError("\(timePerFrameKey)", "\(spriteDictionary)")
+            throw UDDataError.KeyError("\(timePerFrameKey)", "\(spriteDictionary)", __FUNCTION__)
         }
         
         let atlas = SKTextureAtlas(named: atlasFile)
@@ -167,12 +173,23 @@ class UDDataLoader {
         return UDAnimationData(atlasFile: atlasFile, frames: frames, timePerFrame: timePerFrame)
     }
     
+    // MARK: Load Show Badges
+    
+    class func ShowBadgesFromLevelDictionary(dictionary: [String:AnyObject]) throws -> Bool {
+                
+        guard let showBadges = dictionary[GameDataKeys.ShowBadges] as? Bool else {
+            throw UDDataError.KeyError(GameDataKeys.ShowBadges, "\(dictionary)", __FUNCTION__)
+        }
+        
+        return showBadges
+    }
+    
     // MARK: Load Dialogue String (Global)
     
     class func DialogueStringFromLevelDictionary(dictionary: [String:AnyObject], key: UDDialogueKey) throws -> String {
         
         guard let dialogueString = dictionary[key.rawValue] as? String else {
-            throw UDDataError.KeyError(key.rawValue, "\(dictionary)")
+            throw UDDataError.KeyError(key.rawValue, "\(dictionary)", __FUNCTION__)
         }
         return dialogueString
     }
@@ -182,11 +199,11 @@ class UDDataLoader {
     class func LineOfDialogueFromDialogueDictionary(dictionary: [String:AnyObject], npcName: String) throws -> UDLineOfDialogue {
         
         guard let lineText = dictionary[GameDataKeys.LineText] as? String else {
-            throw UDDataError.KeyError(GameDataKeys.LineText, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.LineText, "\(dictionary)", __FUNCTION__)
         }
         
         guard let lineSource = dictionary[GameDataKeys.LineSource] as? Int else {
-            throw UDDataError.KeyError(GameDataKeys.LineSource, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.LineSource, "\(dictionary)", __FUNCTION__)
         }
         
         return UDLineOfDialogue(lineText: (UDLineSource(rawValue: lineSource)! == .Hero) ? "\(GameDataKeys.Hero): " + lineText : "\(npcName): " + lineText, lineSource: UDLineSource(rawValue: lineSource)!)
@@ -211,19 +228,19 @@ class UDDataLoader {
     class func HeroFromLevelDictionary(dictionary: [String:AnyObject]) throws -> Hero {
         
         guard let heroDictionary = dictionary[GameDataKeys.Hero] as? [String:AnyObject] else {
-            throw UDDataError.KeyError(GameDataKeys.Hero, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Hero, "\(dictionary)", __FUNCTION__)
         }
         
         guard let name = heroDictionary[GameDataKeys.Name] as? String else {
-            throw UDDataError.KeyError(GameDataKeys.Name, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Name, "\(dictionary)", __FUNCTION__)
         }
         
         guard let position = heroDictionary[GameDataKeys.Position] as? String else {
-            throw UDDataError.KeyError(GameDataKeys.Position, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Position, "\(dictionary)", __FUNCTION__)
         }
         
         guard let inventoryKeyArray = heroDictionary[GameDataKeys.Inventory] as? [String] else {
-            throw UDDataError.KeyError(GameDataKeys.Inventory, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Inventory, "\(dictionary)", __FUNCTION__)
         }
         
         var items = [UDItem]()
@@ -231,7 +248,7 @@ class UDDataLoader {
             if (UDItemIndex.items.indexForKey(item) != nil) {
                 items.append(UDItemIndex.items[item]!)
             } else {
-                throw UDDataError.KeyError("\(item)", "\(UDItemIndex.items)")
+                throw UDDataError.KeyError("\(item)", "\(UDItemIndex.items)", __FUNCTION__)
             }
         }
         
@@ -242,16 +259,12 @@ class UDDataLoader {
     
     class func AliensFromLevelDictionary(dictionary: [String:AnyObject]) throws -> [Alien] {
         
-        guard let aliensDictionary = dictionary[GameDataKeys.Aliens] as? [String:AnyObject] else {
-            throw UDDataError.KeyError(GameDataKeys.Aliens, "\(dictionary)")
-        }
-        
-        guard let instances = aliensDictionary[GameDataKeys.Instances] as? [[String:AnyObject]] else {
-            throw UDDataError.KeyError(GameDataKeys.Instances, "\(dictionary)")
+        guard let alienDictionaries = dictionary[GameDataKeys.Aliens] as? [[String:AnyObject]] else {
+            throw UDDataError.KeyError(GameDataKeys.Aliens, "\(dictionary)", __FUNCTION__)
         }
         
         var aliens = [Alien]()
-        for alienDictionary in instances {
+        for alienDictionary in alienDictionaries {
             do {
                 let alien = try AlienFromAlienDictionary(alienDictionary)
                 aliens.append(alien)
@@ -266,15 +279,19 @@ class UDDataLoader {
     class func AlienFromAlienDictionary(dictionary: [String:AnyObject]) throws -> Alien {
         
         guard let name = dictionary[GameDataKeys.Name] as? String else {
-            throw UDDataError.KeyError(GameDataKeys.Name, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Name, "\(dictionary)", __FUNCTION__)
         }
         
         guard let position = dictionary[GameDataKeys.Position] as? String else {
-            throw UDDataError.KeyError(GameDataKeys.Position, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Position, "\(dictionary)", __FUNCTION__)
+        }
+        
+        guard let variant = dictionary[GameDataKeys.Variant] as? String else {
+            throw UDDataError.KeyError(GameDataKeys.Variant, "\(dictionary)", __FUNCTION__)
         }
         
         guard let requestDictionaries = dictionary[GameDataKeys.Requests] as? [[String:AnyObject]] else {
-            throw UDDataError.KeyError(GameDataKeys.Requests, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Requests, "\(dictionary)", __FUNCTION__)
         }
         
         var requests = [UDRequest]()
@@ -285,7 +302,7 @@ class UDDataLoader {
             }
         }
         
-        return Alien(name: name, position: CGPointFromString(position), requests: requests)
+        return Alien(name: name, position: CGPointFromString(position), variant: AlienColor(rawValue: variant)!, requests: requests)
     }
     
     // MARK: Load Alien Request
@@ -293,19 +310,19 @@ class UDDataLoader {
     class func UDRequestFromUDRequestDictionary(dictionary: [String:AnyObject], npcName: String) throws -> UDRequest {
         
         guard let requestType = dictionary[GameDataKeys.RequestType] as? String else {
-            throw UDDataError.KeyError(GameDataKeys.RequestType, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.RequestType, "\(dictionary)", __FUNCTION__)
         }
         
         guard let initialConversationData = dictionary[GameDataKeys.InitialConversation] as? [[String:AnyObject]] else {
-            throw UDDataError.KeyError(GameDataKeys.InitialConversation, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.InitialConversation, "\(dictionary)", __FUNCTION__)
         }
         
         guard let passConversationData = dictionary[GameDataKeys.PassConversation] as? [[String:AnyObject]] else {
-            throw UDDataError.KeyError(GameDataKeys.PassConversation, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.PassConversation, "\(dictionary)", __FUNCTION__)
         }
         
         guard let failConversationData = dictionary[GameDataKeys.FailConversation] as? [[String:AnyObject]] else {
-            throw UDDataError.KeyError(GameDataKeys.FailConversation, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.FailConversation, "\(dictionary)", __FUNCTION__)
         }
         
         var initialConversation = UDConversation()
@@ -327,15 +344,15 @@ class UDDataLoader {
     class func TreasureFromLevelDictionary(dictionary: [String:AnyObject]) throws -> SKSpriteNode {
         
         guard let treasureDictionary = dictionary[GameDataKeys.Treasure] as? [String:AnyObject] else {
-            throw UDDataError.KeyError(GameDataKeys.Treasure, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Treasure, "\(dictionary)", __FUNCTION__)
         }
         
         guard let name = treasureDictionary[GameDataKeys.Name] as? String else {
-            throw UDDataError.KeyError(GameDataKeys.Name, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Name, "\(dictionary)", __FUNCTION__)
         }
         
         guard let position = treasureDictionary[GameDataKeys.Position] as? String else {
-            throw UDDataError.KeyError(GameDataKeys.Position, "\(dictionary)")
+            throw UDDataError.KeyError(GameDataKeys.Position, "\(dictionary)", __FUNCTION__)
         }
         
         let treasure = SKSpriteNode(texture: UDAnimation.baseFrameForSprite[.Treasure])

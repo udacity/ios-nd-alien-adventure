@@ -20,7 +20,7 @@ extension Hero {
                 }
             }
         }
-        
+                
         return items
     }
     

@@ -12,15 +12,14 @@ extension Hero {
         
         var moonRocks = [UDItem]()
         
-        if inventory.count > 0 {
-            
+        if inventory.count > 0 {            
             for item in inventory {
                 if item.name == "MoonRock" {
                     moonRocks.append(item)
                 }
             }
         }
-        
+                
         return moonRocks
     }
 }

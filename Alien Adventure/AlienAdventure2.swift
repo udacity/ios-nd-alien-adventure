@@ -17,6 +17,7 @@ extension UDRequestTester {
         // check 1
         let itemsFromCheck1 = delegate.handleItemsFromPlanet([UDItem](), planet: "Glinda")
         if itemsFromCheck1.count != 0 {
+            print("ItemsFromPlanet FAILED: If the inventory is empty, then the number of items returned should be 0.")
             return false
         }
         
@@ -28,11 +29,13 @@ extension UDRequestTester {
                 if planetOfOrigin == "Glinda" {
                     glindaCount2++
                 } else {
+                    print("ItemsFromPlanet FAILED: An item not from Glinda was returned.")
                     return false
                 }
             }
         }
         if glindaCount2 != 3 {
+            print("ItemsFromPlanet FAILED: The number of items from Glinda is not correct.")
             return false
         }
         
@@ -44,11 +47,13 @@ extension UDRequestTester {
                 if planetOfOrigin == "Glinda" {
                     glindaCount3++
                 } else {
+                    print("ItemsFromPlanet FAILED: An item not from Glinda was returned.")
                     return false
                 }
             }
         }
         if glindaCount3 != 4 {
+            print("ItemsFromPlanet FAILED: The number of items from Glinda is not correct.")
             return false
         }
         
@@ -61,13 +66,14 @@ extension UDRequestTester {
         
         // check 1
         if delegate.handleOldestItemFromPlanet([UDItem](), planet: "Cunia") != nil {
+            print("OldestItemFromPlanet FAILED: If the inventory is empty, then nil should be returned.")
             return false
         }
         
         // check 2
-        if let item = delegate.handleOldestItemFromPlanet(delegate.inventory, planet: "Cunia") where item == UDItemIndex.items["Crystal"]! {
-            // do nothing, this is what should be returned
-        } else {
+        let item = delegate.handleOldestItemFromPlanet(delegate.inventory, planet: "Cunia")
+        if item != UDItemIndex.items["Crystal"]! {
+            print("OldestItemFromPlanet FAILED: The oldest item from Cunia was not returned.")
             return false
         }
         
@@ -79,12 +85,16 @@ extension UDRequestTester {
     func testXORCipherKeySearch() -> Bool {
 
         // check 1
-        if delegate.handleXORCipherKeySearch([UInt8]("yhmoexu".utf8)) != 12 {
+        let key1 = delegate.handleXORCipherKeySearch([UInt8]("yhmoexu".utf8))
+        if key1 != 12 {
+            print("XORCipherKeySearch FAILED: \(key1) is not the correct key used to decrypt the message \"yhmoexu\".")
             return false
         }
         
         // check 2
-        if delegate.handleXORCipherKeySearch([UInt8]("0!$&,1<".utf8)) != 69 {
+        let key2 = delegate.handleXORCipherKeySearch([UInt8]("0!$&,1<".utf8))
+        if key2 != 69 {
+            print("XORCipherKeySearch FAILED: \(key1) is not the correct key used to decrypt the message \"0!$&,1<\".")
             return false
         }
         
@@ -96,24 +106,53 @@ extension UDRequestTester {
     func testRarityOfItems() -> Bool {
         
         // check 1
-        if delegate.handleRarityOfItems([UDItem]()) != [UDItemRarity:Int]() {
+        if delegate.handleRarityOfItems([UDItem]()) != [
+            .Common: 0,
+            .Uncommon: 0,
+            .Rare: 0,
+            .Legendary: 0
+        ] {
+            print("RarityOfItems FAILED: If the inventory is empty, then there should be 0 items returned for each rarity.")
             return false
         }
         
         // check 2
-        if delegate.handleRarityOfItems(allItems()) != [
-            .Common: 3,
-            .Uncommon: 3,
-            .Rare: 2,
-            .Legendary: 1
-            ] { return false }
+        let items2 = delegate.handleRarityOfItems(allItems())
+        if items2[.Common] != 3 {
+            print("RarityOfItems FAILED: An incorrect number of .Common items was returned.")
+            return false
+        }
+        if items2[.Uncommon] != 3 {
+            print("RarityOfItems FAILED: An incorrect number of .Uncommon items was returned.")
+            return false
+        }
+        if items2[.Rare] != 2 {
+            print("RarityOfItems FAILED: The incorrect number of .Rare items was returned.")
+            return false
+        }
+        if items2[.Legendary] != 1 {
+            print("RarityOfItems FAILED: The incorrect number of .Legendary items was returned.")
+            return false
+        }
 
         // check 3
-        if delegate.handleRarityOfItems(delegate.inventory) != [
-            .Common: 2,
-            .Uncommon: 3,
-            .Legendary: 1
-            ] { return false }
+        let items3 = delegate.handleRarityOfItems(delegate.inventory)
+        if items3[.Common] != 2 {
+            print("RarityOfItems FAILED: An incorrect number of .Common items was returned.")
+            return false
+        }
+        if items3[.Uncommon] != 3 {
+            print("RarityOfItems FAILED: An incorrect number of .Uncommon items was returned.")
+            return false
+        }
+        if items3[.Rare] != 0 {
+            print("RarityOfItems FAILED: The incorrect number of .Rare items was returned.")
+            return false
+        }
+        if items3[.Legendary] != 1 {
+            print("RarityOfItems FAILED: The incorrect number of .Legendary items was returned.")
+            return false
+        }
         
         return true
     }
@@ -123,17 +162,26 @@ extension UDRequestTester {
     func testItemComparison() -> Bool {
         
         // check 1
-        if !(UDItemIndex.items["BeamRifle"]! < UDItemIndex.items["LaserBazooka"]!) {
+        var item1 = UDItemIndex.items["BeamRifle"]!
+        var item2 = UDItemIndex.items["LaserBazooka"]!
+        if !(item1 < item2) {
+            print("ItemComparison FAILED: An .Uncommon item should be less than a .Rare item.")
             return false
         }
         
         // check 2
-        if !(UDItemIndex.items["LaserCannon"]! < UDItemIndex.items["LaserBazooka"]!) {
+        item1 = UDItemIndex.items["LaserCannon"]!
+        item2 = UDItemIndex.items["LaserBazooka"]!
+        if !(item1 < item2) {
+            print("ItemComparison FAILED: If two items have the same rarity, then their base value should be used to determine which item is less valuable.")
             return false
         }
         
         // check 3
-        if !(UDItemIndex.items["LightShard"]! < UDItemIndex.items["GlowSphere"]!) {
+        item1 = UDItemIndex.items["GlowSphere"]!
+        item2 = UDItemIndex.items["LightShard"]!
+        if (item1 < item2) {
+            print("ItemComparison FAILED: A .Legendary item should not be less than an .Uncommon item.")
             return false
         }
         
@@ -148,11 +196,13 @@ extension UDRequestTester {
         let bannedItemIDs = delegate.handleBannedItems("ItemList")
         
         if bannedItemIDs.count != 2 {
+            print("BannedItems FAILED: An incorrect number of items were banned.")
             return false
         }
         
         for itemID in bannedItemIDs {
             if itemID != 4 && itemID != 0 {
+                print("BannedItems FAILED: An item was banned that should not have been banned.")
                 return false
             }
         }
@@ -165,7 +215,9 @@ extension UDRequestTester {
     func testPlanetData() -> Bool {
         
         // check 1
-        if delegate.handlePlanetData("PlanetData") != "Strov" {
+        let highestValuePlanet = delegate.handlePlanetData("PlanetData")
+        if highestValuePlanet != "Strov" {
+            print("PlanetData FAILED: \"\(highestValuePlanet)\" is not the most intriguing planet.")
             return false
         }
         
@@ -178,6 +230,7 @@ extension UDRequestTester {
         
         // check 1
         if delegate.handleMostCommonCharacter([UDItem]()) != nil {
+            print("MostCommonCharacter FAILED: If the inventory is empty, then nil should be returned.")
             return false
         }
         
@@ -185,11 +238,13 @@ extension UDRequestTester {
         let itemsWithOutMoonOrBazooka = allItems().filter({!$0.name.lowercaseString.containsString("moon") && !$0.name.lowercaseString.containsString("bazooka")})
         
         if delegate.handleMostCommonCharacter(itemsWithOutMoonOrBazooka) != "e" {
+            print("MostCommonCharacter FAILED: The most common character was not returned.")
             return false
         }
         
         // check 3
         if delegate.handleMostCommonCharacter(delegate.inventory) != "o" {
+            print("MostCommonCharacter FAILED: The most common character was not returned.")
             return false
         }
         
@@ -205,14 +260,8 @@ extension UDRequestTester {
     
     func processItemsFromPlanet(failed: Bool) -> String {
         
-        var processingString = "Hero: [Hands over "
         let itemsFromGlinda = delegate.handleItemsFromPlanet(delegate.inventory, planet: "Glinda")
-        
-        if itemsFromGlinda.count == 0 {
-            processingString += "NOTHING!]"
-        } else {
-            processingString += "\(itemsFromGlinda.count) items]"
-        }
+        let processingString = "Hero: [Hands over \(itemsFromGlinda.count) items]"
         
         if(!failed) {
             delegate.inventory = delegate.inventory.filter({
@@ -245,11 +294,11 @@ extension UDRequestTester {
     
     func processXORCipherKeySearch() -> String {
         
-        var processingString = "Hero: That's easy. The key is "
+        var processingString = "Hero: \"That's easy. The key is "
         
         let key = delegate.handleXORCipherKeySearch([UInt8]("yhmoexu".utf8))
         
-        processingString += "\(key)!"
+        processingString += "\(key)!\""
         
         return processingString
     }
@@ -258,16 +307,17 @@ extension UDRequestTester {
     
     func processRarityOfItems() -> String {
         
-        var processingString = "Hero: "
+        var processingString = "Hero: \""
                 
         if delegate.handleRarityOfItems(delegate.inventory) == [
             .Common: 2,
             .Uncommon: 3,
+            .Rare: 0,
             .Legendary: 1
             ] {
-                processingString += "Why don't you try this approach?"
+                processingString += "Why don't you try this approach?\""
         } else {
-            processingString += "Umm... actually I'm not really sure..."
+            processingString += "Umm... actually I'm not really sure...\""
         }
         
         return processingString
@@ -277,22 +327,22 @@ extension UDRequestTester {
     
     func processItemComparison() -> String {
 
-        return "Hero: Just try comparing items like this..."
+        return "Hero: \"Just try comparing items like this...\""
     }
     
     // MARK: BannedItems
     
     func processBannedItems() -> String {
 
-        var processingString = "Hero: "
+        var processingString = "Hero: \""
         let bannedItemIDs = delegate.handleBannedItems("ItemList")
         
         if bannedItemIDs.count == 0 {
-            processingString += "There is NOTHING on this list that should be banned."
+            processingString += "There is nothing on this list that should be banned.\""
         } else if bannedItemIDs.count == 1 {
-            processingString += "This item here... it should be banned."
+            processingString += "This item here... it should be banned.\""
         } else {
-            processingString += "These \(bannedItemIDs.count) items on the list should be banned."
+            processingString += "These \(bannedItemIDs.count) items on the list should be banned.\""
         }
     
         return processingString
@@ -304,19 +354,23 @@ extension UDRequestTester {
         
         let targetPlanet = delegate.handlePlanetData("PlanetData")
         
-        return "Hero: That's easy. You should definately check out the planet \(targetPlanet)!"
+        if targetPlanet == "" {
+            return "Hero: \"Actually, all the planets on this list look pretty good.\""
+        } else {
+            return "Hero: \"That's easy. You should definately check out the planet \"\(targetPlanet)\"!\""
+        }
     }
     
     // MARK: MostCommonCharacter
     
     func processMostCommonCharacter() -> String {
         
-        var processingString = "Hero: "
+        var processingString = "Hero: \""
         
         if let commonCharacter = delegate.handleMostCommonCharacter(delegate.inventory) {
-            processingString += "The most common character is \"\(commonCharacter)\"."
+            processingString += "The most common character is \"\(commonCharacter)\"\"."
         } else {
-            processingString += "I can't really tell. I don't know which character is the most common..."
+            processingString += "I can't really tell. I don't know which character is the most common...\""
         }
         
         return processingString

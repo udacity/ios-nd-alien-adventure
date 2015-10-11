@@ -6,4 +6,18 @@
 //  Copyright © 2015 Udacity. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
+
+class Badge: SKSpriteNode {
+    
+    var requestType: UDRequestType
+    
+    init(requestType: UDRequestType) {        
+        self.requestType = requestType
+        super.init(texture: SKTexture(imageNamed: "BadgeMagenta"), color: UIColor.clearColor(), size: CGSizeMake(48, 48))
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

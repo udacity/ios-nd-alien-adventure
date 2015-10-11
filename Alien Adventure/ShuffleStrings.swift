@@ -25,10 +25,6 @@ extension Hero {
             }
         }
         
-        // complex solution can handle
-        // shuffleStrings(s1: "afe", s2: "fad", shuffle: "afadfe")
-        // ^ true or false?
-        
         return (s1Index == s1.endIndex) && (s2Index == s2.endIndex)
     }
 }

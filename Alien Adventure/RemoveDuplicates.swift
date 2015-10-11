@@ -6,4 +6,10 @@
 //  Copyright © 2015 Udacity. All rights reserved.
 //
 
-import Foundation
+extension Hero {
+    
+    func removeDuplicates(inventory: [UDItem]) -> [UDItem] {        
+        return Array(Set<UDItem>(inventory))
+    }
+    
+}

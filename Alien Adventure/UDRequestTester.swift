@@ -54,6 +54,32 @@ class UDRequestTester {
             return testPlanetData()
         case .MostCommonCharacter:
             return testMostCommonCharacter()
+        // Alien Adventure 3
+        case .BasicCheck:
+            return testBasicCheck()
+        case .AdvancedCheck:
+            return testAdvancedCheck()
+        case .ExpertCheck:
+            return testExpertCheck()
+        case .CheckBadges:
+            return testCheckBadges()
+        // Alien Adventure 4
+        case .PolicingItems:
+            return testPolicingItems()
+        case .FindTheLasers:
+            return testFindTheLasers()
+        case .RedefinePolicingItems:
+            return testRedefinePolicingItems()
+        case .BoostItemValue:
+            return testBoostItemValue()
+        case .SortLeastToGreatest:
+            return testSortLeastToGreatest()
+        case .GetCommonItems:
+            return testGetCommonItems()
+        case .TotalBaseValue:
+            return testTotalBaseValue()
+        case .RemoveDuplicates:
+            return testRemoveDuplicates()            
         // Undefined
         case .Undefined:
             return false
@@ -64,7 +90,7 @@ class UDRequestTester {
         switch(requestType) {
         // Alien Adventure 1
         case .ReverseLongestName:
-            return processReverseLongestName()
+            return processReverseLongestName(failed)
         case .MatchMoonRocks:
             return processMatchMoonRocks(failed)
         case .InscriptionEternalStar:
@@ -72,7 +98,7 @@ class UDRequestTester {
         case .LeastValuableItem:
             return processLeastValuableItem(failed)
         case .ShuffleStrings:
-            return processShuffleStrings()
+            return processShuffleStrings(failed)
         // Alien Adventure 2
         case .ItemsFromPlanet:
             return processItemsFromPlanet(failed)
@@ -90,6 +116,32 @@ class UDRequestTester {
             return processPlanetData()
         case .MostCommonCharacter:
             return processMostCommonCharacter()
+        // Alien Adventure 3
+        case .BasicCheck:
+            return processBasicCheck()
+        case .AdvancedCheck:
+            return processAdvancedCheck()
+        case .ExpertCheck:
+            return processExpertCheck()
+        case .CheckBadges:
+            return processCheckBadges(failed)
+            // Alien Adventure 4
+        case .PolicingItems:
+            return processPolicingItems()
+        case .FindTheLasers:
+            return processFindTheLasers()
+        case .RedefinePolicingItems:
+            return processRedefinePolicingItems()
+        case .BoostItemValue:
+            return processBoostItemValue()
+        case .SortLeastToGreatest:
+            return processSortLeastToGreatest()
+        case .GetCommonItems:
+            return processGetCommonItems()
+        case .TotalBaseValue:
+            return processTotalBaseValue()
+        case .RemoveDuplicates:
+            return processRemoveDuplicates()
         // Undefined
         case .Undefined:
             return ""

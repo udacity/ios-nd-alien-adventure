@@ -16,7 +16,6 @@ enum UDGameState {
 
 class UDGameSM {
     
-    
     // MARK: UDInternalGameState
     
     private enum UDInternalGameState {
@@ -64,7 +63,7 @@ class UDGameSM {
         winningCondition = false
     }
     
-    func nextState() -> UDGameState {
+    func nextState(hero: Hero, currentAlien: Alien?) -> UDGameState {
         
         var nextState: UDInternalGameState
         var externalState: UDGameState
@@ -93,6 +92,9 @@ class UDGameSM {
                     nextState = .NotStarted
                     externalState = .Win
                 } else {
+                    if let currentAlien = currentAlien where Settings.Common.ShowBadges {
+                        addBadge(hero, alien: currentAlien)
+                    }
                     nextState = .Moving
                     externalState = .MoveHero
                 }

@@ -9,11 +9,11 @@
 import Foundation
 
 func <(lhs: UDItem, rhs: UDItem) -> Bool {
-    if lhs.rarity.rawValue < rhs.rarity.rawValue {
-        return true
-    } else if rhs.rarity.rawValue < lhs.rarity.rawValue {
+    if lhs.rarity.rawValue > rhs.rarity.rawValue {
         return false
-    } else {
+    } else if lhs.rarity.rawValue == rhs.rarity.rawValue {
         return lhs.baseValue < rhs.baseValue
+    } else {
+        return true
     }
 }

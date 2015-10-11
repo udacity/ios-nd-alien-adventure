@@ -12,10 +12,15 @@ import SpriteKit
 
 class AlienAdventureScene: SKScene {
     
+    // MARK: Presenting View Controller
+    
+    var settingsController: UIViewController? = nil
+    
     // MARK: World Nodes
     
     var world: SKNode!
     var ui: SKNode!
+    var badgeManager: BadgeManager!
     var dialogueManager: DialogueManager!
     var hero: Hero!
     var treasure: SKSpriteNode!    
@@ -40,10 +45,11 @@ class AlienAdventureScene: SKScene {
         do {
             levelDataDictionary = try UDDataLoader.LevelDictionaryFromGameDictionary(gameDataDictionary, level: Settings.Common.Level)
             UDItemIndex.items = try UDDataLoader.ItemsIndexFromGameDictionary(gameDataDictionary)
+            try UDAnimation.loadAllAnimations(gameDataDictionary)
             try loadGameDataForLevel(Settings.Common.Level)
         }
-        catch UDDataError.KeyError(let key, let dictionary) {
-            print("Cannot find key \'\(key)\'  in \(dictionary)")
+        catch UDDataError.KeyError(let key, let dictionary, let source) {
+            print("\(source): Cannot find key \'\(key)\'  in \(dictionary)")
         }
         catch UDDataError.UnknownError {
             print("unknown error from PListDataError")
@@ -61,7 +67,6 @@ class AlienAdventureScene: SKScene {
     
     func loadGameDataForLevel(level: Int) throws {
         do {
-            try UDAnimation.loadAllAnimations(levelDataDictionary)
             Settings.Dialogue.StartingDialogue = try UDDataLoader.DialogueStringFromLevelDictionary(levelDataDictionary, key: .StartingDialogue)
             Settings.Dialogue.RequestingDialogue = try UDDataLoader.DialogueStringFromLevelDictionary(levelDataDictionary, key: .RequestingDialogue)
             Settings.Dialogue.TransitioningDialogue = try UDDataLoader.DialogueStringFromLevelDictionary(levelDataDictionary, key: .TransitioningDialogue)
@@ -73,20 +78,25 @@ class AlienAdventureScene: SKScene {
     // MARK: Reset Game
     
     func resetGame() {
-        world.position = CGPointMake(0.0, 0.0)
-        dialogueManager.removeDialogueNode()
         
-        hero.position = CGPointMake(0, -124.0)
-        hero.removeAllActions()
-        UDAnimation.runAnimationForSprite(hero, animationKey: .HeroResting)
-        
-        if let currentAlien = currentAlien {
-            currentAlien.removeAllActions()
-            UDAnimation.runAnimationForSprite(currentAlien, animationKey: .AlienResting)
-        }
-        currentAlien = nil
- 
-        resetSMWithRequest(UDRequest.UDRequestWithoutPassFail([UDLineOfDialogue(lineText: Settings.Dialogue.StartingDialogue, lineSource: .Hero)]), resetGame: true)
+        if let settingsController = settingsController {
+            settingsController.dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            world.position = CGPointMake(0.0, 0.0)
+            dialogueManager.removeDialogueNode()
+            
+            hero.position = CGPointMake(0, -124.0)
+            hero.removeAllActions()
+            UDAnimation.runAnimationForSprite(hero, animationKey: .HeroResting)
+            
+            if let currentAlien = currentAlien {
+                currentAlien.removeAllActions()
+                UDAnimation.runAnimationForSprite(currentAlien, animationKey: .MagentaAlienResting)
+            }
+            currentAlien = nil
+            
+            resetSMWithRequest(UDRequest.UDRequestWithoutPassFail([UDLineOfDialogue(lineText: Settings.Dialogue.StartingDialogue, lineSource: .Hero)]), resetGame: true)
+        }        
     }
     
     // MARK: Move Hero
@@ -127,18 +137,23 @@ extension AlienAdventureScene {
         // add ui
         ui = SKNode()
         ui.position = CGPointMake(0, (CGRectGetMaxY(frame)/2) - 50)
+        badgeManager = BadgeManager(displayPosition: CGPointMake(0, (CGRectGetMinY(frame)) + 60), displaySize: CGSizeMake(CGFloat(Int(frame.width - 40) - 40), 64))
+        ui.addChild(badgeManager)
         dialogueManager = DialogueManager(widthOfConverationNode: Int(frame.width - 40) - 40)
         ui.addChild(dialogueManager)
         world.addChild(ui)
         
         var aliens = [Alien]()
         do {
+            if settingsController == nil {
+                Settings.Common.ShowBadges = try UDDataLoader.ShowBadgesFromLevelDictionary(levelDataDictionary)
+            }            
             hero = try UDDataLoader.HeroFromLevelDictionary(levelDataDictionary)
             aliens = try UDDataLoader.AliensFromLevelDictionary(levelDataDictionary)
             treasure = try UDDataLoader.TreasureFromLevelDictionary(levelDataDictionary)
         }
-        catch UDDataError.KeyError(let key, let dictionary) {
-            print("Cannot find key \'\(key)\'  in \(dictionary)")
+        catch UDDataError.KeyError(let key, let dictionary, let source) {
+            print("\(source): Cannot find key \'\(key)\'  in \(dictionary)")
         }
         catch UDDataError.UnknownError {
             print("unknown error from PListDataError 2")
@@ -150,12 +165,18 @@ extension AlienAdventureScene {
         // add hero
         UDAnimation.runAnimationForSprite(hero, animationKey: .HeroResting)
         gameSM = UDGameSM.stateMachine(hero)
+        hero.badgeManager = badgeManager
         world.addChild(hero)
         
         // add aliens
         for alien in aliens {
             world.addChild(alien)
-            UDAnimation.runAnimationForSprite(alien, animationKey: .AlienResting)
+            switch(alien.colorVariant) {
+            case .Magenta:
+                UDAnimation.runAnimationForSprite(alien, animationKey: .MagentaAlienResting)
+            case .Teal:
+                UDAnimation.runAnimationForSprite(alien, animationKey: .TealAlienResting)
+            }
         }
         
         // add treasure
@@ -213,7 +234,12 @@ extension AlienAdventureScene: SKPhysicsContactDelegate {
             
             if let currentAlien = currentAlien {
                 currentAlien.removeAllActions()
-                UDAnimation.runAnimationForSprite(currentAlien, animationKey: .AlienTalking)
+                switch(currentAlien.colorVariant) {
+                case .Magenta:
+                    UDAnimation.runAnimationForSprite(currentAlien, animationKey: .MagentaAlienTalking)
+                case .Teal:
+                    UDAnimation.runAnimationForSprite(currentAlien, animationKey: .TealAlienTalking)
+                }
                 resetSMWithRequest(currentAlien.getFirstRequest)
             }
         }
@@ -226,7 +252,7 @@ extension AlienAdventureScene {
     
     func spinGameSM() {
         if !winningCondition {
-            let gameState = gameSM.nextState()
+            let gameState = gameSM.nextState(hero, currentAlien: currentAlien)
             switch(gameState) {
             case .DoNothing:
                 return
@@ -237,7 +263,12 @@ extension AlienAdventureScene {
                 } else {
                     if let currentAlien = currentAlien {
                         currentAlien.removeAllActions()
-                        UDAnimation.runAnimationForSprite(currentAlien, animationKey: .AlienResting)
+                        switch(currentAlien.colorVariant) {
+                        case .Magenta:
+                            UDAnimation.runAnimationForSprite(currentAlien, animationKey: .MagentaAlienResting)
+                        case .Teal:
+                            UDAnimation.runAnimationForSprite(currentAlien, animationKey: .TealAlienResting)
+                        }
                     }
                     dialogueManager.removeDialogueNode()
                     moveHero()
@@ -248,9 +279,14 @@ extension AlienAdventureScene {
                 dialogueManager.displayNextLine(gameSM.getDialogue())
                 if gameSM.failedRequest {
                     if let currentAlien = currentAlien {
-                        if currentAlien.actionForKey(UDAnimation.UDAnimationKey.AlienAngry.rawValue) == nil {
+                        if currentAlien.actionForKey(UDAnimation.UDAnimationKey.MagentaAlienAngry.rawValue) == nil {
                             currentAlien.removeAllActions()
-                            UDAnimation.runAnimationForSprite(currentAlien, animationKey: .AlienAngry)
+                            switch(currentAlien.colorVariant) {
+                            case .Magenta:
+                                UDAnimation.runAnimationForSprite(currentAlien, animationKey: .MagentaAlienAngry)
+                            case .Teal:
+                                UDAnimation.runAnimationForSprite(currentAlien, animationKey: .TealAlienAngry)
+                            }
                         }
                         
                     }

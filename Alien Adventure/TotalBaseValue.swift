@@ -1,5 +1,5 @@
 //
-//  GetCommonItems.swift
+//  TotalBaseValue.swift
 //  Alien Adventure
 //
 //  Created by Jarrod Parkes on 10/4/15.
@@ -8,8 +8,8 @@
 
 extension Hero {
     
-    func getCommonItems(inventory: [UDItem]) -> [UDItem] {
-        return inventory.filter({ $0.rarity == .Common })
+    func totalBaseValue(inventory: [UDItem]) -> Int {
+        return inventory.reduce(0, combine: { $0 + $1.baseValue })
     }
     
 }

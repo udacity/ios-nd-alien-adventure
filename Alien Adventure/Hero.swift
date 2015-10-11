@@ -15,6 +15,7 @@ class Hero: SKSpriteNode {
     // MARK: Properties
     
     var inventory = [UDItem]()
+    var badgeManager: BadgeManager? = nil
     
     // MARK: Initializers
     
@@ -35,8 +36,18 @@ class Hero: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // Handling Requests Not Seen By Students
+    
     func checkItemComparison(item1 item1: UDItem, item2: UDItem) -> Bool {
         return item1 < item2
+    }
+
+    // Adding Badges
+    
+    func addBadge(badge: Badge) {
+        if let badgeManager = badgeManager {
+            badgeManager.addBadge(badge)
+        }
     }
 }
 
@@ -97,4 +108,56 @@ extension Hero: UDRequestDelegate {
     func handleMostCommonCharacter(inventory: [UDItem]) -> Character? {
         return mostCommonCharacter(inventory)
     }
+    
+    // Alien Adventure 3
+    
+    func handleBasicCheck() -> Bool {
+        return true
+    }
+    
+    func handleAdvancedCheck() -> Bool {
+        return true
+    }
+    
+    func handleExpertCheck() -> Bool {
+        return true
+    }
+    
+    func handleCheckBadges(badges: [Badge], requestTypes: [UDRequestType]) -> Bool {
+        return checkBadges(badges, requestTypes: requestTypes)
+    }
+    
+    // Alien Adventure 4
+    
+    func handlePolicingItems(inventory: [UDItem], policingFilter: UDItem throws -> Void) -> [UDPolicingError:Int] {
+        return policingItems(inventory, policingFilter: policingFilter)
+    }
+    
+    func handleFindTheLasers() -> (UDItem -> Bool) {
+        return findTheLasers()
+    }
+    
+    func handleRedefinePolicingItems() -> (UDItem throws -> Void) {
+        return redefinePolicingItems()
+    }
+    
+    func handleBoostItemValue(inventory: [UDItem]) -> [UDItem] {
+        return boostItemValue(inventory)
+    }
+    
+    func handleSortLeastToGreatest(inventory: [UDItem]) -> [UDItem] {
+        return sortLeastToGreatest(inventory)
+    }
+    
+    func handleGetCommonItems(inventory: [UDItem]) -> [UDItem] {
+        return getCommonItems(inventory)
+    }
+    
+    func handleTotalBaseValue(inventory: [UDItem]) -> Int {
+        return totalBaseValue(inventory)
+    }
+    
+    func handleRemoveDuplicates(inventory: [UDItem]) -> [UDItem] {
+        return removeDuplicates(inventory)
+    }    
 }

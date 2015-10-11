@@ -6,4 +6,58 @@
 //  Copyright © 2015 Udacity. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+// MARK: - SettingsViewController: UIViewController
+
+class SettingsViewController: UIViewController {
+    
+    // MARK: Properties
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var levelSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var startGameButton: UIButton!
+    @IBOutlet weak var showBadgesLabel: UILabel!    
+    @IBOutlet weak var showBadgesSwitch: UISwitch!
+    
+    // MARK: Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let attributesDictionary: [String:AnyObject] = [
+            NSFontAttributeName: UIFont(name: Settings.Common.Font, size: 18)!
+        ]
+        
+        titleLabel.font = UIFont(name: Settings.Common.Font, size: 32)
+        showBadgesLabel.font = UIFont(name: Settings.Common.Font, size: 20)
+        showBadgesSwitch.onTintColor = UIColor.magentaColor()
+        levelSegmentedControl.setTitleTextAttributes(attributesDictionary, forState: .Normal)
+        Settings.Common.Level = levelSegmentedControl.selectedSegmentIndex
+        startGameButton.titleLabel?.font = UIFont(name: Settings.Common.Font, size: 20)
+        addTargets()
+    }
+    
+    // MARK: Add Targets
+    
+    func addTargets() {
+        levelSegmentedControl.addTarget(self, action: Selector("switchLevel:"), forControlEvents: .ValueChanged)
+        showBadgesSwitch.addTarget(self, action: Selector("showBadges:"), forControlEvents: .ValueChanged)
+        startGameButton.addTarget(self, action: Selector("startGame"), forControlEvents: .TouchUpInside)
+    }
+    
+    // MARK: Implement Actions
+    
+    func switchLevel(segmentControl: UISegmentedControl) {
+        Settings.Common.Level = segmentControl.selectedSegmentIndex
+    }
+    
+    func showBadges(switchControl: UISwitch) {
+        Settings.Common.ShowBadges = switchControl.on
+    }
+    
+    func startGame() {
+        let alienAdventureViewController = self.storyboard!.instantiateViewControllerWithIdentifier("AlienAdventureViewController") as! AlienAdventureViewController
+        self.presentViewController(alienAdventureViewController, animated: true, completion: nil)
+    }
+}

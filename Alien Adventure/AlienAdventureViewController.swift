@@ -19,14 +19,15 @@ class AlienAdventureViewController: UIViewController {
     
     // MARK: Life Cycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         // create/present AlienAdventureScene (SKScene)
         let scene = AlienAdventureScene(size: CGSize(width: 1024, height: 1024))
         scene.scaleMode = .AspectFill
         scene.physicsWorld.contactDelegate = scene
-        scene.anchorPoint = CGPointMake(0.5, 0.5)    
+        scene.anchorPoint = CGPointMake(0.5, 0.5)
+        scene.settingsController = self.presentingViewController
         spriteKitView.showsFPS = true
         spriteKitView.presentScene(scene)
     }

@@ -16,6 +16,15 @@ struct UDAnimationData {
     let timePerFrame: NSTimeInterval
 }
 
+// MARK: - UDSpriteKey
+
+enum UDSpriteKey: String {
+    case Hero = "Hero"
+    case MagentaAlien = "MagentaAlien"
+    case TealAlien = "TealAlien"
+    case Treasure = "Treasure"
+}
+
 // MARK: - UDAnimation
 
 class UDAnimation {
@@ -40,18 +49,13 @@ class UDAnimation {
         case HeroResting = "HeroResting"
         case HeroMoving = "HeroMoving"
         case HeroCelebrating = "HeroCelebrating"
-        case AlienResting = "AlienResting"
-        case AlienTalking = "AlienTalking"
-        case AlienAngry = "AlienAngry"
+        case MagentaAlienResting = "MagentaAlienResting"
+        case MagentaAlienTalking = "MagentaAlienTalking"
+        case MagentaAlienAngry = "MagentaAlienAngry"
+        case TealAlienResting = "TealAlienResting"
+        case TealAlienTalking = "TealAlienTalking"
+        case TealAlienAngry = "TealAlienAngry"
         case TreasureOpening = "TreasureOpening"
-    }
-    
-    // MARK: UDSpriteKey
-    
-    enum UDSpriteKey: String {
-        case Hero = "Hero"
-        case Alien = "Aliens"
-        case Treasure = "Treasure"
     }
     
     // MARK: Return Animation Actions
@@ -75,29 +79,35 @@ class UDAnimation {
     
     // MARK: Load Animation Data
     
-    class func loadAllAnimations(levelDataDictionary: [String:AnyObject]) throws {
+    class func loadAllAnimations(gameDataDictionary: [String:AnyObject]) throws {
         do {
             // for hero
-            try loadAnimation(levelDataDictionary, animationKey: .HeroResting, spriteKey: .Hero, animationKeyPrefix: .Resting)
-            try loadAnimation(levelDataDictionary, animationKey: .HeroMoving, spriteKey: .Hero, animationKeyPrefix: .Moving)
-            try loadAnimation(levelDataDictionary, animationKey: .HeroCelebrating, spriteKey: .Hero, animationKeyPrefix: .Celebrating)
+            try loadAnimation(gameDataDictionary, animationKey: .HeroResting, spriteKey: .Hero, animationKeyPrefix: .Resting)
+            try loadAnimation(gameDataDictionary, animationKey: .HeroMoving, spriteKey: .Hero, animationKeyPrefix: .Moving)
+            try loadAnimation(gameDataDictionary, animationKey: .HeroCelebrating, spriteKey: .Hero, animationKeyPrefix: .Celebrating)
             setBaseFrameForSpritesWithKey(.Hero, withAnimation: animations[.HeroResting]!.frames)
             
-            // for alien
-            try loadAnimation(levelDataDictionary, animationKey: .AlienResting, spriteKey: .Alien, animationKeyPrefix: .Resting)
-            try loadAnimation(levelDataDictionary, animationKey: .AlienTalking, spriteKey: .Alien, animationKeyPrefix: .Talking)
-            try loadAnimation(levelDataDictionary, animationKey: .AlienAngry, spriteKey: .Alien, animationKeyPrefix: .Angry)
-            setBaseFrameForSpritesWithKey(.Alien, withAnimation: animations[.AlienResting]!.frames)
+            // for magenta alien
+            try loadAnimation(gameDataDictionary, animationKey: .MagentaAlienResting, spriteKey: .MagentaAlien, animationKeyPrefix: .Resting)
+            try loadAnimation(gameDataDictionary, animationKey: .MagentaAlienTalking, spriteKey: .MagentaAlien, animationKeyPrefix: .Talking)
+            try loadAnimation(gameDataDictionary, animationKey: .MagentaAlienAngry, spriteKey: .MagentaAlien, animationKeyPrefix: .Angry)
+            setBaseFrameForSpritesWithKey(.MagentaAlien, withAnimation: animations[.MagentaAlienResting]!.frames)
+            
+            // for teal alien
+            try loadAnimation(gameDataDictionary, animationKey: .TealAlienResting, spriteKey: .TealAlien, animationKeyPrefix: .Resting)
+            try loadAnimation(gameDataDictionary, animationKey: .TealAlienTalking, spriteKey: .TealAlien, animationKeyPrefix: .Talking)
+            try loadAnimation(gameDataDictionary, animationKey: .TealAlienAngry, spriteKey: .TealAlien, animationKeyPrefix: .Angry)
+            setBaseFrameForSpritesWithKey(.TealAlien, withAnimation: animations[.TealAlienResting]!.frames)
             
             // for treasure
-            try loadAnimation(levelDataDictionary, animationKey: .TreasureOpening, spriteKey: .Treasure, animationKeyPrefix: .Opening)
+            try loadAnimation(gameDataDictionary, animationKey: .TreasureOpening, spriteKey: .Treasure, animationKeyPrefix: .Opening)
             setBaseFrameForSpritesWithKey(.Treasure, withAnimation: animations[.TreasureOpening]!.frames)
         }
     }
     
-    private class func loadAnimation(levelDataDictionary: [String:AnyObject], animationKey: UDAnimationKey, spriteKey: UDSpriteKey, animationKeyPrefix: UDAnimationPrefix) throws {
+    private class func loadAnimation(gameDataDictionary: [String:AnyObject], animationKey: UDAnimationKey, spriteKey: UDSpriteKey, animationKeyPrefix: UDAnimationPrefix) throws {
         do {
-            let animationFromPList = try UDDataLoader.AnimationFromLevelDictionary(levelDataDictionary, spriteKey: spriteKey.rawValue, animationKeyPrefix: animationKeyPrefix.rawValue)
+            let animationFromPList = try UDDataLoader.AnimationFromGameDictionary(gameDataDictionary, spriteKey: spriteKey.rawValue, animationKeyPrefix: animationKeyPrefix.rawValue)
             animations[animationKey] = animationFromPList
         }
     }

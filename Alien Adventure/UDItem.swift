@@ -45,7 +45,26 @@ struct UDItem {
     }
 }
 
+// MARK: - UDItem: Hashable
+
+extension UDItem: Hashable {
+    var hashValue: Int {
+        return itemID.hashValue
+    }
+}
+
+
 // MARK: - UDItem (Operators)
+
+func <= (lhs: UDItem, rhs: UDItem) -> Bool {
+    if lhs.rarity.rawValue > rhs.rarity.rawValue {
+        return false
+    } else if lhs.rarity.rawValue == rhs.rarity.rawValue {
+        return lhs.baseValue <= rhs.baseValue
+    } else {
+        return true
+    }
+}
 
 func == (lhs: UDItem, rhs: UDItem) -> Bool {
     return lhs.itemID == rhs.itemID

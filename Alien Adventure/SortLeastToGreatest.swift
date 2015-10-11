@@ -6,4 +6,10 @@
 //  Copyright © 2015 Udacity. All rights reserved.
 //
 
-import Foundation
+extension Hero {
+    
+    func sortLeastToGreatest(inventory: [UDItem]) -> [UDItem] {
+        return inventory.sort({ $0 < $1 })
+    }
+    
+}

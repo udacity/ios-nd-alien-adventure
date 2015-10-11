@@ -15,13 +15,22 @@ extension UDRequestTester {
     func testReverseLongestName() -> Bool {
         
         // check 1
-        if delegate.handleReverseLongestName([UDItem]()) != "" { return false }
+        if delegate.handleReverseLongestName([UDItem]()) != "" {
+            print("ReverseLongestName FAILED: If the inventory is empty, then the method should return \"\".")
+            return false
+        }
         
         // check 2
-        if delegate.handleReverseLongestName(allItems()) != "akoozaBresaL" { return false }
+        if delegate.handleReverseLongestName(allItems()) != "akoozaBresaL" {
+            print("ReverseLongestName FAILED: The reverse longest string was not returned.")
+            return false
+        }
         
         // check 3
-        if delegate.handleReverseLongestName(delegate.inventory) != "nonnaCresaL" { return false }
+        if delegate.handleReverseLongestName(delegate.inventory) != "nonnaCresaL" {
+            print("ReverseLongestName FAILED: The reverse longest string was not returned.")
+            return false
+        }
         
         return true
     }
@@ -33,6 +42,7 @@ extension UDRequestTester {
         // check 1
         let itemsFromCheck1 = delegate.handleMatchMoonRocks([UDItem]())
         if itemsFromCheck1.count != 0 {
+            print("MatchMoonRocks FAILED: If the inventory is empty, then no MoonRocks should be returned.")
             return false
         }
         
@@ -45,6 +55,7 @@ extension UDRequestTester {
             }
         }
         if moonRocksCount2 != 1 {
+            print("MatchMoonRocks FAILED: An incorrect number of MoonRocks was returned.")
             return false
         }
         
@@ -57,6 +68,7 @@ extension UDRequestTester {
             }
         }
         if moonRocksCount3 != 2 {
+            print("MatchMoonRocks FAILED: An incorrect number of MoonRocks was returned.")
             return false
         }
         
@@ -69,13 +81,14 @@ extension UDRequestTester {
         
         // check 1
         if delegate.handleInscriptionEternalStar([UDItem]()) != nil {
+            print("InscriptionEternalStar FAILED: If the inventory is empty, then nil should be returned.")
             return false
         }
         
         // check 2
-        if let item = delegate.handleInscriptionEternalStar(delegate.inventory) where item == UDItemIndex.items["GlowSphere"]! {
-            // do nothing, this is what should be returned
-        } else {
+        let item = delegate.handleInscriptionEternalStar(delegate.inventory)
+        if item != UDItemIndex.items["GlowSphere"]! {
+            print("InscriptionEternalStar FAILED: The correct item was not returned.")
             return false
         }
         
@@ -88,16 +101,21 @@ extension UDRequestTester {
         
         // check 1
         if delegate.handleLeastValuableItem([UDItem]()) != nil {
+            print("LeastValuableItem FAILED: If the inventory is empty, then nil should be returned.")
             return false
         }
         
         // check 2
-        if let result = delegate.handleLeastValuableItem(allItems()) where result != UDItemIndex.items["Dust"]! {
+        let result2 = delegate.handleLeastValuableItem(allItems())
+        if result2 != UDItemIndex.items["Dust"]! {
+            print("LeastValuableItem FAILED: The least valuable item was not returned.")
             return false
         }
         
         // check 3
-        if let result = delegate.handleLeastValuableItem(delegate.inventory) where result != UDItemIndex.items["MoonRubble"]! {
+        let result3 = delegate.handleLeastValuableItem(delegate.inventory)
+        if result3 != UDItemIndex.items["MoonRubble"]! {
+            print("LeastValuableItem FAILED: The least valuable item was not returned.")
             return false
         }
         
@@ -110,21 +128,25 @@ extension UDRequestTester {
         
         // check 1
         if !delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "acbd") {
+            print("ShuffleStrings FAILED: The shuffle for the input (\"ab\", \"cd\", \"acbd\") is valid, but false was returned.")
             return false
         }
         
         // check 2
         if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "badc") {
+            print("ShuffleStrings FAILED: The shuffle for the input (\"ab\", \"cd\", \"badc\") is invalid, but true was returned.")
             return false
         }
         
         // check 3
         if !delegate.handleShuffleStrings(s1: "", s2: "", shuffle: "") {
+            print("ShuffleStrings FAILED: The shuffle for the input (\"\", \"\", \"\") is valid, but false was returned.")
             return false
         }
         
         // check 4
         if delegate.handleShuffleStrings(s1: "", s2: "", shuffle: "sdf") {
+            print("ShuffleStrings FAILED: The shuffle for the input (\"\", \"\", \"sdf\") is invalid, but true was returned.")
             return false
         }
         
@@ -138,25 +160,23 @@ extension UDRequestTester {
     
     // MARK: ReverseLongString
     
-    func processReverseLongestName() -> String {
+    func processReverseLongestName(failed: Bool) -> String {
         
-        let reverseLongestName = delegate.handleReverseLongestName(delegate.inventory)
-        
-        return "Hero: \"How about \(reverseLongestName)?\""
+        if !failed {
+            let reverseLongestName = delegate.handleReverseLongestName(delegate.inventory)
+            
+            return "Hero: \"How about \(reverseLongestName)?\""
+        } else {
+            return "Hero: \"Uhh... Udacity?\""
+        }
     }
     
     // MARK: MatchMoonRocks
     
     func processMatchMoonRocks(failed: Bool) -> String {
         
-        var processingString = "Hero: [Hands over "
         let moonRocks = delegate.handleMatchMoonRocks(delegate.inventory)
-        
-        if moonRocks.count == 0 {
-            processingString += "NOTHING!]"
-        } else {
-            processingString += "\(moonRocks.count) MoonRocks]"
-        }
+        let processingString = "Hero: [Hands over \(moonRocks.count) MoonRocks]"
         
         if(!failed) {
             delegate.inventory = delegate.inventory.filter({$0.name != "MoonRock"})
@@ -206,12 +226,28 @@ extension UDRequestTester {
     
     // MARK: ShuffleStrings
     
-    func processShuffleStrings() -> String {
+    func processShuffleStrings(failed: Bool) -> String {
         
-        var processingString = "Hero: \"So is (\"abc\", \"def\", \"adbecf\") a valid shuffle? Let's see... "
+        // check 1
+        if !delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "acbd") {
+            return "Hero: \"So is (\"ab\", \"cd\", \"acbd\") a valid shuffle? Umm... no?\""
+        }
         
-        processingString += (delegate.handleShuffleStrings(s1: "abc", s2: "def", shuffle: "adbecf")) ? "yes it is!\"" : "maybe? I'm not sure!\""
+        // check 2
+        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "badc") {
+            return "Hero: \"So is (\"ab\", \"cd\", \"badc\") a valid shuffle? Umm... yes?\""
+        }
         
-        return processingString
+        // check 3
+        if !delegate.handleShuffleStrings(s1: "", s2: "", shuffle: "") {
+            return "Hero: \"So is (\"\", \"\", \"\") a valid shuffle? Umm... no?\""
+        }
+        
+        // check 4
+        if delegate.handleShuffleStrings(s1: "", s2: "", shuffle: "sdf") {
+            return "Hero: \"So is (\"\", \"\", \"sdf\") a valid shuffle? Umm... yes?\""
+        }
+        
+        return "Hero: \"So is (\"ab\", \"cd\", \"badc\") a valid shuffle? No it isn't!\""
     }
 }
