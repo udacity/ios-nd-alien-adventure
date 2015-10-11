@@ -9,17 +9,6 @@
 extension Hero {
     
     func matchMoonRocks(inventory: [UDItem]) -> [UDItem] {
-        
-        var moonRocks = [UDItem]()
-        
-        if inventory.count > 0 {            
-            for item in inventory {
-                if item.name == "MoonRock" {
-                    moonRocks.append(item)
-                }
-            }
-        }
-                
-        return moonRocks
+        return [UDItem]()
     }
 }

@@ -9,7 +9,7 @@
 extension Hero {
     
     func getCommonItems(inventory: [UDItem]) -> [UDItem] {
-        return inventory.filter({ $0.rarity == .Common })
+        return [UDItem]()
     }
     
 }

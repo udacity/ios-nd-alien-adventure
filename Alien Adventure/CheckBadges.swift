@@ -8,15 +8,8 @@
 
 extension Hero {
     
-    func checkBadges(badges: [Badge], var requestTypes: [UDRequestType]) -> Bool {
-        
-        for badge in badges {
-            if let indexForBadge = requestTypes.indexOf(badge.requestType) {
-                requestTypes.removeAtIndex(indexForBadge)
-            }
-        }
-        
-        return requestTypes.count == 0
+    func checkBadges(badges: [Badge], requestTypes: [UDRequestType]) -> Bool {
+        return true
     }
     
 }
