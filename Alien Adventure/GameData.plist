@@ -366,7 +366,7 @@
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"I&apos;ll let you pass if you tell me a funny word!"</string>
+									<string>&quot;I&apos;ll let you pass if you tell me a funny word!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -375,7 +375,7 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"That&apos;s a good one!"</string>
+									<string>&quot;That&apos;s a good one!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -384,13 +384,13 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Not. Funny. At. All. Now I am angry..."</string>
+									<string>&quot;Not. Funny. At. All. Now I am angry...&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"You won&apos;t like me when I&apos;m angry!"</string>
+									<string>&quot;You won&apos;t like me when I&apos;m angry!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -403,7 +403,7 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"I&apos;ll only let you pass if you hand over all your MoonRocks!"</string>
+									<string>&quot;I&apos;ll only let you pass if you hand over all your MoonRocks!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -412,19 +412,19 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Wow, thanks! This is just what I needed!"</string>
+									<string>&quot;Wow, thanks! This is just what I needed!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"You may pass along..."</string>
+									<string>&quot;You may pass along...&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Whew! Thanks!"</string>
+									<string>&quot;Whew! Thanks!&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
@@ -433,13 +433,13 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"You don&apos;t have any MoonRocks? Well I don&apos;t have any patience!"</string>
+									<string>&quot;You don&apos;t have any MoonRocks? Well I don&apos;t have any patience!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"You&apos;re not going anywhere!"</string>
+									<string>&quot;You&apos;re not going anywhere!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -463,13 +463,13 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Umm... let me guess, you want something?"</string>
+									<string>&quot;Umm... let me guess, you want something?&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"That&apos;s right. I am looking for a mysterious relic with the inscription THE ETERNAL STAR. Do you have such a relic?"</string>
+									<string>&quot;That&apos;s right. I am looking for a mysterious relic with the inscription THE ETERNAL STAR. Do you have such a relic?&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -478,19 +478,19 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Wow! This is incredible!"</string>
+									<string>&quot;Wow! This is incredible!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Please go right ahead, there is something of greater value if you continue further."</string>
+									<string>&quot;Please go right ahead, there is something of greater value if you continue further.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Sweet! I wonder what it is?"</string>
+									<string>&quot;Sweet! I wonder what it is?&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
@@ -499,13 +499,13 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"This isn&apos;t it. This is an ETERNAL FAILURE!"</string>
+									<string>&quot;This isn&apos;t it. This is an ETERNAL FAILURE!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"I&apos;m afraid you cannot pass, you&apos;ll be stuck here forever."</string>
+									<string>&quot;I&apos;m afraid you cannot pass, you&apos;ll be stuck here forever.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -529,13 +529,13 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"What will it take to let me pass?"</string>
+									<string>&quot;What will it take to let me pass?&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"I&apos;m not like the other aliens. How about your least valuable item?"</string>
+									<string>&quot;I&apos;m not like the other aliens. How about your least valuable item?&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -544,19 +544,19 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Yeah... this looks cheap. That&apos;s just my style."</string>
+									<string>&quot;Yeah... this looks cheap. That&apos;s just my style.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"You can move right along."</string>
+									<string>&quot;You can move right along.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Yes! I can see something in the distance!"</string>
+									<string>&quot;Yes! I can see something in the distance!&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
@@ -565,13 +565,13 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"I wanted something cheap... but instead you played a cheap trick!"</string>
+									<string>&quot;I wanted something cheap... but instead you played a cheap trick!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Prepare for your doom!"</string>
+									<string>&quot;Prepare for your doom!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -595,61 +595,61 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Can I pass? I just need to go a little further..."</string>
+									<string>&quot;Can I pass? I just need to go a little further...&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"You can pass, but only if you can answer my tricky problem!"</string>
+									<string>&quot;You can pass, but only if you can answer my tricky problem!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Tricky problem? Hmm... why not!"</string>
+									<string>&quot;Tricky problem? Hmm... why not!&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Here&apos;s the problem... if I give you a group of three strings, can you tell me if the third string is a valid shuffle of the first two?"</string>
+									<string>&quot;Here&apos;s the problem... if I give you a group of three strings, can you tell me if the third string is a valid shuffle of the first two?&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Maybe? What&apos;s a valid shuffle?"</string>
+									<string>&quot;Maybe? What&apos;s a valid shuffle?&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"A valid shuffle combines two strings together where the left-to-right order of the characters in both strings is maintained."</string>
+									<string>&quot;A valid shuffle combines two strings together where the left-to-right order of the characters in both strings is maintained.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"For example, if I give you ("ab", "cd", "cabd"), then "cabd" is a valid shuffle because characters "ab" and "cd" still occur in the same order."</string>
+									<string>&quot;For example, if I give you (&quot;ab&quot;, &quot;cd&quot;, &quot;cabd&quot;), then &quot;cabd&quot; is a valid shuffle because characters &quot;ab&quot; and &quot;cd&quot; still occur in the same order.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"However, if I give you (&quot;ab&quot;, &quot;cd&quot;, "bacd"), then "bacd" IS NOT a valid shuffle because characters "ab" don&apos;t occur in the same order."</string>
+									<string>&quot;However, if I give you (&quot;ab&quot;, &quot;cd&quot;, &quot;bacd&quot;), then &quot;bacd&quot; IS NOT a valid shuffle because characters &quot;ab&quot; don&apos;t occur in the same order.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Alright, I can do it. Give me a group of strings!"</string>
+									<string>&quot;Alright, I can do it. Give me a group of strings!&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Here you go, good luck..."</string>
+									<string>&quot;Here you go, good luck...&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -658,19 +658,19 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Nice! I&apos;m impressed!"</string>
+									<string>&quot;Nice! I&apos;m impressed!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Please... continue forward."</string>
+									<string>&quot;Please... continue forward.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Wahoo! Let&apos;s go!"</string>
+									<string>&quot;Wahoo! Let&apos;s go!&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
@@ -685,7 +685,7 @@
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Thus, you cannot pass..."</string>
+									<string>&quot;Thus, you cannot pass...&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -783,7 +783,7 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Are you hiding something from me?&quot;</string>
+									<string>&quot;Are you hiding something from me?&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -844,7 +844,7 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Are you kidding me? What&apos;s that sticking out of your compartment?&quot;</string>
+									<string>&quot;Are you kidding me? What&apos;s that sticking out of your compartment?&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -925,13 +925,13 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Haha! That&apos;s it! It works!&quot;</string>
+									<string>&quot;Haha! That&apos;s it! It works!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Heh. Yeah, I&apos;m pretty good with encryption. Not because I&apos;m a pirate or anything...&quot;</string>
+									<string>&quot;Heh. Yeah, I&apos;m pretty good with encryption. Not because I&apos;m a pirate or anything...&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
@@ -940,19 +940,19 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Aww man... it isn&apos;t working. Wait a minute!&quot;</string>
+									<string>&quot;Aww man... it isn&apos;t working. Wait a minute!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"How do I know you&apos;re not a pirate?!?&quot;</string>
+									<string>&quot;How do I know you&apos;re not a pirate?!?&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Guards! Seize this robot at once!&quot;</string>
+									<string>&quot;Guards! Seize this robot at once!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -1020,7 +1020,7 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Since you know so much about rarity... could you quickly determine if one item is more valuable than another?&quot;</string>
+									<string>&quot;Since you know so much about rarity... could you quickly determine if one item is more valuable than another?&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -1047,7 +1047,7 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"You&apos;re right. I would have never thought of that!&quot;</string>
+									<string>&quot;You&apos;re right. I would have never thought of that!&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -1074,7 +1074,7 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"That won&apos;t work. I&apos;ve tried it already and it failed.&quot;</string>
+									<string>&quot;That won&apos;t work. I&apos;ve tried it already and it failed.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -1216,7 +1216,7 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Interesting. Maybe I&apos;ll plan my next visit there.&quot;</string>
+									<string>&quot;Interesting. Maybe I&apos;ll plan my next visit there.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -1285,7 +1285,7 @@
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"If you take the names of all the items in your inventory... what is the most common character?&quot;</string>
+									<string>&quot;If you take the names of all the items in your inventory... what is the most common character?&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
@@ -1294,19 +1294,19 @@
 							<array>
 								<dict>
 									<key>LineText</key>
-									<string>"Whoa! Not to shabby.&quot;</string>
+									<string>&quot;Whoa! Not to shabby.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Please... continue forward."</string>
+									<string>&quot;Please... continue forward.&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>"Yes! Treasure, here we come!"</string>
+									<string>&quot;Yes! Treasure, here we come!&quot;</string>
 									<key>LineSource</key>
 									<integer>0</integer>
 								</dict>
@@ -1368,7 +1368,7 @@
 					<key>Position</key>
 					<string>{ 1000, -80 }</string>
 					<key>Variant</key>
-					<string>Teal</string>
+					<string>Magenta</string>
 					<key>Requests</key>
 					<array>
 						<dict>
