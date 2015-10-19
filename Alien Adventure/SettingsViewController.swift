@@ -35,15 +35,27 @@ class SettingsViewController: UIViewController {
         levelSegmentedControl.setTitleTextAttributes(attributesDictionary, forState: .Normal)
         Settings.Common.Level = levelSegmentedControl.selectedSegmentIndex
         startGameButton.titleLabel?.font = UIFont(name: Settings.Common.Font, size: 20)
+        
         addTargets()
     }
     
     // MARK: Add Targets
     
     func addTargets() {
-        
+        print("adding targets!")
     }
     
-    // MARK: Implement Actions
+    // MARK: Implementing Actions
     
+    func switchLevel(segmentControl: UISegmentedControl) {
+        print("level control has changed!")
+    }
+    
+    func showBadges(switchControl: UISwitch) {
+        print("show badges switch has changed!")
+    }
+    
+    func startGame() {
+        print("start button has been pressed!")
+    }
 }
