@@ -237,7 +237,7 @@ extension UDRequestTester {
         // check 2
         let itemsWithOutMoonOrBazooka = allItems().filter({!$0.name.lowercaseString.containsString("moon") && !$0.name.lowercaseString.containsString("bazooka")})
         
-        if delegate.handleMostCommonCharacter(itemsWithOutMoonOrBazooka) != "e" {
+        if delegate.handleMostCommonCharacter(itemsWithOutMoonOrBazooka) != "a" {
             print("MostCommonCharacter FAILED: The most common character was not returned.")
             return false
         }
