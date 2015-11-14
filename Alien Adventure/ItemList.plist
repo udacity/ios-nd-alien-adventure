@@ -160,7 +160,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>LightShard</string>
+		<string>GammaShard</string>
 		<key>ItemID</key>
 		<integer>7</integer>
 		<key>ItemType</key>

@@ -179,7 +179,7 @@ extension UDRequestTester {
         
         // check 3
         item1 = UDItemIndex.items["GlowSphere"]!
-        item2 = UDItemIndex.items["LightShard"]!
+        item2 = UDItemIndex.items["GammaShard"]!
         if (item1 < item2) {
             print("ItemComparison FAILED: A .Legendary item should not be less than an .Uncommon item.")
             return false

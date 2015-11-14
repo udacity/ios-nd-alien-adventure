@@ -152,7 +152,7 @@
 				<real>43000</real>
 			</dict>
 		</dict>
-		<key>LightShard</key>
+		<key>GammaShard</key>
 		<dict>
 			<key>ItemID</key>
 			<integer>7</integer>
@@ -731,7 +731,7 @@
 					<string>GlowSphere</string>
 					<string>MoonRubble</string>
 					<string>MoonRubble</string>
-					<string>LightShard</string>
+					<string>GammaShard</string>
 					<string>Crystal</string>
 				</array>
 			</dict>
