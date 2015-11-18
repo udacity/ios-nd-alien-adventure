@@ -11,3 +11,5 @@ import Foundation
 func <(lhs: UDItem, rhs: UDItem) -> Bool {
     return true
 }
+
+// If you have completed this function and it is working correctly, feel free to skip this part of the adventure by opening the "Under the Hood" folder, and making the following change in settings.swift: "static var RequestsToSkip = 5"
