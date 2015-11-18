@@ -469,7 +469,7 @@
 								</dict>
 								<dict>
 									<key>LineText</key>
-									<string>&quot;That&apos;s right. I am looking for a mysterious relic with the inscription THE ETERNAL STAR. Do you have such a relic?&quot;</string>
+									<string>&quot;That&apos;s right. I am looking for a mysterious relic with an inscription that contains the words THE ETERNAL STAR. Do you have such a relic?&quot;</string>
 									<key>LineSource</key>
 									<integer>1</integer>
 								</dict>
