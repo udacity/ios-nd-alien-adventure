@@ -300,11 +300,36 @@ extension AlienAdventureScene {
     }
     
     func resetSMWithRequest(request: UDRequest, resetGame: Bool = false) {
-        if resetGame {
-            gameSM.resetMachineWithRequest(request)
-        } else {
-            gameSM.startNewRequest(request)
+        
+        var processAsNormal = true
+        
+        // if a alien request is encountered and we have a skip left, then skip it!
+        if Settings.Common.RequestsToSkip > 0 && request.requestType != .Undefined {
+            
+            let requestTester = UDRequestTester(delegate: hero)
+            
+            if requestTester.runTestForRequestType(request.requestType) {
+                requestTester.processRequestType(request.requestType, failed: false)
+            }
+            
+            processAsNormal = false
+            Settings.Common.RequestsToSkip -= 1
         }
-        spinGameSM()
+        
+        // if not skipped, process as normal
+        if processAsNormal {
+            if resetGame {
+                gameSM.resetMachineWithRequest(request)
+            } else {
+                gameSM.startNewRequest(request)
+            }
+            spinGameSM()
+        } else { // if skipped, get the next alien request (if available) or move!
+            if let currentAlien = currentAlien, let nextRequest = currentAlien.getNextRequest {
+                resetSMWithRequest(nextRequest)
+            } else {
+                moveHero()
+            }
+        }
     }
 }
