@@ -210,8 +210,7 @@ extension UDRequestTester {
         // check 1
         let commonItems = delegate.handleGetCommonItems(delegate.inventory)
         
-        // inventory has at least one common item...
-        if commonItems.count == 0 {
+        if commonItems.count != 5 {
             return false
         }
         
@@ -253,7 +252,7 @@ extension UDRequestTester {
         let noDuplicateItems = delegate.handleRemoveDuplicates(delegate.inventory)
         
         // duplicate items has at least one item...
-        if noDuplicateItems.count == 0 {
+        if noDuplicateItems.count != 5 {
             return false
         }
         
