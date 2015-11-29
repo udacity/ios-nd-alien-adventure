@@ -23,18 +23,18 @@ class AlienAdventureScene: SKScene {
     var badgeManager: BadgeManager!
     var dialogueManager: DialogueManager!
     var hero: Hero!
-    var treasure: SKSpriteNode!    
+    var treasure: SKSpriteNode!
     
     // MARK: State
     
     var gameSM: UDGameSM!
     var currentAlien: Alien? = nil
     var winningCondition = false
-
+    
     // MARK: Data
     
     var levelDataDictionary: [String:AnyObject]!
-
+    
     // MARK: Initializers
     
     override init(size: CGSize) {
@@ -58,7 +58,7 @@ class AlienAdventureScene: SKScene {
             print("really unknown error in loadAnimations")
         }
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -86,17 +86,20 @@ class AlienAdventureScene: SKScene {
             dialogueManager.removeDialogueNode()
             
             hero.position = CGPointMake(0, -124.0)
+            hero.badgeManager!.badges.removeAll(keepCapacity: true)
+            hero.badgeManager!.badgeDisplay.removeAllChildren()
             hero.removeAllActions()
             UDAnimation.runAnimationForSprite(hero, animationKey: .HeroResting)
             
             if let currentAlien = currentAlien {
+                currentAlien.reset()
                 currentAlien.removeAllActions()
                 UDAnimation.runAnimationForSprite(currentAlien, animationKey: .MagentaAlienResting)
             }
             currentAlien = nil
             
             resetSMWithRequest(UDRequest.UDRequestWithoutPassFail([UDLineOfDialogue(lineText: Settings.Dialogue.StartingDialogue, lineSource: .Hero)]), resetGame: true)
-        }        
+        }
     }
     
     // MARK: Move Hero
@@ -147,7 +150,7 @@ extension AlienAdventureScene {
         do {
             if settingsController == nil {
                 Settings.Common.ShowBadges = try UDDataLoader.ShowBadgesFromLevelDictionary(levelDataDictionary)
-            }            
+            }
             hero = try UDDataLoader.HeroFromLevelDictionary(levelDataDictionary)
             aliens = try UDDataLoader.AliensFromLevelDictionary(levelDataDictionary)
             treasure = try UDDataLoader.TreasureFromLevelDictionary(levelDataDictionary)
@@ -185,7 +188,7 @@ extension AlienAdventureScene {
         // start game SM
         resetSMWithRequest(UDRequest.UDRequestWithoutPassFail([UDLineOfDialogue(lineText: Settings.Dialogue.StartingDialogue, lineSource: .Hero)]))
     }
-
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         spinGameSM()
     }
@@ -220,7 +223,7 @@ extension AlienAdventureScene: SKPhysicsContactDelegate {
             hero.removeAllActions()
             UDAnimation.runAnimationForSprite(hero, animationKey: .HeroCelebrating)
         }
-        // hit alien
+            // hit alien
         else if contact.bodyA.node!.dynamicType == Alien.self || contact.bodyB.node!.dynamicType == Alien.self {
             
             if contact.bodyA.node!.dynamicType == Alien.self {
@@ -262,6 +265,7 @@ extension AlienAdventureScene {
                     dialogueManager.displayNextLine(UDLineOfDialogue(lineText: "\(currentAlien.name!): \(Settings.Dialogue.TransitioningDialogue)", lineSource: .Alien))
                 } else {
                     if let currentAlien = currentAlien {
+                        currentAlien.reset()
                         currentAlien.removeAllActions()
                         switch(currentAlien.colorVariant) {
                         case .Magenta:

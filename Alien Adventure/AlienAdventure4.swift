@@ -63,9 +63,9 @@ extension UDRequestTester {
             .ValueLessThan10: 0,
             .NameContainsLaser: 0,
             .ItemFromCunia: 0
-        ] {
-            print("PolicingItems FAILED: If the inventory is empty, then 0 errors should have been detected for each type of UDPolicingError.")
-            return false
+            ] {
+                print("PolicingItems FAILED: If the inventory is empty, then 0 errors should have been detected for each type of UDPolicingError.")
+                return false
         }
         
         return true
@@ -85,14 +85,14 @@ extension UDRequestTester {
                 return false
             }
         }
-            
+        
         return true
     }
     
     // MARK: RedefinePolicingItems
     
     func testRedefinePolicingItems() -> Bool {
-
+        
         let redefinedPoliceFilter = delegate.handleRedefinePolicingItems()
         
         // check 1
@@ -130,9 +130,9 @@ extension UDRequestTester {
             .ValueLessThan10: 0,
             .NameContainsLaser: 0,
             .ItemFromCunia: 0
-        ] {
-            print("RedefinePolicingItems FAILED: If the inventory is empty, then 0 errors should have been detected for each type of UDPolicingError.")
-            return false
+            ] {
+                print("RedefinePolicingItems FAILED: If the inventory is empty, then 0 errors should have been detected for each type of UDPolicingError.")
+                return false
         }
         
         return true
@@ -148,9 +148,14 @@ extension UDRequestTester {
             originalValues.append(item.baseValue)
         }
         
+        // check 1
         let modifiedInventory = delegate.handleBoostItemValue(delegate.inventory)
         
-        // check 1
+        // modified inventory should have same number of items as inventory
+        if modifiedInventory.count != delegate.inventory.count {
+            return false
+        }
+        
         for (index, item) in modifiedInventory.enumerate() {
             if item.baseValue != originalValues[index] + 100 {
                 print("BoostItemValue FAILED: An item's base value has not been boosted by 100.")
@@ -165,19 +170,29 @@ extension UDRequestTester {
     
     func testSortLeastToGreatest() -> Bool {
         
+        // check 1
         let sortedInventory = delegate.handleSortLeastToGreatest(delegate.inventory)
         
-        // check 1
+        // sorted inventory must have all items from the inventory
+        if sortedInventory.count != delegate.inventory.count {
+            return false
+        }
+        
         for var index = 0; index < sortedInventory.count - 1; ++index {
             if !(sortedInventory[index] <= sortedInventory[index+1]) {
                 print("SortLeastToGreatest FAILED: In a sorted inventory, \(sortedInventory[index]) appears before \(sortedInventory[index+1]). That is incorrect.")
                 return false
-            }            
+            }
         }
-                
-        let sortedAllItems = delegate.handleSortLeastToGreatest(allItems())
         
         // check 2
+        let sortedAllItems = delegate.handleSortLeastToGreatest(allItems())
+        
+        // all sorted items must have all items
+        if sortedAllItems.count != allItems().count {
+            return false
+        }
+        
         for var index = 0; index < sortedAllItems.count - 1; ++index {
             if !(sortedAllItems[index] <= sortedAllItems[index+1]) {
                 print("SortLeastToGreatest FAILED: In a sorted inventory, \(sortedAllItems[index]) appears before \(sortedAllItems[index+1]). That is incorrect.")
@@ -191,10 +206,15 @@ extension UDRequestTester {
     // MARK: GetCommonItems
     
     func testGetCommonItems() -> Bool {
-
-        let commonItems = delegate.handleGetCommonItems(delegate.inventory)
         
         // check 1
+        let commonItems = delegate.handleGetCommonItems(delegate.inventory)
+        
+        // inventory has at least one common item...
+        if commonItems.count == 0 {
+            return false
+        }
+        
         for item in commonItems {
             if item.rarity != .Common {
                 print("GetCommonItems FAILED: When reducing an inventory to only the .Common items, \(item) was still included.")
@@ -228,10 +248,15 @@ extension UDRequestTester {
     
     func testRemoveDuplicates() -> Bool {
         
+        // check 1
         var emptySetOfItems = Set<UDItem>()
         let noDuplicateItems = delegate.handleRemoveDuplicates(delegate.inventory)
         
-        // check 1
+        // duplicate items has at least one item...
+        if noDuplicateItems.count == 0 {
+            return false
+        }
+        
         for item in noDuplicateItems {
             if emptySetOfItems.contains(item) {
                 print("RemoveDuplicates FAILED: Not all duplicates were removed from the inventory.")
@@ -243,13 +268,13 @@ extension UDRequestTester {
         
         return true
     }
-
+    
 }
 
 // MARK: - RequestTester (Alien Adventure 4 Process Requests)
 
 extension UDRequestTester {
-
+    
     // MARK: PolicingItems
     
     func processPolicingItems() -> String {
@@ -275,9 +300,9 @@ extension UDRequestTester {
         if errorsReported[UDPolicingError.ValueLessThan10] != nil && errorsReported[UDPolicingError.NameContainsLaser] != nil && errorsReported[UDPolicingError.ItemFromCunia] != nil {
             processingString += "I found \(errorsReported[UDPolicingError.ValueLessThan10]! + errorsReported[UDPolicingError.ItemFromCunia]! + errorsReported[UDPolicingError.NameContainsLaser]!) total errors.\""
         } else {
-           processingString += "I found some errors.\""
+            processingString += "I found some errors.\""
         }
-                
+        
         return processingString
     }
     
