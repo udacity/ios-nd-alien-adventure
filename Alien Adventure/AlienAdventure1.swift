@@ -67,7 +67,7 @@ extension UDRequestTester {
                 moonRocksCount3++
             }
         }
-        if moonRocksCount3 != 2 {
+        if moonRocksCount3 != 2 || itemsFromCheck3.count != 2 {
             print("MatchMoonRocks FAILED: An incorrect number of MoonRocks was returned.")
             return false
         }
@@ -175,14 +175,13 @@ extension UDRequestTester {
     
     func processMatchMoonRocks(failed: Bool) -> String {
         
-        let moonRocks = delegate.handleMatchMoonRocks(delegate.inventory)
-        let processingString = "Hero: [Hands over \(moonRocks.count) MoonRocks]"
-        
         if(!failed) {
+            let moonRocks = delegate.handleMatchMoonRocks(delegate.inventory)
             delegate.inventory = delegate.inventory.filter({$0.name != "MoonRock"})
+            return "Hero: [Hands over \(moonRocks.count) MoonRocks]"
+        } else {
+            return "Hero: [Hands over some items (they might be MoonRocks...)]"
         }
-        
-        return processingString
     }
     
     // MARK: InscriptionEternalStar
