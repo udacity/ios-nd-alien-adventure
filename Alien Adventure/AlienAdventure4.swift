@@ -97,10 +97,6 @@ extension UDRequestTester {
         
         // check 1
         let errorsDetected1 = delegate.handlePolicingItems(delegate.inventory, policingFilter: redefinedPoliceFilter)
-        if errorsDetected1[.ValueLessThan10] != 4 {
-            print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .ValueLessThan10 errors in all cases.")
-            return false
-        }
         if errorsDetected1[.NameContainsLaser] != 1 {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .NameContainsLaser errors in all cases.")
             return false
@@ -109,19 +105,23 @@ extension UDRequestTester {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .ItemFromCunia errors in all cases.")
             return false
         }
-        
-        // check 2
-        let errorsDetected2 = delegate.handlePolicingItems(allItems(), policingFilter: redefinedPoliceFilter)
-        if errorsDetected2[.ValueLessThan10] != 3 {
+        if errorsDetected1[.ValueLessThan10] != 4 {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .ValueLessThan10 errors in all cases.")
             return false
         }
+        
+        // check 2
+        let errorsDetected2 = delegate.handlePolicingItems(allItems(), policingFilter: redefinedPoliceFilter)
         if errorsDetected2[.NameContainsLaser] != 2 {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .NameContainsLaser errors in all cases.")
             return false
         }
         if errorsDetected2[.ItemFromCunia] != 4 {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .ItemFromCunia errors in all cases.")
+            return false
+        }
+        if errorsDetected2[.ValueLessThan10] != 3 {
+            print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .ValueLessThan10 errors in all cases.")
             return false
         }
         
