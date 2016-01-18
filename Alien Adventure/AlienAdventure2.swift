@@ -57,6 +57,24 @@ extension UDRequestTester {
             return false
         }
         
+        // check 4 (ensure student isn't hard-coding the "Glinda" check
+        let itemsFromCheck4 = delegate.handleItemsFromPlanet(delegate.inventory, planet: "Cunia")
+        var cuniaCount = 0
+        for item in itemsFromCheck4 {
+            if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String {
+                if planetOfOrigin == "Cunia" {
+                    cuniaCount++
+                } else {
+                    print("ItemsFromPlanet FAILED: Your implementation of itemsFromPlanet does not handle cases when checking for items from a planet other than Glinda.")
+                    return false
+                }
+            }
+        }
+        if cuniaCount != 5 {
+            print("ItemsFromPlanet FAILED: Your implementation of itemsFromPlanet does not handle cases when checking for items from a planet other than Glinda.")
+            return false
+        }
+        
         return true
     }
     
