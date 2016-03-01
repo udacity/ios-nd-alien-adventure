@@ -150,6 +150,18 @@ extension UDRequestTester {
             return false
         }
         
+        // check 5
+        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "abef") {
+            print("ShuffleStrings FAILED: The shuffle for the input (\"ab\", \"cd\", \"abef\") is invalid, but true was returned.")
+            return false
+        }
+        
+        // check 6
+        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "abdc") {
+            print("ShuffleStrings FAILED: The shuffle for the input (\"ab\", \"cd\", \"abdc\") is invalid, but true was returned.")
+            return false
+        }
+        
         return true
     }
 }
@@ -245,6 +257,16 @@ extension UDRequestTester {
         // check 4
         if delegate.handleShuffleStrings(s1: "", s2: "", shuffle: "sdf") {
             return "Hero: \"So is (\"\", \"\", \"sdf\") a valid shuffle? Umm... yes?\""
+        }
+        
+        // check 5
+        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "abef") {
+            return "Hero: \"So is (\"ab\", \"cd\", \"abef\") a valid shuffle? Umm... yes?\""
+        }
+        
+        // check 6
+        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "abdc") {
+            return "Hero: \"So is (\"ab\", \"cd\", \"abdc\") a valid shuffle? Umm... yes?\""
         }
         
         return "Hero: \"So is (\"ab\", \"cd\", \"badc\") a valid shuffle? No it isn't!\""
