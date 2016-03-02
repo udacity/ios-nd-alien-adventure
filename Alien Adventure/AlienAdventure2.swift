@@ -13,7 +13,7 @@ extension UDRequestTester {
     // MARK: ItemsFromPlanet
     
     func testItemsFromPlanet() -> Bool {
-
+        
         // check 1
         let itemsFromCheck1 = delegate.handleItemsFromPlanet([UDItem](), planet: "Glinda")
         if itemsFromCheck1.count != 0 {
@@ -95,13 +95,24 @@ extension UDRequestTester {
             return false
         }
         
+        // check 3
+        let item1 = UDItem(itemID: 0, itemType: .Weapon, name: "Test1", baseValue: 1, inscription: nil, rarity: .Common, historicalData: ["CarbonAge": 30, "PlanetOfOrigin": "TestPlanet"])
+        let item2 = UDItem(itemID: 1, itemType: .Weapon, name: "Test2", baseValue: 2, inscription: nil, rarity: .Common, historicalData: ["PlanetOfOrigin": "TestPlanet"])
+        let item3 = UDItem(itemID: 2, itemType: .Weapon, name: "Test3", baseValue: 3, inscription: nil, rarity: .Common, historicalData: ["CarbonAge": 1000, "PlanetOfOrigin": "TestPlanet"])
+        let testItems = [item1, item2, item3]
+        let checkItem = delegate.handleOldestItemFromPlanet(testItems, planet: "TestPlanet")
+        if checkItem != testItems[2] {
+            print("OldestItemFromPlanet FAILED: An item without a CarbonAge was not correctly skipped over.")
+            return false
+        }
+        
         return true
     }
     
     // MARK: XORCipherKeySearch
     
     func testXORCipherKeySearch() -> Bool {
-
+        
         // check 1
         let key1 = delegate.handleXORCipherKeySearch([UInt8]("yhmoexu".utf8))
         if key1 != 12 {
@@ -152,7 +163,7 @@ extension UDRequestTester {
             print("RarityOfItems FAILED: The incorrect number of .Legendary items was returned.")
             return false
         }
-
+        
         // check 3
         let items3 = delegate.handleRarityOfItems(delegate.inventory)
         if items3[.Common] != 2 {
@@ -290,14 +301,14 @@ extension UDRequestTester {
                 }
             })
         }
-                
+        
         return processingString
     }
     
     // MARK: OldestItemFromPlanet
     
     func processOldestItemFromPlanet() -> String {
-
+        
         var processingString = "Hero: [Shows the Alien "
         if let oldestItem = delegate.handleOldestItemFromPlanet(delegate.inventory, planet: "Cunia") {
             processingString += "the \(oldestItem.name.lowercaseString)]"
@@ -326,7 +337,7 @@ extension UDRequestTester {
     func processRarityOfItems() -> String {
         
         var processingString = "Hero: \""
-                
+        
         if delegate.handleRarityOfItems(delegate.inventory) == [
             .Common: 2,
             .Uncommon: 3,
@@ -344,14 +355,14 @@ extension UDRequestTester {
     // MARK: ItemComparison
     
     func processItemComparison() -> String {
-
+        
         return "Hero: \"Just try comparing items like this...\""
     }
     
     // MARK: BannedItems
     
     func processBannedItems() -> String {
-
+        
         var processingString = "Hero: \""
         let bannedItemIDs = delegate.handleBannedItems("ItemList")
         
@@ -362,7 +373,7 @@ extension UDRequestTester {
         } else {
             processingString += "These \(bannedItemIDs.count) items on the list should be banned.\""
         }
-    
+        
         return processingString
     }
     
