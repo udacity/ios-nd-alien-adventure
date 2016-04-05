@@ -178,8 +178,6 @@ extension UDRequestTester {
             return false
         }
         
-        // for var index = 0; index < sortedInventory.count - 1; index += 1
-        
         for var index in 0 ..< sortedInventory.count - 1 {
             if !(sortedInventory[index] <= sortedInventory[index+1]) {
                 print("SortLeastToGreatest FAILED: In a sorted inventory, \(sortedInventory[index]) appears before \(sortedInventory[index+1]). That is incorrect.")
