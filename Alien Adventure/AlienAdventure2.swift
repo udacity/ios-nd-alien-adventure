@@ -27,7 +27,7 @@ extension UDRequestTester {
         for item in itemsFromCheck2 {
             if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String {
                 if planetOfOrigin == "Glinda" {
-                    glindaCount2++
+                    glindaCount2 += 1
                 } else {
                     print("ItemsFromPlanet FAILED: An item not from Glinda was returned.")
                     return false
@@ -45,7 +45,7 @@ extension UDRequestTester {
         for item in itemsFromCheck3 {
             if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String {
                 if planetOfOrigin == "Glinda" {
-                    glindaCount3++
+                    glindaCount3 += 1
                 } else {
                     print("ItemsFromPlanet FAILED: An item not from Glinda was returned.")
                     return false
@@ -63,7 +63,7 @@ extension UDRequestTester {
         for item in itemsFromCheck4 {
             if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String {
                 if planetOfOrigin == "Cunia" {
-                    cuniaCount++
+                    cuniaCount += 1
                 } else {
                     print("ItemsFromPlanet FAILED: Your implementation of itemsFromPlanet does not handle cases when checking for items from a planet other than Glinda.")
                     return false
