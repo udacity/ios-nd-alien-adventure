@@ -28,7 +28,8 @@ class Alien: SKSpriteNode {
         return requests[0]
     }
     var getNextRequest: UDRequest? {
-        if Int(currentRequestIndex += 1) < requests.count {
+        currentRequestIndex += 1
+        if currentRequestIndex < requests.count {
             return requests[currentRequestIndex]
         } else {
             return nil
