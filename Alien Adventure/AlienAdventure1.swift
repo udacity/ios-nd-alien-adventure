@@ -51,7 +51,7 @@ extension UDRequestTester {
         var moonRocksCount2 = 0
         for item in itemsFromCheck2 {
             if item == UDItemIndex.items["MoonRock"]! {
-                moonRocksCount2++
+                moonRocksCount2 += 1
             }
         }
         if moonRocksCount2 != 1 {
@@ -64,7 +64,7 @@ extension UDRequestTester {
         var moonRocksCount3 = 0
         for item in itemsFromCheck3 {
             if item == UDItemIndex.items["MoonRock"]! {
-                moonRocksCount3++
+                moonRocksCount3 += 1
             }
         }
         if moonRocksCount3 != 2 || itemsFromCheck3.count != 2 {

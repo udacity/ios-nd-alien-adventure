@@ -178,7 +178,7 @@ extension UDRequestTester {
             return false
         }
         
-        for var index = 0; index < sortedInventory.count - 1; ++index {
+        for index in 0 ..< sortedInventory.count - 1 {
             if !(sortedInventory[index] <= sortedInventory[index+1]) {
                 print("SortLeastToGreatest FAILED: In a sorted inventory, \(sortedInventory[index]) appears before \(sortedInventory[index+1]). That is incorrect.")
                 return false
@@ -193,7 +193,7 @@ extension UDRequestTester {
             return false
         }
         
-        for var index = 0; index < sortedAllItems.count - 1; ++index {
+        for index in 0 ..< sortedAllItems.count - 1 {
             if !(sortedAllItems[index] <= sortedAllItems[index+1]) {
                 print("SortLeastToGreatest FAILED: In a sorted inventory, \(sortedAllItems[index]) appears before \(sortedAllItems[index+1]). That is incorrect.")
                 return false
