@@ -23,6 +23,7 @@ class AlienAdventureScene: SKScene {
     var badgeManager: BadgeManager!
     var dialogueManager: DialogueManager!
     var hero: Hero!
+    var aliens = [Alien]()
     var treasure: SKSpriteNode!
     
     // MARK: State
@@ -30,6 +31,7 @@ class AlienAdventureScene: SKScene {
     var gameSM: UDGameSM!
     var currentAlien: Alien? = nil
     var winningCondition = false
+    var requestsToSkip = 0
     
     // MARK: Data
     
@@ -39,6 +41,8 @@ class AlienAdventureScene: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)
+        
+        requestsToSkip = Settings.Common.RequestsToSkip
         
         let gameDataDictionary = NSDictionary(contentsOfURL: Settings.Common.GameDataURL) as! [String:AnyObject]
         
@@ -82,6 +86,7 @@ class AlienAdventureScene: SKScene {
         if let settingsController = settingsController {
             settingsController.dismissViewControllerAnimated(true, completion: nil)
         } else {
+            requestsToSkip = Settings.Common.RequestsToSkip
             world.position = CGPointMake(0.0, 0.0)
             dialogueManager.removeDialogueNode()
             
@@ -89,12 +94,17 @@ class AlienAdventureScene: SKScene {
             hero.badgeManager!.badges.removeAll(keepCapacity: true)
             hero.badgeManager!.badgeDisplay.removeAllChildren()
             hero.removeAllActions()
+            hero.inventory.removeAll(keepCapacity: true)
+            for item in UDDataLoader.items {
+                hero.inventory.append(item)
+            }
             UDAnimation.runAnimationForSprite(hero, animationKey: .HeroResting)
             
-            if let currentAlien = currentAlien {
-                currentAlien.reset()
-                currentAlien.removeAllActions()
-                UDAnimation.runAnimationForSprite(currentAlien, animationKey: .MagentaAlienResting)
+            for alien in aliens {
+                alien.reset()
+                alien.removeAllActions()
+                let restingAnimationKey: UDAnimation.UDAnimationKey = alien.colorVariant == .Magenta ? .MagentaAlienResting : .TealAlienResting
+                UDAnimation.runAnimationForSprite(alien, animationKey: restingAnimationKey)
             }
             currentAlien = nil
             
@@ -145,8 +155,7 @@ extension AlienAdventureScene {
         dialogueManager = DialogueManager(widthOfConverationNode: Int(frame.width - 40) - 40)
         ui.addChild(dialogueManager)
         world.addChild(ui)
-        
-        var aliens = [Alien]()
+                
         do {
             if settingsController == nil {
                 Settings.Common.ShowBadges = try UDDataLoader.ShowBadgesFromLevelDictionary(levelDataDictionary)
@@ -308,7 +317,7 @@ extension AlienAdventureScene {
         var processAsNormal = true
         
         // if a alien request is encountered and we have a skip left, then skip it!
-        if Settings.Common.RequestsToSkip > 0 && request.requestType != .Undefined {
+        if requestsToSkip > 0 && request.requestType != .Undefined {
             
             let requestTester = UDRequestTester(delegate: hero)
             
@@ -317,7 +326,7 @@ extension AlienAdventureScene {
             }
             
             processAsNormal = false
-            Settings.Common.RequestsToSkip -= 1
+            requestsToSkip -= 1
         }
         
         // if not skipped, process as normal

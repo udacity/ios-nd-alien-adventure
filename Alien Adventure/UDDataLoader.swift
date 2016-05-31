@@ -30,6 +30,10 @@ enum UDDialogueKey: String {
 
 class UDDataLoader {
     
+    // MARK: Hero Starting Items
+    
+    static var items = [UDItem]()
+    
     // MARK: GameDataKeys
     
     struct GameDataKeys {
@@ -242,8 +246,7 @@ class UDDataLoader {
         guard let inventoryKeyArray = heroDictionary[GameDataKeys.Inventory] as? [String] else {
             throw UDDataError.KeyError(GameDataKeys.Inventory, "\(dictionary)", #function)
         }
-        
-        var items = [UDItem]()
+                
         for item in inventoryKeyArray {
             if (UDItemIndex.items.indexForKey(item) != nil) {
                 items.append(UDItemIndex.items[item]!)
