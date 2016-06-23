@@ -13,7 +13,7 @@ import SpriteKit
 struct UDAnimationData {
     let atlasFile: String
     let frames: [SKTexture]
-    let timePerFrame: NSTimeInterval
+    let timePerFrame: TimeInterval
 }
 
 // MARK: - UDSpriteKey
@@ -60,16 +60,16 @@ class UDAnimation {
     
     // MARK: Return Animation Actions
     
-    class func runAnimationForSprite(sprite: SKSpriteNode, animationKey: UDAnimationKey, times: Int = 0) {
+    class func runAnimationForSprite(_ sprite: SKSpriteNode, animationKey: UDAnimationKey, times: Int = 0) {
         if let animation = animations[animationKey] {
             if times == 0 {
-                sprite.runAction(SKAction.repeatActionForever(
-                    SKAction.animateWithTextures(animation.frames,
+                sprite.run(SKAction.repeatForever(
+                    SKAction.animate(with: animation.frames,
                         timePerFrame: animation.timePerFrame,
                         resize: false,
                         restore: true)))
             } else {
-                sprite.runAction(SKAction.repeatAction(SKAction.animateWithTextures(animation.frames,
+                sprite.run(SKAction.repeat(SKAction.animate(with: animation.frames,
                     timePerFrame: animation.timePerFrame,
                     resize: false,
                     restore: false), count: 1))
@@ -79,7 +79,7 @@ class UDAnimation {
     
     // MARK: Load Animation Data
     
-    class func loadAllAnimations(gameDataDictionary: [String:AnyObject]) throws {
+    class func loadAllAnimations(_ gameDataDictionary: [String:AnyObject]) throws {
         do {
             // for hero
             try loadAnimation(gameDataDictionary, animationKey: .HeroResting, spriteKey: .Hero, animationKeyPrefix: .Resting)
@@ -105,7 +105,7 @@ class UDAnimation {
         }
     }
     
-    private class func loadAnimation(gameDataDictionary: [String:AnyObject], animationKey: UDAnimationKey, spriteKey: UDSpriteKey, animationKeyPrefix: UDAnimationPrefix) throws {
+    private class func loadAnimation(_ gameDataDictionary: [String:AnyObject], animationKey: UDAnimationKey, spriteKey: UDSpriteKey, animationKeyPrefix: UDAnimationPrefix) throws {
         do {
             let animationFromPList = try UDDataLoader.AnimationFromGameDictionary(gameDataDictionary, spriteKey: spriteKey.rawValue, animationKeyPrefix: animationKeyPrefix.rawValue)
             animations[animationKey] = animationFromPList
@@ -114,7 +114,7 @@ class UDAnimation {
     
     // MARK: Set Base Frames
     
-    private class func setBaseFrameForSpritesWithKey(spriteKey: UDSpriteKey, withAnimation: [SKTexture]) {
+    private class func setBaseFrameForSpritesWithKey(_ spriteKey: UDSpriteKey, withAnimation: [SKTexture]) {
         baseFrameForSprite[spriteKey] = withAnimation[0]
     }
 }

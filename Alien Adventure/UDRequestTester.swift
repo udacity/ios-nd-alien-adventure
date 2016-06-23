@@ -24,7 +24,7 @@ class UDRequestTester {
     
     // MARK: Run Test
     
-    func runTestForRequestType(requestType: UDRequestType) -> Bool {
+    func runTestForRequestType(_ requestType: UDRequestType) -> Bool {
         switch(requestType) {
         // Alien Adventure 1
         case .ReverseLongestName:
@@ -86,7 +86,7 @@ class UDRequestTester {
         }
     }
     
-    func processRequestType(requestType: UDRequestType, failed: Bool) -> String {
+    func processRequestType(_ requestType: UDRequestType, failed: Bool) -> String {
         switch(requestType) {
         // Alien Adventure 1
         case .ReverseLongestName:

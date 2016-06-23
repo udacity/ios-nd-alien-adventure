@@ -96,9 +96,9 @@ extension UDRequestTester {
         }
         
         // check 3
-        let item1 = UDItem(itemID: 0, itemType: .Weapon, name: "Test1", baseValue: 1, inscription: nil, rarity: .Common, historicalData: ["CarbonAge": 30, "PlanetOfOrigin": "TestPlanet"])
-        let item2 = UDItem(itemID: 1, itemType: .Weapon, name: "Test2", baseValue: 2, inscription: nil, rarity: .Common, historicalData: ["PlanetOfOrigin": "TestPlanet"])
-        let item3 = UDItem(itemID: 2, itemType: .Weapon, name: "Test3", baseValue: 3, inscription: nil, rarity: .Common, historicalData: ["CarbonAge": 1000, "PlanetOfOrigin": "TestPlanet"])
+        let item1 = UDItem(itemID: 0, itemType: .weapon, name: "Test1", baseValue: 1, inscription: nil, rarity: .common, historicalData: ["CarbonAge": 30, "PlanetOfOrigin": "TestPlanet"])
+        let item2 = UDItem(itemID: 1, itemType: .weapon, name: "Test2", baseValue: 2, inscription: nil, rarity: .common, historicalData: ["PlanetOfOrigin": "TestPlanet"])
+        let item3 = UDItem(itemID: 2, itemType: .weapon, name: "Test3", baseValue: 3, inscription: nil, rarity: .common, historicalData: ["CarbonAge": 1000, "PlanetOfOrigin": "TestPlanet"])
         let testItems = [item1, item2, item3]
         let checkItem = delegate.handleOldestItemFromPlanet(testItems, planet: "TestPlanet")
         if checkItem != testItems[2] {
@@ -136,10 +136,10 @@ extension UDRequestTester {
         
         // check 1
         if delegate.handleRarityOfItems([UDItem]()) != [
-            .Common: 0,
-            .Uncommon: 0,
-            .Rare: 0,
-            .Legendary: 0
+            .common: 0,
+            .uncommon: 0,
+            .rare: 0,
+            .legendary: 0
         ] {
             print("RarityOfItems FAILED: If the inventory is empty, then there should be 0 items returned for each rarity.")
             return false
@@ -147,38 +147,38 @@ extension UDRequestTester {
         
         // check 2
         let items2 = delegate.handleRarityOfItems(allItems())
-        if items2[.Common] != 3 {
+        if items2[.common] != 3 {
             print("RarityOfItems FAILED: An incorrect number of .Common items was returned.")
             return false
         }
-        if items2[.Uncommon] != 3 {
+        if items2[.uncommon] != 3 {
             print("RarityOfItems FAILED: An incorrect number of .Uncommon items was returned.")
             return false
         }
-        if items2[.Rare] != 2 {
+        if items2[.rare] != 2 {
             print("RarityOfItems FAILED: The incorrect number of .Rare items was returned.")
             return false
         }
-        if items2[.Legendary] != 1 {
+        if items2[.legendary] != 1 {
             print("RarityOfItems FAILED: The incorrect number of .Legendary items was returned.")
             return false
         }
         
         // check 3
         let items3 = delegate.handleRarityOfItems(delegate.inventory)
-        if items3[.Common] != 2 {
+        if items3[.common] != 2 {
             print("RarityOfItems FAILED: An incorrect number of .Common items was returned.")
             return false
         }
-        if items3[.Uncommon] != 3 {
+        if items3[.uncommon] != 3 {
             print("RarityOfItems FAILED: An incorrect number of .Uncommon items was returned.")
             return false
         }
-        if items3[.Rare] != 0 {
+        if items3[.rare] != 0 {
             print("RarityOfItems FAILED: The incorrect number of .Rare items was returned.")
             return false
         }
-        if items3[.Legendary] != 1 {
+        if items3[.legendary] != 1 {
             print("RarityOfItems FAILED: The incorrect number of .Legendary items was returned.")
             return false
         }
@@ -264,7 +264,7 @@ extension UDRequestTester {
         }
         
         // check 2
-        let itemsWithOutMoonOrBazooka = allItems().filter({!$0.name.lowercaseString.containsString("moon") && !$0.name.lowercaseString.containsString("bazooka")})
+        let itemsWithOutMoonOrBazooka = allItems().filter({!$0.name.lowercased().contains("moon") && !$0.name.lowercased().contains("bazooka")})
         
         if delegate.handleMostCommonCharacter(itemsWithOutMoonOrBazooka) != "a" {
             print("MostCommonCharacter FAILED: The most common character was not returned.")
@@ -287,7 +287,7 @@ extension UDRequestTester {
     
     // MARK: ItemsFromPlanet
     
-    func processItemsFromPlanet(failed: Bool) -> String {
+    func processItemsFromPlanet(_ failed: Bool) -> String {
         
         let itemsFromGlinda = delegate.handleItemsFromPlanet(delegate.inventory, planet: "Glinda")
         let processingString = "Hero: [Hands over \(itemsFromGlinda.count) items]"
@@ -311,7 +311,7 @@ extension UDRequestTester {
         
         var processingString = "Hero: [Shows the Alien "
         if let oldestItem = delegate.handleOldestItemFromPlanet(delegate.inventory, planet: "Cunia") {
-            processingString += "the \(oldestItem.name.lowercaseString)]"
+            processingString += "the \(oldestItem.name.lowercased())]"
         } else {
             processingString += "NOTHING!]"
         }
@@ -339,10 +339,10 @@ extension UDRequestTester {
         var processingString = "Hero: \""
         
         if delegate.handleRarityOfItems(delegate.inventory) == [
-            .Common: 2,
-            .Uncommon: 3,
-            .Rare: 0,
-            .Legendary: 1
+            .common: 2,
+            .uncommon: 3,
+            .rare: 0,
+            .legendary: 1
             ] {
                 processingString += "Why don't you try this approach?\""
         } else {

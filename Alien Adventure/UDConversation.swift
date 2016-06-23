@@ -9,7 +9,7 @@
 // MARK: - UDConversationType
 
 enum UDConversationType {
-    case Initial, Pass, Fail
+    case initial, pass, fail
 }
 
 // MARK: - UDConversation
@@ -45,7 +45,7 @@ struct UDConversation {
     
     // MARK: Add Line
     
-    mutating func addLine(lineOfDialogue: UDLineOfDialogue) {
+    mutating func addLine(_ lineOfDialogue: UDLineOfDialogue) {
         linesOfDialogue.append(lineOfDialogue)
     }
 }

@@ -9,7 +9,7 @@
 // MARK: - UDRequestProgress
 
 enum UDRequestState {
-    case Speak, SpeakAngry, FinishRequest
+    case speak, speakAngry, finishRequest
 }
 
 // MARK: - UDRequestSM
@@ -19,20 +19,20 @@ class UDRequestSM {
     // MARK: UDRequestState
     
     enum UDRequestInternalState {
-        case NotStarted, InitialConvo, ProcessRequest, PassConvo, FailConvo
+        case notStarted, initialConvo, processRequest, passConvo, failConvo
     }
     
     // MARK: Properties
     
     private var request: UDRequest!
     private var delegate: UDRequestDelegate!
-    private var currentState = UDRequestInternalState.NotStarted    
-    var currentLineOfDialogue = UDLineOfDialogue(lineText: "", lineSource: .None)
+    private var currentState = UDRequestInternalState.notStarted    
+    var currentLineOfDialogue = UDLineOfDialogue(lineText: "", lineSource: .none)
     var failedRequest = false
     
     // MARK: Shared Instance
     
-    class func stateMachine(delegate: UDRequestDelegate) -> UDRequestSM {
+    class func stateMachine(_ delegate: UDRequestDelegate) -> UDRequestSM {
         
         struct Singleton {
             static var sharedInstance = UDRequestSM()
@@ -43,9 +43,9 @@ class UDRequestSM {
         return stateMachine
     }
     
-    func setNewRequest(newRequest: UDRequest) {
+    func setNewRequest(_ newRequest: UDRequest) {
         request = newRequest
-        currentState = .InitialConvo
+        currentState = .initialConvo
         failedRequest = false
     }
     
@@ -55,52 +55,52 @@ class UDRequestSM {
         var externalState: UDRequestState
         
         switch(currentState) {
-        case .NotStarted:
-            nextState = .NotStarted
-            externalState = .FinishRequest
-        case .InitialConvo:
-            if conversationFinished(.Initial) {
+        case .notStarted:
+            nextState = .notStarted
+            externalState = .finishRequest
+        case .initialConvo:
+            if conversationFinished(.initial) {
                 if request.requestType == .Undefined {
-                    nextState = .NotStarted
-                    externalState = .FinishRequest
+                    nextState = .notStarted
+                    externalState = .finishRequest
                 } else {
-                    currentLineOfDialogue = UDLineOfDialogue(lineText: Settings.Dialogue.RequestingDialogue, lineSource: .Hero)
-                    nextState = .ProcessRequest
-                    externalState = .Speak
+                    currentLineOfDialogue = UDLineOfDialogue(lineText: Settings.Dialogue.RequestingDialogue, lineSource: .hero)
+                    nextState = .processRequest
+                    externalState = .speak
                 }
             } else {
                 currentLineOfDialogue = request.initialConversation.removeLine()!
-                nextState = .InitialConvo
-                externalState = .Speak
+                nextState = .initialConvo
+                externalState = .speak
             }
-        case .ProcessRequest:
+        case .processRequest:
             let requestTester = UDRequestTester(delegate: delegate)
             failedRequest = !requestTester.runTestForRequestType(request.requestType)
-            currentLineOfDialogue = UDLineOfDialogue(lineText: requestTester.processRequestType(request.requestType, failed: failedRequest), lineSource: .Hero)
+            currentLineOfDialogue = UDLineOfDialogue(lineText: requestTester.processRequestType(request.requestType, failed: failedRequest), lineSource: .hero)
                         
             if failedRequest {
-                nextState = .FailConvo
+                nextState = .failConvo
             } else {
-                nextState = .PassConvo
+                nextState = .passConvo
             }            
-            externalState = .Speak
-        case .PassConvo:
-            if conversationFinished(.Pass) {
-                nextState = .NotStarted
-                externalState = .FinishRequest
+            externalState = .speak
+        case .passConvo:
+            if conversationFinished(.pass) {
+                nextState = .notStarted
+                externalState = .finishRequest
             } else {
                 currentLineOfDialogue = request!.passConversation.removeLine()!
-                nextState = .PassConvo
-                externalState = .Speak
+                nextState = .passConvo
+                externalState = .speak
             }
-        case .FailConvo:            
-            if conversationFinished(.Fail) {
-                nextState = .NotStarted
-                externalState = .FinishRequest
+        case .failConvo:            
+            if conversationFinished(.fail) {
+                nextState = .notStarted
+                externalState = .finishRequest
             } else {
                 currentLineOfDialogue = request!.failConversation.removeLine()!
-                nextState = .FailConvo
-                externalState = .SpeakAngry
+                nextState = .failConvo
+                externalState = .speakAngry
             }
         }
         
@@ -108,17 +108,17 @@ class UDRequestSM {
         return externalState
     }
     
-    private func conversationFinished(type: UDConversationType) -> Bool {
+    private func conversationFinished(_ type: UDConversationType) -> Bool {
         guard let request = request else {
             return true
         }
         
         switch(type) {
-        case .Initial:
+        case .initial:
             return request.initialConversation.finished
-        case .Pass:
+        case .pass:
             return request.passConversation.finished
-        case .Fail:
+        case .fail:
             return request.failConversation.finished
         }
     }

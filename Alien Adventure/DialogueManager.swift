@@ -30,7 +30,7 @@ class DialogueManager: SKNode {
     
     // MARK: Display    
     
-    func displayNextLine(line: UDLineOfDialogue) {
+    func displayNextLine(_ line: UDLineOfDialogue) {
         removeDialogueNode()
         dialogue = Dialogue(text: line.lineText, widthOfDialogue: widthOfDialogueNode, lineSource: line.lineSource)
         self.addChild(dialogue)

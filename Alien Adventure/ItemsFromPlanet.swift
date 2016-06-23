@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func itemsFromPlanet(inventory: [UDItem], planet: String) -> [UDItem] {
+    func itemsFromPlanet(_ inventory: [UDItem], planet: String) -> [UDItem] {
         return [UDItem]()
     }
     

@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func rarityOfItems(inventory: [UDItem]) -> [UDItemRarity:Int] {
+    func rarityOfItems(_ inventory: [UDItem]) -> [UDItemRarity:Int] {
         return [UDItemRarity:Int]()
     }
 }

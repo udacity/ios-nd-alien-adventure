@@ -21,7 +21,7 @@ class BadgeManager: SKNode {
     
     init(displayPosition: CGPoint, displaySize: CGSize) {
         super.init()
-        badgeDisplay = SKSpriteNode(color: UIColor.clearColor(), size: CGSizeMake(400, 400))
+        badgeDisplay = SKSpriteNode(color: UIColor.clear(), size: CGSize(width: 400, height: 400))
         badgeDisplay.position = displayPosition
         badgeDisplay.size = displaySize        
         self.addChild(badgeDisplay)
@@ -31,8 +31,8 @@ class BadgeManager: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func addBadge(badge: Badge) {
-        badge.position = CGPoint(x: CGRectGetMinX(badgeDisplay.frame) + 32 + CGFloat(badges.count * 70), y: 0)
+    func addBadge(_ badge: Badge) {
+        badge.position = CGPoint(x: badgeDisplay.frame.minX + 32 + CGFloat(badges.count * 70), y: 0)
         badgeDisplay.addChild(badge)
         badges.append(badge)
     }

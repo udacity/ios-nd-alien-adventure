@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func leastValuableItem(inventory: [UDItem]) -> UDItem? {
+    func leastValuableItem(_ inventory: [UDItem]) -> UDItem? {
         return nil
     }
 }

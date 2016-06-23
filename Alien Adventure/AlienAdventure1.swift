@@ -172,7 +172,7 @@ extension UDRequestTester {
     
     // MARK: ReverseLongString
     
-    func processReverseLongestName(failed: Bool) -> String {
+    func processReverseLongestName(_ failed: Bool) -> String {
         
         if !failed {
             let reverseLongestName = delegate.handleReverseLongestName(delegate.inventory)
@@ -185,7 +185,7 @@ extension UDRequestTester {
     
     // MARK: MatchMoonRocks
     
-    func processMatchMoonRocks(failed: Bool) -> String {
+    func processMatchMoonRocks(_ failed: Bool) -> String {
         
         if(!failed) {
             let moonRocks = delegate.handleMatchMoonRocks(delegate.inventory)
@@ -198,7 +198,7 @@ extension UDRequestTester {
     
     // MARK: InscriptionEternalStar
     
-    func processInscriptionEternalStar(failed: Bool) -> String {
+    func processInscriptionEternalStar(_ failed: Bool) -> String {
         
         var processingString = "Hero: [Hands over "
         if let eternalStarItem = delegate.handleInscriptionEternalStar(delegate.inventory) {
@@ -215,15 +215,15 @@ extension UDRequestTester {
     
     // MARK: LeastValuableItem
     
-    func processLeastValuableItem(failed: Bool) -> String {
+    func processLeastValuableItem(_ failed: Bool) -> String {
         
         var processingString = "Hero: [Hands over "
         if let leastValuableItem = delegate.handleLeastValuableItem(delegate.inventory) {
             processingString += "the \(leastValuableItem.name)]"
             if(!failed) {
-                for (idx, item) in delegate.inventory.enumerate() {
+                for (idx, item) in delegate.inventory.enumerated() {
                     if item == leastValuableItem {
-                        delegate.inventory.removeAtIndex(idx)
+                        delegate.inventory.remove(at: idx)
                         break
                     }
                 }
@@ -237,7 +237,7 @@ extension UDRequestTester {
     
     // MARK: ShuffleStrings
     
-    func processShuffleStrings(failed: Bool) -> String {
+    func processShuffleStrings(_ failed: Bool) -> String {
         
         // check 1
         if !delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "acbd") {

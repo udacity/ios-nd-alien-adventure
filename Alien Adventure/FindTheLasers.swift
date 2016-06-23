@@ -8,9 +8,9 @@
 
 extension Hero {
     
-    func findTheLasers() -> (UDItem -> Bool) {
+    func findTheLasers() -> ((UDItem) -> Bool) {
         
-        func containsLaser(item: UDItem) -> Bool {
+        func containsLaser(_ item: UDItem) -> Bool {
             return true
         }
         

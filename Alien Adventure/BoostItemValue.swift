@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func boostItemValue(inventory: [UDItem]) -> [UDItem] {
+    func boostItemValue(_ inventory: [UDItem]) -> [UDItem] {
         return [UDItem]()
     }
 }

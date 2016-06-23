@@ -10,7 +10,7 @@ import Foundation
 
 extension Hero {
     
-    func xorCipherKeySearch(encryptedString: [UInt8]) -> UInt8 {
+    func xorCipherKeySearch(_ encryptedString: [UInt8]) -> UInt8 {
         
         // NOTE: This code doesn't exactly mimic what is in the Lesson. We've
         // added some print statements so that there are no warnings for 
@@ -31,7 +31,7 @@ extension Hero {
             }
             
             if let decryptedString = String(bytes: decrypted,
-                encoding: NSUTF8StringEncoding) where decryptedString == "udacity" {
+                encoding: String.Encoding.utf8) where decryptedString == "udacity" {
                     // ADD CODE: found match, now what?
             }
         }

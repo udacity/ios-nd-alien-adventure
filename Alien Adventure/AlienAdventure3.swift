@@ -107,7 +107,7 @@ extension UDRequestTester {
     
     // MARK: CheckBadges
     
-    func processCheckBadges(failed: Bool) -> String {
+    func processCheckBadges(_ failed: Bool) -> String {
         if failed {
             return "Hero: Yeah... so it turns out I have some badges, but honestly I'm not going to tell you what I have..."
         } else {

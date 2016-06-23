@@ -9,13 +9,13 @@
 // MARK: - UDItemType
 
 enum UDItemType: Int {
-    case Weapon = 0, Magic, Other
+    case weapon = 0, magic, other
 }
 
 // MARK: - UDItemRarity
 
 enum UDItemRarity: Int {
-    case Common = 0, Uncommon, Rare, Legendary
+    case common = 0, uncommon, rare, legendary
 }
 
 // MARK: - UDItem

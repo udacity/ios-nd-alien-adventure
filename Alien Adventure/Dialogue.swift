@@ -22,11 +22,11 @@ class Dialogue: SKNode {
     init(text: String, widthOfDialogue: Int, lineSource: UDLineSource) {
         super.init()
         
-        self.text = SKMultiLabelNode(text: text, labelWidth: widthOfDialogue, pos: CGPointZero, fontSize: 30, leading: 40)
+        self.text = SKMultiLabelNode(text: text, labelWidth: widthOfDialogue, pos: CGPoint.zero, fontSize: 30, leading: 40)
 
-        self.background = (lineSource == .Hero) ? SKSpriteNode(imageNamed: "Dialogue-Hero") : SKSpriteNode(imageNamed: "Dialogue-Alien")
-        self.background.position = CGPointMake(self.text!.position.x, self.text!.position.y - 50)
-        self.background.size = CGSizeMake(CGFloat(self.text!.labelWidth) + 35, 200)
+        self.background = (lineSource == .hero) ? SKSpriteNode(imageNamed: "Dialogue-Hero") : SKSpriteNode(imageNamed: "Dialogue-Alien")
+        self.background.position = CGPoint(x: self.text!.position.x, y: self.text!.position.y - 50)
+        self.background.size = CGSize(width: CGFloat(self.text!.labelWidth) + 35, height: 200)
         
         self.addChild(self.background)
         self.addChild(self.text!)

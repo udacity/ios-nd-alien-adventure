@@ -14,55 +14,55 @@ extension UDRequestTester {
     
     func testPolicingItems() -> Bool {
         
-        func policingFilter(item: UDItem) throws {
-            if item.name.lowercaseString.containsString("laser") {
-                throw UDPolicingError.NameContainsLaser
+        func policingFilter(_ item: UDItem) throws {
+            if item.name.lowercased().contains("laser") {
+                throw UDPolicingError.nameContainsLaser
             }
             
             if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String where planetOfOrigin == "Cunia" {
-                throw UDPolicingError.ItemFromCunia
+                throw UDPolicingError.itemFromCunia
             }
             
             if item.baseValue < 10 {
-                throw UDPolicingError.ValueLessThan10
+                throw UDPolicingError.valueLessThan10
             }
         }
         
         // check 1
         let errorsDetected1 = delegate.handlePolicingItems(delegate.inventory, policingFilter: policingFilter)
-        if errorsDetected1[.ValueLessThan10] != 4 {
+        if errorsDetected1[.valueLessThan10] != 4 {
             print("PolicingItems FAILED: An incorrect number of .ValueLessThan10 errors were detected.")
             return false
         }
-        if errorsDetected1[.NameContainsLaser] != 1 {
+        if errorsDetected1[.nameContainsLaser] != 1 {
             print("PolicingItems FAILED: An incorrect number of .NameContainsLaser errors were detected.")
             return false
         }
-        if errorsDetected1[.ItemFromCunia] != 3 {
+        if errorsDetected1[.itemFromCunia] != 3 {
             print("PolicingItems FAILED: An incorrect number of .ItemFromCunia errors were detected.")
             return false
         }
         
         // check 2
         let errorsDetected2 = delegate.handlePolicingItems(allItems(), policingFilter: policingFilter)
-        if errorsDetected2[.ValueLessThan10] != 3 {
+        if errorsDetected2[.valueLessThan10] != 3 {
             print("PolicingItems FAILED: An incorrect number of .ValueLessThan10 errors were detected.")
             return false
         }
-        if errorsDetected2[.NameContainsLaser] != 2 {
+        if errorsDetected2[.nameContainsLaser] != 2 {
             print("PolicingItems FAILED: An incorrect number of .NameContainsLaser errors were detected.")
             return false
         }
-        if errorsDetected2[.ItemFromCunia] != 4 {
+        if errorsDetected2[.itemFromCunia] != 4 {
             print("PolicingItems FAILED: An incorrect number of .ItemFromCunia errors were detected.")
             return false
         }
         
         // check 3
         if delegate.handlePolicingItems([UDItem](), policingFilter: policingFilter) != [
-            .ValueLessThan10: 0,
-            .NameContainsLaser: 0,
-            .ItemFromCunia: 0
+            .valueLessThan10: 0,
+            .nameContainsLaser: 0,
+            .itemFromCunia: 0
             ] {
                 print("PolicingItems FAILED: If the inventory is empty, then 0 errors should have been detected for each type of UDPolicingError.")
                 return false
@@ -80,7 +80,7 @@ extension UDRequestTester {
         let inventoryWithLasers = delegate.inventory.filter(hasLaser)
         
         for item in inventoryWithLasers {
-            if !item.name.lowercaseString.containsString("laser") {
+            if !item.name.lowercased().contains("laser") {
                 print("FindTheLasers FAILED: The method you returned responded true for an item with the name \(item.name) which does not contain the word laser.")
                 return false
             }
@@ -97,39 +97,39 @@ extension UDRequestTester {
         
         // check 1
         let errorsDetected1 = delegate.handlePolicingItems(delegate.inventory, policingFilter: redefinedPoliceFilter)
-        if errorsDetected1[.NameContainsLaser] != 1 {
+        if errorsDetected1[.nameContainsLaser] != 1 {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .NameContainsLaser errors in all cases.")
             return false
         }
-        if errorsDetected1[.ItemFromCunia] != 3 {
+        if errorsDetected1[.itemFromCunia] != 3 {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .ItemFromCunia errors in all cases.")
             return false
         }
-        if errorsDetected1[.ValueLessThan10] != 4 {
+        if errorsDetected1[.valueLessThan10] != 4 {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .ValueLessThan10 errors in all cases.")
             return false
         }
         
         // check 2
         let errorsDetected2 = delegate.handlePolicingItems(allItems(), policingFilter: redefinedPoliceFilter)
-        if errorsDetected2[.NameContainsLaser] != 2 {
+        if errorsDetected2[.nameContainsLaser] != 2 {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .NameContainsLaser errors in all cases.")
             return false
         }
-        if errorsDetected2[.ItemFromCunia] != 4 {
+        if errorsDetected2[.itemFromCunia] != 4 {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .ItemFromCunia errors in all cases.")
             return false
         }
-        if errorsDetected2[.ValueLessThan10] != 3 {
+        if errorsDetected2[.valueLessThan10] != 3 {
             print("RedefinePolicingItems FAILED: Your method does not detect the correct amount of .ValueLessThan10 errors in all cases.")
             return false
         }
         
         // check 3
         if delegate.handlePolicingItems([UDItem](), policingFilter: redefinedPoliceFilter) != [
-            .ValueLessThan10: 0,
-            .NameContainsLaser: 0,
-            .ItemFromCunia: 0
+            .valueLessThan10: 0,
+            .nameContainsLaser: 0,
+            .itemFromCunia: 0
             ] {
                 print("RedefinePolicingItems FAILED: If the inventory is empty, then 0 errors should have been detected for each type of UDPolicingError.")
                 return false
@@ -156,7 +156,7 @@ extension UDRequestTester {
             return false
         }
         
-        for (index, item) in modifiedInventory.enumerate() {
+        for (index, item) in modifiedInventory.enumerated() {
             if item.baseValue != originalValues[index] + 100 {
                 print("BoostItemValue FAILED: An item's base value has not been boosted by 100.")
                 return false
@@ -215,7 +215,7 @@ extension UDRequestTester {
         }
         
         for item in commonItems {
-            if item.rarity != .Common {
+            if item.rarity != .common {
                 print("GetCommonItems FAILED: When reducing an inventory to only the .Common items, \(item) was still included.")
                 return false
             }
@@ -280,24 +280,24 @@ extension UDRequestTester {
         
         var processingString = "Hero: \""
         
-        func policingFilter(item: UDItem) throws {
-            if item.name.lowercaseString.containsString("laser") {
-                throw UDPolicingError.NameContainsLaser
+        func policingFilter(_ item: UDItem) throws {
+            if item.name.lowercased().contains("laser") {
+                throw UDPolicingError.nameContainsLaser
             }
             
             if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String where planetOfOrigin == "Cunia" {
-                throw UDPolicingError.ItemFromCunia
+                throw UDPolicingError.itemFromCunia
             }
             
             if item.baseValue < 10 {
-                throw UDPolicingError.ValueLessThan10
+                throw UDPolicingError.valueLessThan10
             }
         }
         
         let errorsReported = delegate.handlePolicingItems(delegate.inventory, policingFilter: policingFilter)
         
-        if errorsReported[UDPolicingError.ValueLessThan10] != nil && errorsReported[UDPolicingError.NameContainsLaser] != nil && errorsReported[UDPolicingError.ItemFromCunia] != nil {
-            processingString += "I found \(errorsReported[UDPolicingError.ValueLessThan10]! + errorsReported[UDPolicingError.ItemFromCunia]! + errorsReported[UDPolicingError.NameContainsLaser]!) total errors.\""
+        if errorsReported[UDPolicingError.valueLessThan10] != nil && errorsReported[UDPolicingError.nameContainsLaser] != nil && errorsReported[UDPolicingError.itemFromCunia] != nil {
+            processingString += "I found \(errorsReported[UDPolicingError.valueLessThan10]! + errorsReported[UDPolicingError.itemFromCunia]! + errorsReported[UDPolicingError.nameContainsLaser]!) total errors.\""
         } else {
             processingString += "I found some errors.\""
         }

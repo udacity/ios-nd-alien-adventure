@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func checkBadges(badges: [Badge], requestTypes: [UDRequestType]) -> Bool {
+    func checkBadges(_ badges: [Badge], requestTypes: [UDRequestType]) -> Bool {
         return true
     }
     

@@ -52,34 +52,34 @@ protocol UDRequestDelegate {
     var inventory: [UDItem] {get set}
     var badgeManager: BadgeManager? {get set}
     // Alien Adventure 1
-    func handleReverseLongestName(inventory: [UDItem]) -> String
-    func handleMatchMoonRocks(inventory: [UDItem]) -> [UDItem]
-    func handleInscriptionEternalStar(inventory: [UDItem]) -> UDItem?
-    func handleLeastValuableItem(inventory: [UDItem]) -> UDItem?
-    func handleShuffleStrings(s1 s1: String, s2: String, shuffle: String) -> Bool
+    func handleReverseLongestName(_ inventory: [UDItem]) -> String
+    func handleMatchMoonRocks(_ inventory: [UDItem]) -> [UDItem]
+    func handleInscriptionEternalStar(_ inventory: [UDItem]) -> UDItem?
+    func handleLeastValuableItem(_ inventory: [UDItem]) -> UDItem?
+    func handleShuffleStrings(s1: String, s2: String, shuffle: String) -> Bool
     // Alien Adventure 2
-    func handleItemsFromPlanet(inventory: [UDItem], planet: String) -> [UDItem]
-    func handleOldestItemFromPlanet(inventory: [UDItem], planet: String) -> UDItem?
-    func handleXORCipherKeySearch(encryptedString: [UInt8]) -> UInt8
-    func handleRarityOfItems(inventory: [UDItem]) -> [UDItemRarity:Int]
-    func handleItemComparison(item1 item1: UDItem, item2: UDItem) -> Bool
-    func handleBannedItems(dataFile: String) -> [Int]
-    func handlePlanetData(dataFile: String) -> String
-    func handleMostCommonCharacter(inventory: [UDItem]) -> Character?
+    func handleItemsFromPlanet(_ inventory: [UDItem], planet: String) -> [UDItem]
+    func handleOldestItemFromPlanet(_ inventory: [UDItem], planet: String) -> UDItem?
+    func handleXORCipherKeySearch(_ encryptedString: [UInt8]) -> UInt8
+    func handleRarityOfItems(_ inventory: [UDItem]) -> [UDItemRarity:Int]
+    func handleItemComparison(item1: UDItem, item2: UDItem) -> Bool
+    func handleBannedItems(_ dataFile: String) -> [Int]
+    func handlePlanetData(_ dataFile: String) -> String
+    func handleMostCommonCharacter(_ inventory: [UDItem]) -> Character?
     // Alien Adventure 3
     func handleBasicCheck() -> Bool
     func handleAdvancedCheck() -> Bool
     func handleExpertCheck() -> Bool
-    func handleCheckBadges(badges: [Badge], requestTypes: [UDRequestType]) -> Bool
+    func handleCheckBadges(_ badges: [Badge], requestTypes: [UDRequestType]) -> Bool
     // Alien Adventure 4
-    func handlePolicingItems(inventory: [UDItem], policingFilter: UDItem throws -> Void) -> [UDPolicingError:Int]
-    func handleFindTheLasers() -> (UDItem -> Bool)
-    func handleRedefinePolicingItems() -> (UDItem throws -> Void)
-    func handleBoostItemValue(inventory: [UDItem]) -> [UDItem]
-    func handleSortLeastToGreatest(inventory: [UDItem]) -> [UDItem]
-    func handleGetCommonItems(inventory: [UDItem]) -> [UDItem]
-    func handleTotalBaseValue(inventory: [UDItem]) -> Int
-    func handleRemoveDuplicates(inventory: [UDItem]) -> [UDItem]
+    func handlePolicingItems(_ inventory: [UDItem], policingFilter: (UDItem) throws -> Void) -> [UDPolicingError:Int]
+    func handleFindTheLasers() -> ((UDItem) -> Bool)
+    func handleRedefinePolicingItems() -> ((UDItem) throws -> Void)
+    func handleBoostItemValue(_ inventory: [UDItem]) -> [UDItem]
+    func handleSortLeastToGreatest(_ inventory: [UDItem]) -> [UDItem]
+    func handleGetCommonItems(_ inventory: [UDItem]) -> [UDItem]
+    func handleTotalBaseValue(_ inventory: [UDItem]) -> Int
+    func handleRemoveDuplicates(_ inventory: [UDItem]) -> [UDItem]
 }
 
 // MARK: - UDRequest
@@ -95,7 +95,7 @@ struct UDRequest {
     
     // MARK: Constructor
     
-    static func UDRequestWithoutPassFail(initialDialogue: [UDLineOfDialogue]) -> UDRequest {
+    static func UDRequestWithoutPassFail(_ initialDialogue: [UDLineOfDialogue]) -> UDRequest {
         return UDRequest(requestType: .Undefined, initialConversation: UDConversation(linesOfDialogue: initialDialogue), passConversation: UDConversation(), failConversation: UDConversation())
     }
 }

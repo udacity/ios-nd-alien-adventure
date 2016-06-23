@@ -8,17 +8,17 @@
 
 // MARK: - UDPolicingError
 
-enum UDPolicingError: ErrorType {
-    case NameContainsLaser
-    case ItemFromCunia
-    case ValueLessThan10
+enum UDPolicingError: ErrorProtocol {
+    case nameContainsLaser
+    case itemFromCunia
+    case valueLessThan10
 }
 
 extension Hero {
     
-    func redefinePolicingItems() -> (UDItem throws -> Void) {
+    func redefinePolicingItems() -> ((UDItem) throws -> Void) {
         
-        func policingFilter(item: UDItem) throws -> Void {
+        func policingFilter(_ item: UDItem) throws -> Void {
             
         }
         

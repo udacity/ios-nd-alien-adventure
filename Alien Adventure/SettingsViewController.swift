@@ -31,8 +31,8 @@ class SettingsViewController: UIViewController {
         
         titleLabel.font = UIFont(name: Settings.Common.Font, size: 32)
         showBadgesLabel.font = UIFont(name: Settings.Common.Font, size: 20)
-        showBadgesSwitch.onTintColor = UIColor.magentaColor()
-        levelSegmentedControl.setTitleTextAttributes(attributesDictionary, forState: .Normal)
+        showBadgesSwitch.onTintColor = UIColor.magenta()
+        levelSegmentedControl.setTitleTextAttributes(attributesDictionary, for: UIControlState())
         Settings.Common.Level = levelSegmentedControl.selectedSegmentIndex
         startGameButton.titleLabel?.font = UIFont(name: Settings.Common.Font, size: 20)
         
@@ -47,11 +47,11 @@ class SettingsViewController: UIViewController {
     
     // MARK: Implementing Actions
     
-    func switchLevel(segmentControl: UISegmentedControl) {
+    func switchLevel(_ segmentControl: UISegmentedControl) {
         print("level control has changed!")
     }
     
-    func showBadges(switchControl: UISwitch) {
+    func showBadges(_ switchControl: UISwitch) {
         print("show badges switch has changed!")
     }
     

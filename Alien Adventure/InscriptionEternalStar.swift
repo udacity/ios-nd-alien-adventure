@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func inscriptionEternalStar(inventory: [UDItem]) -> UDItem? {
+    func inscriptionEternalStar(_ inventory: [UDItem]) -> UDItem? {
         return nil
     }
 }

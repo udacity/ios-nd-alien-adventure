@@ -44,7 +44,7 @@ class AlienAdventureScene: SKScene {
         
         requestsToSkip = Settings.Common.RequestsToSkip
         
-        let gameDataDictionary = NSDictionary(contentsOfURL: Settings.Common.GameDataURL) as! [String:AnyObject]
+        let gameDataDictionary = NSDictionary(contentsOf: Settings.Common.GameDataURL) as! [String:AnyObject]
         
         do {
             levelDataDictionary = try UDDataLoader.LevelDictionaryFromGameDictionary(gameDataDictionary, level: Settings.Common.Level)
@@ -52,10 +52,10 @@ class AlienAdventureScene: SKScene {
             try UDAnimation.loadAllAnimations(gameDataDictionary)
             try loadGameDataForLevel(Settings.Common.Level)
         }
-        catch UDDataError.KeyError(let key, let dictionary, let source) {
+        catch UDDataError.keyError(let key, let dictionary, let source) {
             print("\(source): Cannot find key \'\(key)\'  in \(dictionary)")
         }
-        catch UDDataError.UnknownError {
+        catch UDDataError.unknownError {
             print("unknown error from PListDataError")
         }
         catch {
@@ -69,7 +69,7 @@ class AlienAdventureScene: SKScene {
     
     // MARK: Load Game Data
     
-    func loadGameDataForLevel(level: Int) throws {
+    func loadGameDataForLevel(_ level: Int) throws {
         do {
             Settings.Dialogue.StartingDialogue = try UDDataLoader.DialogueStringFromLevelDictionary(levelDataDictionary, key: .StartingDialogue)
             Settings.Dialogue.RequestingDialogue = try UDDataLoader.DialogueStringFromLevelDictionary(levelDataDictionary, key: .RequestingDialogue)
@@ -84,17 +84,17 @@ class AlienAdventureScene: SKScene {
     func resetGame() {
         
         if let settingsController = settingsController {
-            settingsController.dismissViewControllerAnimated(true, completion: nil)
+            settingsController.dismiss(animated: true, completion: nil)
         } else {
             requestsToSkip = Settings.Common.RequestsToSkip
-            world.position = CGPointMake(0.0, 0.0)
+            world.position = CGPoint(x: 0.0, y: 0.0)
             dialogueManager.removeDialogueNode()
             
-            hero.position = CGPointMake(0, -124.0)
-            hero.badgeManager!.badges.removeAll(keepCapacity: true)
+            hero.position = CGPoint(x: 0, y: -124.0)
+            hero.badgeManager!.badges.removeAll(keepingCapacity: true)
             hero.badgeManager!.badgeDisplay.removeAllChildren()
             hero.removeAllActions()
-            hero.inventory.removeAll(keepCapacity: true)
+            hero.inventory.removeAll(keepingCapacity: true)
             for item in UDDataLoader.items {
                 hero.inventory.append(item)
             }
@@ -108,21 +108,21 @@ class AlienAdventureScene: SKScene {
             }
             currentAlien = nil
             
-            resetSMWithRequest(UDRequest.UDRequestWithoutPassFail([UDLineOfDialogue(lineText: Settings.Dialogue.StartingDialogue, lineSource: .Hero)]), resetGame: true)
+            resetSMWithRequest(UDRequest.UDRequestWithoutPassFail([UDLineOfDialogue(lineText: Settings.Dialogue.StartingDialogue, lineSource: .hero)]), resetGame: true)
         }
     }
     
     // MARK: Move Hero
     
     func moveHero() {
-        if hero.actionForKey(UDAnimation.UDAnimationKey.HeroMoving.rawValue) == nil {
+        if hero.action(forKey: UDAnimation.UDAnimationKey.HeroMoving.rawValue) == nil {
             
-            if let _ = hero.actionForKey(UDAnimation.UDAnimationKey.HeroResting.rawValue) {
-                hero.removeActionForKey(UDAnimation.UDAnimationKey.HeroResting.rawValue)
+            if let _ = hero.action(forKey: UDAnimation.UDAnimationKey.HeroResting.rawValue) {
+                hero.removeAction(forKey: UDAnimation.UDAnimationKey.HeroResting.rawValue)
             }
             
-            let action = SKAction.moveBy(CGVectorMake(1000, 0), duration: 2.0)
-            hero.runAction(action)
+            let action = SKAction.move(by: CGVector(dx: 1000, dy: 0), duration: 2.0)
+            hero.run(action)
             UDAnimation.runAnimationForSprite(hero, animationKey: .HeroMoving)
         }
     }
@@ -132,11 +132,11 @@ class AlienAdventureScene: SKScene {
 
 extension AlienAdventureScene {
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
         // add world
         world = SKNode()
-        world.position = CGPointMake(0.0, 0.0)
+        world.position = CGPoint(x: 0.0, y: 0.0)
         addChild(world)
         
         // add background
@@ -149,8 +149,8 @@ extension AlienAdventureScene {
         
         // add ui
         ui = SKNode()
-        ui.position = CGPointMake(0, (CGRectGetMaxY(frame)/2) - 50)
-        badgeManager = BadgeManager(displayPosition: CGPointMake(0, (CGRectGetMinY(frame)) + 60), displaySize: CGSizeMake(CGFloat(Int(frame.width - 40) - 40), 64))
+        ui.position = CGPoint(x: 0, y: (frame.maxY/2) - 50)
+        badgeManager = BadgeManager(displayPosition: CGPoint(x: 0, y: (frame.minY) + 60), displaySize: CGSize(width: CGFloat(Int(frame.width - 40) - 40), height: 64))
         ui.addChild(badgeManager)
         dialogueManager = DialogueManager(widthOfConverationNode: Int(frame.width - 40) - 40)
         ui.addChild(dialogueManager)
@@ -164,10 +164,10 @@ extension AlienAdventureScene {
             aliens = try UDDataLoader.AliensFromLevelDictionary(levelDataDictionary)
             treasure = try UDDataLoader.TreasureFromLevelDictionary(levelDataDictionary)
         }
-        catch UDDataError.KeyError(let key, let dictionary, let source) {
+        catch UDDataError.keyError(let key, let dictionary, let source) {
             print("\(source): Cannot find key \'\(key)\'  in \(dictionary)")
         }
-        catch UDDataError.UnknownError {
+        catch UDDataError.unknownError {
             print("unknown error from PListDataError 2")
         }
         catch {
@@ -195,22 +195,22 @@ extension AlienAdventureScene {
         world.addChild(treasure)
         
         // start game SM
-        resetSMWithRequest(UDRequest.UDRequestWithoutPassFail([UDLineOfDialogue(lineText: Settings.Dialogue.StartingDialogue, lineSource: .Hero)]))
+        resetSMWithRequest(UDRequest.UDRequestWithoutPassFail([UDLineOfDialogue(lineText: Settings.Dialogue.StartingDialogue, lineSource: .hero)]))
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         spinGameSM()
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         // center world on hero
         if let sceneWithHero = hero.scene {
-            let heroPositionInScene = sceneWithHero.convertPoint(hero.position, fromNode: world)
-            world.position = CGPointMake(world.position.x - heroPositionInScene.x - 200, 0.0)
+            let heroPositionInScene = sceneWithHero.convert(hero.position, from: world)
+            world.position = CGPoint(x: world.position.x - heroPositionInScene.x - 200, y: 0.0)
         }
         
         // center UI
-        ui.position = CGPointMake(CGRectGetMidX(frame) - world.position.x, (CGRectGetMaxY(frame)/2) - 50)
+        ui.position = CGPoint(x: frame.midX - world.position.x, y: (frame.maxY/2) - 50)
     }
 }
 
@@ -218,14 +218,14 @@ extension AlienAdventureScene {
 
 extension AlienAdventureScene: SKPhysicsContactDelegate {
     
-    func didBeginContact(contact: SKPhysicsContact) {
+    func didBegin(_ contact: SKPhysicsContact) {
         hero.removeAllActions()
         
         // hit treasure
         if contact.bodyA.node?.name == Settings.Names.Treasure || contact.bodyB.node?.name == Settings.Names.Treasure {
             
             winningCondition = true
-            dialogueManager.displayNextLine(UDLineOfDialogue(lineText: Settings.Dialogue.WinningDialogue, lineSource: .Hero))
+            dialogueManager.displayNextLine(UDLineOfDialogue(lineText: Settings.Dialogue.WinningDialogue, lineSource: .hero))
             
             UDAnimation.runAnimationForSprite(treasure, animationKey: .TreasureOpening, times: 1)
             
@@ -266,12 +266,12 @@ extension AlienAdventureScene {
         if !winningCondition {
             let gameState = gameSM.nextState(hero, currentAlien: currentAlien)
             switch(gameState) {
-            case .DoNothing:
+            case .doNothing:
                 return
-            case .MoveHero:
+            case .moveHero:
                 if let currentAlien = currentAlien, let nextRequest = currentAlien.getNextRequest {
                     gameSM.startNewRequest(nextRequest)
-                    dialogueManager.displayNextLine(UDLineOfDialogue(lineText: "\(currentAlien.name!): \(Settings.Dialogue.TransitioningDialogue)", lineSource: .Alien))
+                    dialogueManager.displayNextLine(UDLineOfDialogue(lineText: "\(currentAlien.name!): \(Settings.Dialogue.TransitioningDialogue)", lineSource: .alien))
                 } else {
                     if let currentAlien = currentAlien {
                         currentAlien.reset()
@@ -286,13 +286,13 @@ extension AlienAdventureScene {
                     dialogueManager.removeDialogueNode()
                     moveHero()
                 }
-            case .Dialogue:
+            case .dialogue:
                 dialogueManager.displayNextLine(gameSM.getDialogue())
-            case .DialogueAngry:
+            case .dialogueAngry:
                 dialogueManager.displayNextLine(gameSM.getDialogue())
                 if gameSM.failedRequest {
                     if let currentAlien = currentAlien {
-                        if currentAlien.actionForKey(UDAnimation.UDAnimationKey.MagentaAlienAngry.rawValue) == nil {
+                        if currentAlien.action(forKey: UDAnimation.UDAnimationKey.MagentaAlienAngry.rawValue) == nil {
                             currentAlien.removeAllActions()
                             switch(currentAlien.colorVariant) {
                             case .Magenta:
@@ -304,15 +304,15 @@ extension AlienAdventureScene {
                         
                     }
                 }
-            case .Reset:
+            case .reset:
                 resetGame()
-            case .Win:
+            case .win:
                 winningCondition = true
             }
         }
     }
     
-    func resetSMWithRequest(request: UDRequest, resetGame: Bool = false) {
+    func resetSMWithRequest(_ request: UDRequest, resetGame: Bool = false) {
         
         var processAsNormal = true
         
@@ -322,7 +322,7 @@ extension AlienAdventureScene {
             let requestTester = UDRequestTester(delegate: hero)
             
             if requestTester.runTestForRequestType(request.requestType) {
-                requestTester.processRequestType(request.requestType, failed: false)
+                let _ = requestTester.processRequestType(request.requestType, failed: false)
             }
             
             processAsNormal = false

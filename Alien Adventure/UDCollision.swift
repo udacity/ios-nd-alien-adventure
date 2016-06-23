@@ -11,16 +11,16 @@ import SpriteKit
 // MARK: - UDCollisionCategory
 
 enum UDCollisionCategory: UInt32 {
-    case Player = 1
-    case World = 2
+    case player = 1
+    case world = 2
 }
 
 // MARK: - UDCollision
 
 class UDCollision {
             
-    class func setCollisionForPhysicsBody(physicsBody: SKPhysicsBody, belongsToMask: UDCollisionCategory, contactWithMask: UDCollisionCategory, dynamic: Bool = false) {
-        physicsBody.dynamic = dynamic
+    class func setCollisionForPhysicsBody(_ physicsBody: SKPhysicsBody, belongsToMask: UDCollisionCategory, contactWithMask: UDCollisionCategory, dynamic: Bool = false) {
+        physicsBody.isDynamic = dynamic
         physicsBody.affectedByGravity = false
         physicsBody.allowsRotation = false
         physicsBody.usesPreciseCollisionDetection = true

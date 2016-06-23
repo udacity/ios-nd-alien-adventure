@@ -33,7 +33,7 @@ class SKMultiLabelNode: SKNode {
     
     // MARK: Initializers
     
-    init(text: String, labelWidth: Int, pos: CGPoint, fontName: String = "Superclarendon-Italic", fontSize: CGFloat, fontColor: UIColor = UIColor.whiteColor(), leading: Int, alignment: SKLabelHorizontalAlignmentMode = .Left) {
+    init(text: String, labelWidth: Int, pos: CGPoint, fontName: String = "Superclarendon-Italic", fontSize: CGFloat, fontColor: UIColor = UIColor.white(), leading: Int, alignment: SKLabelHorizontalAlignmentMode = .left) {
                 
         self.text = text
         self.labelWidth = labelWidth
@@ -66,8 +66,8 @@ class SKMultiLabelNode: SKNode {
             labels = []
         }
         
-        let separators = NSCharacterSet.whitespaceAndNewlineCharacterSet()
-        let words = text.componentsSeparatedByCharactersInSet(separators)
+        let separators = CharacterSet.whitespacesAndNewlines
+        let words = text.components(separatedBy: separators)
         
         var finalLine = false
         var wordCount = -1
@@ -111,9 +111,9 @@ class SKMultiLabelNode: SKNode {
                 }
                 label.text = lineString
                 var linePos = pos
-                if (alignment == .Left) {
+                if (alignment == .left) {
                     linePos.x -= CGFloat(labelWidth / 2)
-                } else if (alignment == .Right) {
+                } else if (alignment == .right) {
                     linePos.x += CGFloat(labelWidth / 2)
                 }
                 if lineCount == 1 {
@@ -121,7 +121,7 @@ class SKMultiLabelNode: SKNode {
                 } else {
                    linePos.y += CGFloat(-leading * (lineCount - 1))
                 }
-                label.position = CGPointMake( linePos.x , linePos.y )
+                label.position = CGPoint( x: linePos.x , y: linePos.y )
                 self.addChild(label)
                 labels.append(label)
             }

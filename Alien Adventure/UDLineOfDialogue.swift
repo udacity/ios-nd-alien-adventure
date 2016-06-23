@@ -9,7 +9,7 @@
 // MARK: - UDLineSource
 
 enum UDLineSource: Int {
-    case Hero = 0, Alien, None
+    case hero = 0, alien, none
 }
 
 // MARK: - UDLineOfDialogue

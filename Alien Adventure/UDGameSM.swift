@@ -9,7 +9,7 @@
 // MARK: - UDGameState
 
 enum UDGameState {
-    case DoNothing, Dialogue, DialogueAngry, Reset, Win, MoveHero
+    case doNothing, dialogue, dialogueAngry, reset, win, moveHero
 }
 
 // MARK: - UDGameSM
@@ -19,12 +19,12 @@ class UDGameSM {
     // MARK: UDInternalGameState
     
     private enum UDInternalGameState {
-        case NotStarted, Moving, InRequest
+        case notStarted, moving, inRequest
     }
     
     // MARK: Properties
     
-    private var currentState = UDInternalGameState.InRequest
+    private var currentState = UDInternalGameState.inRequest
     private var requestSM: UDRequestSM!
     private var winningCondition = false
     var failedRequest: Bool {
@@ -33,7 +33,7 @@ class UDGameSM {
     
     // MARK: Shared Instance
     
-    class func stateMachine(delegate: UDRequestDelegate) -> UDGameSM {
+    class func stateMachine(_ delegate: UDRequestDelegate) -> UDGameSM {
         
         struct Singleton {
             static var sharedInstance = UDGameSM()
@@ -52,51 +52,51 @@ class UDGameSM {
     
     // MARK: Update SM
     
-    func startNewRequest(request: UDRequest) {
-        currentState = .InRequest
+    func startNewRequest(_ request: UDRequest) {
+        currentState = .inRequest
         requestSM.setNewRequest(request)
     }
     
-    func resetMachineWithRequest(request: UDRequest) {
-        currentState = .InRequest
+    func resetMachineWithRequest(_ request: UDRequest) {
+        currentState = .inRequest
         requestSM.setNewRequest(request)
         winningCondition = false
     }
     
-    func nextState(hero: Hero, currentAlien: Alien?) -> UDGameState {
+    func nextState(_ hero: Hero, currentAlien: Alien?) -> UDGameState {
         
         var nextState: UDInternalGameState
         var externalState: UDGameState
         
         switch(currentState) {
-        case .NotStarted:
-            nextState = .NotStarted
-            externalState = .DoNothing
-        case .Moving:
-            nextState = .Moving
-            externalState = .DoNothing
-        case .InRequest:
+        case .notStarted:
+            nextState = .notStarted
+            externalState = .doNothing
+        case .moving:
+            nextState = .moving
+            externalState = .doNothing
+        case .inRequest:
             let requestState = requestSM.nextState()
             switch(requestState) {
-            case .Speak:
-                nextState = .InRequest
-                externalState = .Dialogue
-            case .SpeakAngry:
-                nextState = .InRequest
-                externalState = .DialogueAngry
-            case .FinishRequest:
+            case .speak:
+                nextState = .inRequest
+                externalState = .dialogue
+            case .speakAngry:
+                nextState = .inRequest
+                externalState = .dialogueAngry
+            case .finishRequest:
                 if(failedRequest) {
-                    nextState = .InRequest
-                    externalState = .Reset
+                    nextState = .inRequest
+                    externalState = .reset
                 } else if(winningCondition) {
-                    nextState = .NotStarted
-                    externalState = .Win
+                    nextState = .notStarted
+                    externalState = .win
                 } else {
                     if let currentAlien = currentAlien where Settings.Common.ShowBadges {
                         addBadge(hero, alien: currentAlien)
                     }
-                    nextState = .Moving
-                    externalState = .MoveHero
+                    nextState = .moving
+                    externalState = .moveHero
                 }
             }
         }
