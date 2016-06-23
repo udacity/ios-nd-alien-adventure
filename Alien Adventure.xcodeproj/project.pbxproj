@@ -7,67 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A90B6FDC1BC2C58600DCBC73 /* ItemList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90B6FDB1BC2C58600DCBC73 /* ItemList.plist */; settings = {ASSET_TAGS = (); }; };
-		A90B6FDE1BC2C67300DCBC73 /* PlanetData.json in Resources */ = {isa = PBXBuildFile; fileRef = A90B6FDD1BC2C67300DCBC73 /* PlanetData.json */; settings = {ASSET_TAGS = (); }; };
-		A90B6FE11BC2EF1D00DCBC73 /* AlienAdventure1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B6FE01BC2EF1D00DCBC73 /* AlienAdventure1.swift */; settings = {ASSET_TAGS = (); }; };
-		A90B6FE31BC2EF4C00DCBC73 /* AlienAdventure2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B6FE21BC2EF4C00DCBC73 /* AlienAdventure2.swift */; settings = {ASSET_TAGS = (); }; };
-		A90B6FE51BC2EF5500DCBC73 /* AlienAdventure3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B6FE41BC2EF5500DCBC73 /* AlienAdventure3.swift */; settings = {ASSET_TAGS = (); }; };
-		A90B6FE71BC2EF5E00DCBC73 /* AlienAdventure4.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B6FE61BC2EF5E00DCBC73 /* AlienAdventure4.swift */; settings = {ASSET_TAGS = (); }; };
-		A919BC7A1BBC5F9D0019C7FA /* MatchMoonRocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC791BBC5F9D0019C7FA /* MatchMoonRocks.swift */; settings = {ASSET_TAGS = (); }; };
-		A919BC7D1BBC5FC00019C7FA /* InscriptionEternalStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC7C1BBC5FC00019C7FA /* InscriptionEternalStar.swift */; settings = {ASSET_TAGS = (); }; };
-		A919BC7F1BBC5FD70019C7FA /* LeastValuableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC7E1BBC5FD70019C7FA /* LeastValuableItem.swift */; settings = {ASSET_TAGS = (); }; };
-		A919BC811BBC5FEB0019C7FA /* ShuffleStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC801BBC5FEB0019C7FA /* ShuffleStrings.swift */; settings = {ASSET_TAGS = (); }; };
-		A919BC861BBCA5250019C7FA /* UDLineOfDialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC851BBCA5250019C7FA /* UDLineOfDialogue.swift */; settings = {ASSET_TAGS = (); }; };
-		A919BC891BBCA8120019C7FA /* UDRequestSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC881BBCA8120019C7FA /* UDRequestSM.swift */; settings = {ASSET_TAGS = (); }; };
-		A919BC8B1BBCA83F0019C7FA /* UDGameSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC8A1BBCA83F0019C7FA /* UDGameSM.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5A9A1BC1F71300910C1A /* ItemComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5A991BC1F71300910C1A /* ItemComparison.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5A9C1BC1F72200910C1A /* RarityOfItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5A9B1BC1F72200910C1A /* RarityOfItems.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5A9E1BC1F74300910C1A /* BannedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5A9D1BC1F74300910C1A /* BannedItems.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AA01BC1F74D00910C1A /* PlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5A9F1BC1F74D00910C1A /* PlanetData.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AA21BC1F75800910C1A /* MostCommonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AA11BC1F75800910C1A /* MostCommonCharacter.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AA61BC1F7FD00910C1A /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AA51BC1F7FD00910C1A /* Badge.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AA81BC1F81700910C1A /* SpecialBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AA71BC1F81700910C1A /* SpecialBadge.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AAA1BC1F83F00910C1A /* CheckBadges.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AA91BC1F83F00910C1A /* CheckBadges.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AAC1BC1F86100910C1A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AAB1BC1F86100910C1A /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AAE1BC204E500910C1A /* PolicingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AAD1BC204E500910C1A /* PolicingItems.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AB01BC204F200910C1A /* FindTheLasers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AAF1BC204F200910C1A /* FindTheLasers.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AB51BC2051D00910C1A /* RedefinePolicingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AB41BC2051D00910C1A /* RedefinePolicingItems.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AB71BC2052D00910C1A /* BoostItemValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AB61BC2052D00910C1A /* BoostItemValue.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AB91BC2053C00910C1A /* SortLeastToGreatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AB81BC2053C00910C1A /* SortLeastToGreatest.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5ABB1BC2054E00910C1A /* GetCommonItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5ABA1BC2054E00910C1A /* GetCommonItems.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5ABD1BC2055D00910C1A /* TotalBaseValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5ABC1BC2055D00910C1A /* TotalBaseValue.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A5AC11BC2057A00910C1A /* RemoveDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AC01BC2057A00910C1A /* RemoveDuplicates.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A82821BB9DF3B006E27CC /* UDDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A82811BB9DF3B006E27CC /* UDDataLoader.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A82841BB9E08E006E27CC /* UDRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A82831BB9E08E006E27CC /* UDRequest.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A82861BB9E0BA006E27CC /* UDItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A82851BB9E0BA006E27CC /* UDItem.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A82881BB9E1DC006E27CC /* UDConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A82871BB9E1DC006E27CC /* UDConversation.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A828A1BB9EAC3006E27CC /* UDItemIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A82891BB9EAC3006E27CC /* UDItemIndex.swift */; settings = {ASSET_TAGS = (); }; };
-		A96A828C1BBA18BB006E27CC /* UDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A828B1BBA18BB006E27CC /* UDAnimation.swift */; settings = {ASSET_TAGS = (); }; };
-		A98021981BC6E91400349EF5 /* AddBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98021971BC6E91400349EF5 /* AddBadge.swift */; settings = {ASSET_TAGS = (); }; };
-		A9818DD01BBB1952001E2606 /* ReverseLongestName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818DCF1BBB1952001E2606 /* ReverseLongestName.swift */; settings = {ASSET_TAGS = (); }; };
-		A9818DD21BBB4159001E2606 /* UDRequestTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818DD11BBB4159001E2606 /* UDRequestTester.swift */; settings = {ASSET_TAGS = (); }; };
-		A9BD4DC71BAC821800C877DB /* hero.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9BD4DC41BAC821800C877DB /* hero.atlas */; settings = {ASSET_TAGS = (); }; };
-		A9BD4DC81BAC821800C877DB /* treasure.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9BD4DC51BAC821800C877DB /* treasure.atlas */; settings = {ASSET_TAGS = (); }; };
-		A9BEF37A1BAD0464009FAD66 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BEF3791BAD0464009FAD66 /* Settings.swift */; settings = {ASSET_TAGS = (); }; };
-		A9BEF37C1BAD0735009FAD66 /* GameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9BEF37B1BAD0735009FAD66 /* GameData.plist */; settings = {ASSET_TAGS = (); }; };
+		A90B6FDC1BC2C58600DCBC73 /* ItemList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A90B6FDB1BC2C58600DCBC73 /* ItemList.plist */; };
+		A90B6FDE1BC2C67300DCBC73 /* PlanetData.json in Resources */ = {isa = PBXBuildFile; fileRef = A90B6FDD1BC2C67300DCBC73 /* PlanetData.json */; };
+		A90B6FE11BC2EF1D00DCBC73 /* AlienAdventure1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B6FE01BC2EF1D00DCBC73 /* AlienAdventure1.swift */; };
+		A90B6FE31BC2EF4C00DCBC73 /* AlienAdventure2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B6FE21BC2EF4C00DCBC73 /* AlienAdventure2.swift */; };
+		A90B6FE51BC2EF5500DCBC73 /* AlienAdventure3.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B6FE41BC2EF5500DCBC73 /* AlienAdventure3.swift */; };
+		A90B6FE71BC2EF5E00DCBC73 /* AlienAdventure4.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90B6FE61BC2EF5E00DCBC73 /* AlienAdventure4.swift */; };
+		A919BC7A1BBC5F9D0019C7FA /* MatchMoonRocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC791BBC5F9D0019C7FA /* MatchMoonRocks.swift */; };
+		A919BC7D1BBC5FC00019C7FA /* InscriptionEternalStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC7C1BBC5FC00019C7FA /* InscriptionEternalStar.swift */; };
+		A919BC7F1BBC5FD70019C7FA /* LeastValuableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC7E1BBC5FD70019C7FA /* LeastValuableItem.swift */; };
+		A919BC811BBC5FEB0019C7FA /* ShuffleStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC801BBC5FEB0019C7FA /* ShuffleStrings.swift */; };
+		A919BC861BBCA5250019C7FA /* UDLineOfDialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC851BBCA5250019C7FA /* UDLineOfDialogue.swift */; };
+		A919BC891BBCA8120019C7FA /* UDRequestSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC881BBCA8120019C7FA /* UDRequestSM.swift */; };
+		A919BC8B1BBCA83F0019C7FA /* UDGameSM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A919BC8A1BBCA83F0019C7FA /* UDGameSM.swift */; };
+		A96A5A9A1BC1F71300910C1A /* ItemComparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5A991BC1F71300910C1A /* ItemComparison.swift */; };
+		A96A5A9C1BC1F72200910C1A /* RarityOfItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5A9B1BC1F72200910C1A /* RarityOfItems.swift */; };
+		A96A5A9E1BC1F74300910C1A /* BannedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5A9D1BC1F74300910C1A /* BannedItems.swift */; };
+		A96A5AA01BC1F74D00910C1A /* PlanetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5A9F1BC1F74D00910C1A /* PlanetData.swift */; };
+		A96A5AA21BC1F75800910C1A /* MostCommonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AA11BC1F75800910C1A /* MostCommonCharacter.swift */; };
+		A96A5AA61BC1F7FD00910C1A /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AA51BC1F7FD00910C1A /* Badge.swift */; };
+		A96A5AA81BC1F81700910C1A /* SpecialBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AA71BC1F81700910C1A /* SpecialBadge.swift */; };
+		A96A5AAA1BC1F83F00910C1A /* CheckBadges.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AA91BC1F83F00910C1A /* CheckBadges.swift */; };
+		A96A5AAC1BC1F86100910C1A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AAB1BC1F86100910C1A /* SettingsViewController.swift */; };
+		A96A5AAE1BC204E500910C1A /* PolicingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AAD1BC204E500910C1A /* PolicingItems.swift */; };
+		A96A5AB01BC204F200910C1A /* FindTheLasers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AAF1BC204F200910C1A /* FindTheLasers.swift */; };
+		A96A5AB51BC2051D00910C1A /* RedefinePolicingItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AB41BC2051D00910C1A /* RedefinePolicingItems.swift */; };
+		A96A5AB71BC2052D00910C1A /* BoostItemValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AB61BC2052D00910C1A /* BoostItemValue.swift */; };
+		A96A5AB91BC2053C00910C1A /* SortLeastToGreatest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AB81BC2053C00910C1A /* SortLeastToGreatest.swift */; };
+		A96A5ABB1BC2054E00910C1A /* GetCommonItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5ABA1BC2054E00910C1A /* GetCommonItems.swift */; };
+		A96A5ABD1BC2055D00910C1A /* TotalBaseValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5ABC1BC2055D00910C1A /* TotalBaseValue.swift */; };
+		A96A5AC11BC2057A00910C1A /* RemoveDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A5AC01BC2057A00910C1A /* RemoveDuplicates.swift */; };
+		A96A82821BB9DF3B006E27CC /* UDDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A82811BB9DF3B006E27CC /* UDDataLoader.swift */; };
+		A96A82841BB9E08E006E27CC /* UDRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A82831BB9E08E006E27CC /* UDRequest.swift */; };
+		A96A82861BB9E0BA006E27CC /* UDItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A82851BB9E0BA006E27CC /* UDItem.swift */; };
+		A96A82881BB9E1DC006E27CC /* UDConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A82871BB9E1DC006E27CC /* UDConversation.swift */; };
+		A96A828A1BB9EAC3006E27CC /* UDItemIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A82891BB9EAC3006E27CC /* UDItemIndex.swift */; };
+		A96A828C1BBA18BB006E27CC /* UDAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96A828B1BBA18BB006E27CC /* UDAnimation.swift */; };
+		A98021981BC6E91400349EF5 /* AddBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98021971BC6E91400349EF5 /* AddBadge.swift */; };
+		A9818DD01BBB1952001E2606 /* ReverseLongestName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818DCF1BBB1952001E2606 /* ReverseLongestName.swift */; };
+		A9818DD21BBB4159001E2606 /* UDRequestTester.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9818DD11BBB4159001E2606 /* UDRequestTester.swift */; };
+		A9BD4DC71BAC821800C877DB /* hero.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9BD4DC41BAC821800C877DB /* hero.atlas */; };
+		A9BD4DC81BAC821800C877DB /* treasure.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9BD4DC51BAC821800C877DB /* treasure.atlas */; };
+		A9BEF37A1BAD0464009FAD66 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BEF3791BAD0464009FAD66 /* Settings.swift */; };
+		A9BEF37C1BAD0735009FAD66 /* GameData.plist in Resources */ = {isa = PBXBuildFile; fileRef = A9BEF37B1BAD0735009FAD66 /* GameData.plist */; };
 		A9C2B4A21B8E2ED2007983DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4A11B8E2ED2007983DB /* AppDelegate.swift */; };
 		A9C2B4AB1B8E2ED2007983DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C2B4A91B8E2ED2007983DB /* Main.storyboard */; };
 		A9C2B4AD1B8E2ED2007983DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C2B4AC1B8E2ED2007983DB /* Assets.xcassets */; };
-		A9C2B4B01B8E2ED2007983DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C2B4AE1B8E2ED2007983DB /* LaunchScreen.storyboard */; };
-		A9C2B4C91B8E3B3B007983DB /* DialogueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4BF1B8E3B3B007983DB /* DialogueManager.swift */; settings = {ASSET_TAGS = (); }; };
-		A9C2B4CA1B8E3B3B007983DB /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C01B8E3B3B007983DB /* Dialogue.swift */; settings = {ASSET_TAGS = (); }; };
-		A9C2B4CD1B8E3B3B007983DB /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C31B8E3B3B007983DB /* Hero.swift */; settings = {ASSET_TAGS = (); }; };
-		A9C2B4CE1B8E3B3B007983DB /* Alien.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C41B8E3B3B007983DB /* Alien.swift */; settings = {ASSET_TAGS = (); }; };
-		A9C2B4CF1B8E3B3B007983DB /* AlienAdventureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C51B8E3B3B007983DB /* AlienAdventureScene.swift */; settings = {ASSET_TAGS = (); }; };
-		A9C2B4D01B8E3B3B007983DB /* AlienAdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C61B8E3B3B007983DB /* AlienAdventureViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A9C2B4D11B8E3B3B007983DB /* SKMultiLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C71B8E3B3B007983DB /* SKMultiLabelNode.swift */; settings = {ASSET_TAGS = (); }; };
-		A9DA77DE1BC6D1200040D29C /* BadgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA77DD1BC6D1200040D29C /* BadgeManager.swift */; settings = {ASSET_TAGS = (); }; };
-		A9E61FEB1BC6AC11001414C0 /* tealAlien.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9E61FEA1BC6AC11001414C0 /* tealAlien.atlas */; settings = {ASSET_TAGS = (); }; };
-		A9E61FED1BC6AC2A001414C0 /* magentaAlien.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9E61FEC1BC6AC2A001414C0 /* magentaAlien.atlas */; settings = {ASSET_TAGS = (); }; };
-		A9EBA3BF1BC0CDFA00B795AA /* ItemsFromPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EBA3BE1BC0CDFA00B795AA /* ItemsFromPlanet.swift */; settings = {ASSET_TAGS = (); }; };
-		A9EBA3C11BC0CE0800B795AA /* OldestItemFromPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EBA3C01BC0CE0800B795AA /* OldestItemFromPlanet.swift */; settings = {ASSET_TAGS = (); }; };
-		A9EBA3C31BC0CECE00B795AA /* XORCipherKeySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EBA3C21BC0CECE00B795AA /* XORCipherKeySearch.swift */; settings = {ASSET_TAGS = (); }; };
-		A9EE84731BBD8E1A00AD7A82 /* UDCollision.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE84721BBD8E1A00AD7A82 /* UDCollision.swift */; settings = {ASSET_TAGS = (); }; };
+		A9C2B4C91B8E3B3B007983DB /* DialogueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4BF1B8E3B3B007983DB /* DialogueManager.swift */; };
+		A9C2B4CA1B8E3B3B007983DB /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C01B8E3B3B007983DB /* Dialogue.swift */; };
+		A9C2B4CD1B8E3B3B007983DB /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C31B8E3B3B007983DB /* Hero.swift */; };
+		A9C2B4CE1B8E3B3B007983DB /* Alien.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C41B8E3B3B007983DB /* Alien.swift */; };
+		A9C2B4CF1B8E3B3B007983DB /* AlienAdventureScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C51B8E3B3B007983DB /* AlienAdventureScene.swift */; };
+		A9C2B4D01B8E3B3B007983DB /* AlienAdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C61B8E3B3B007983DB /* AlienAdventureViewController.swift */; };
+		A9C2B4D11B8E3B3B007983DB /* SKMultiLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C71B8E3B3B007983DB /* SKMultiLabelNode.swift */; };
+		A9DA77DE1BC6D1200040D29C /* BadgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA77DD1BC6D1200040D29C /* BadgeManager.swift */; };
+		A9E41A871D1C030F00D5B0AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E41A851D1C030F00D5B0AB /* LaunchScreen.xib */; };
+		A9E61FEB1BC6AC11001414C0 /* tealAlien.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9E61FEA1BC6AC11001414C0 /* tealAlien.atlas */; };
+		A9E61FED1BC6AC2A001414C0 /* magentaAlien.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9E61FEC1BC6AC2A001414C0 /* magentaAlien.atlas */; };
+		A9EBA3BF1BC0CDFA00B795AA /* ItemsFromPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EBA3BE1BC0CDFA00B795AA /* ItemsFromPlanet.swift */; };
+		A9EBA3C11BC0CE0800B795AA /* OldestItemFromPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EBA3C01BC0CE0800B795AA /* OldestItemFromPlanet.swift */; };
+		A9EBA3C31BC0CECE00B795AA /* XORCipherKeySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EBA3C21BC0CECE00B795AA /* XORCipherKeySearch.swift */; };
+		A9EE84731BBD8E1A00AD7A82 /* UDCollision.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EE84721BBD8E1A00AD7A82 /* UDCollision.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,7 +118,6 @@
 		A9C2B4A11B8E2ED2007983DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9C2B4AA1B8E2ED2007983DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9C2B4AC1B8E2ED2007983DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A9C2B4AF1B8E2ED2007983DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9C2B4B11B8E2ED2007983DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C2B4BF1B8E3B3B007983DB /* DialogueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogueManager.swift; sourceTree = "<group>"; };
 		A9C2B4C01B8E3B3B007983DB /* Dialogue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
@@ -128,6 +127,7 @@
 		A9C2B4C61B8E3B3B007983DB /* AlienAdventureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlienAdventureViewController.swift; sourceTree = "<group>"; };
 		A9C2B4C71B8E3B3B007983DB /* SKMultiLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMultiLabelNode.swift; sourceTree = "<group>"; };
 		A9DA77DD1BC6D1200040D29C /* BadgeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeManager.swift; sourceTree = "<group>"; };
+		A9E41A861D1C030F00D5B0AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A9E61FEA1BC6AC11001414C0 /* tealAlien.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tealAlien.atlas; sourceTree = "<group>"; };
 		A9E61FEC1BC6AC2A001414C0 /* magentaAlien.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = magentaAlien.atlas; sourceTree = "<group>"; };
 		A9EBA3BE1BC0CDFA00B795AA /* ItemsFromPlanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsFromPlanet.swift; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 				A9E61FEC1BC6AC2A001414C0 /* magentaAlien.atlas */,
 				A9BD4DC51BAC821800C877DB /* treasure.atlas */,
 				A9C2B4A91B8E2ED2007983DB /* Main.storyboard */,
-				A9C2B4AE1B8E2ED2007983DB /* LaunchScreen.storyboard */,
+				A9E41A851D1C030F00D5B0AB /* LaunchScreen.xib */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -417,9 +417,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E41A871D1C030F00D5B0AB /* LaunchScreen.xib in Resources */,
 				A9BD4DC81BAC821800C877DB /* treasure.atlas in Resources */,
 				A9E61FED1BC6AC2A001414C0 /* magentaAlien.atlas in Resources */,
-				A9C2B4B01B8E2ED2007983DB /* LaunchScreen.storyboard in Resources */,
 				A9BD4DC71BAC821800C877DB /* hero.atlas in Resources */,
 				A9E61FEB1BC6AC11001414C0 /* tealAlien.atlas in Resources */,
 				A90B6FDC1BC2C58600DCBC73 /* ItemList.plist in Resources */,
@@ -502,12 +502,12 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A9C2B4AE1B8E2ED2007983DB /* LaunchScreen.storyboard */ = {
+		A9E41A851D1C030F00D5B0AB /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A9C2B4AF1B8E2ED2007983DB /* Base */,
+				A9E41A861D1C030F00D5B0AB /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
