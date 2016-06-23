@@ -53,7 +53,6 @@
 		A9C2B4A21B8E2ED2007983DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4A11B8E2ED2007983DB /* AppDelegate.swift */; };
 		A9C2B4AB1B8E2ED2007983DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C2B4A91B8E2ED2007983DB /* Main.storyboard */; };
 		A9C2B4AD1B8E2ED2007983DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9C2B4AC1B8E2ED2007983DB /* Assets.xcassets */; };
-		A9C2B4B01B8E2ED2007983DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9C2B4AE1B8E2ED2007983DB /* LaunchScreen.storyboard */; };
 		A9C2B4C91B8E3B3B007983DB /* DialogueManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4BF1B8E3B3B007983DB /* DialogueManager.swift */; };
 		A9C2B4CA1B8E3B3B007983DB /* Dialogue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C01B8E3B3B007983DB /* Dialogue.swift */; };
 		A9C2B4CD1B8E3B3B007983DB /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C31B8E3B3B007983DB /* Hero.swift */; };
@@ -62,6 +61,7 @@
 		A9C2B4D01B8E3B3B007983DB /* AlienAdventureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C61B8E3B3B007983DB /* AlienAdventureViewController.swift */; };
 		A9C2B4D11B8E3B3B007983DB /* SKMultiLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C2B4C71B8E3B3B007983DB /* SKMultiLabelNode.swift */; };
 		A9DA77DE1BC6D1200040D29C /* BadgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DA77DD1BC6D1200040D29C /* BadgeManager.swift */; };
+		A9E41A871D1C030F00D5B0AB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9E41A851D1C030F00D5B0AB /* LaunchScreen.xib */; };
 		A9E61FEB1BC6AC11001414C0 /* tealAlien.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9E61FEA1BC6AC11001414C0 /* tealAlien.atlas */; };
 		A9E61FED1BC6AC2A001414C0 /* magentaAlien.atlas in Resources */ = {isa = PBXBuildFile; fileRef = A9E61FEC1BC6AC2A001414C0 /* magentaAlien.atlas */; };
 		A9EBA3BF1BC0CDFA00B795AA /* ItemsFromPlanet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EBA3BE1BC0CDFA00B795AA /* ItemsFromPlanet.swift */; };
@@ -118,7 +118,6 @@
 		A9C2B4A11B8E2ED2007983DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9C2B4AA1B8E2ED2007983DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A9C2B4AC1B8E2ED2007983DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A9C2B4AF1B8E2ED2007983DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9C2B4B11B8E2ED2007983DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9C2B4BF1B8E3B3B007983DB /* DialogueManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DialogueManager.swift; sourceTree = "<group>"; };
 		A9C2B4C01B8E3B3B007983DB /* Dialogue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dialogue.swift; sourceTree = "<group>"; };
@@ -128,6 +127,7 @@
 		A9C2B4C61B8E3B3B007983DB /* AlienAdventureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlienAdventureViewController.swift; sourceTree = "<group>"; };
 		A9C2B4C71B8E3B3B007983DB /* SKMultiLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMultiLabelNode.swift; sourceTree = "<group>"; };
 		A9DA77DD1BC6D1200040D29C /* BadgeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeManager.swift; sourceTree = "<group>"; };
+		A9E41A861D1C030F00D5B0AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		A9E61FEA1BC6AC11001414C0 /* tealAlien.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = tealAlien.atlas; sourceTree = "<group>"; };
 		A9E61FEC1BC6AC2A001414C0 /* magentaAlien.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = magentaAlien.atlas; sourceTree = "<group>"; };
 		A9EBA3BE1BC0CDFA00B795AA /* ItemsFromPlanet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsFromPlanet.swift; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 				A9E61FEC1BC6AC2A001414C0 /* magentaAlien.atlas */,
 				A9BD4DC51BAC821800C877DB /* treasure.atlas */,
 				A9C2B4A91B8E2ED2007983DB /* Main.storyboard */,
-				A9C2B4AE1B8E2ED2007983DB /* LaunchScreen.storyboard */,
+				A9E41A851D1C030F00D5B0AB /* LaunchScreen.xib */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -418,9 +418,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E41A871D1C030F00D5B0AB /* LaunchScreen.xib in Resources */,
 				A9BD4DC81BAC821800C877DB /* treasure.atlas in Resources */,
 				A9E61FED1BC6AC2A001414C0 /* magentaAlien.atlas in Resources */,
-				A9C2B4B01B8E2ED2007983DB /* LaunchScreen.storyboard in Resources */,
 				A9BD4DC71BAC821800C877DB /* hero.atlas in Resources */,
 				A9E61FEB1BC6AC11001414C0 /* tealAlien.atlas in Resources */,
 				A90B6FDC1BC2C58600DCBC73 /* ItemList.plist in Resources */,
@@ -503,12 +503,12 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		A9C2B4AE1B8E2ED2007983DB /* LaunchScreen.storyboard */ = {
+		A9E41A851D1C030F00D5B0AB /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A9C2B4AF1B8E2ED2007983DB /* Base */,
+				A9E41A861D1C030F00D5B0AB /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
