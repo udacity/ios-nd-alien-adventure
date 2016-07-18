@@ -1,17 +1,21 @@
+<img src="https://s3-us-west-1.amazonaws.com/udacity-content/degrees/catalog-images/nd003.png" alt="iOS Developer Nanodegree logo" height="70" >
+
 # Alien Adventure
 
-This repository is for the Alien Adventure app for Udacity's Beginning iOS App Development.
+![Platform iOS](https://img.shields.io/badge/nanodegree-iOS-blue.svg)
 
-###Maintainers
+This repository contains starter code for the Alien Adventure project in Udacity's iOS Nanodegree.
+
+## Overview
+
+Alien Adventure is an intergalactic "click-to-continue" game. The game's main robot protagonist needs your help answering  questions posed by aliens who block its path.
+
+## Setup
+
+Each question posed by an alien has an associated Swift file where you "implement" a response. Otherwise, there are no special setup instructions, just build, run, and click!
+
+## Maintainers
 
 @jarrodparkes
 
-###How To Contribute
 
-- Fork the repository to your personal account
-- Make your changes
-- Submit a pull request to this repository
-
-###Description
-
-To finish an intergalactic journey, a hero needs your help answering the tricky requests of aliens.
