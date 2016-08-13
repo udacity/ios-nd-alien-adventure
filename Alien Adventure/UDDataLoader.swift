@@ -11,7 +11,7 @@ import Foundation
 
 // MARK: - UDDataError
 
-enum UDDataError: ErrorProtocol {
+enum UDDataError: Error {
     case keyError(String, String, String)
     case unknownError
 }

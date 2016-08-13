@@ -31,7 +31,7 @@ extension Hero {
             }
             
             if let decryptedString = String(bytes: decrypted,
-                encoding: String.Encoding.utf8) where decryptedString == "udacity" {
+                encoding: String.Encoding.utf8), decryptedString == "udacity" {
                     // ADD CODE: found match, now what?
             }
         }

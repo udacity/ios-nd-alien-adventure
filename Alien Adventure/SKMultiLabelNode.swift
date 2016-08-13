@@ -33,7 +33,7 @@ class SKMultiLabelNode: SKNode {
     
     // MARK: Initializers
     
-    init(text: String, labelWidth: Int, pos: CGPoint, fontName: String = "Superclarendon-Italic", fontSize: CGFloat, fontColor: UIColor = UIColor.white(), leading: Int, alignment: SKLabelHorizontalAlignmentMode = .left) {
+    init(text: String, labelWidth: Int, pos: CGPoint, fontName: String = "Superclarendon-Italic", fontSize: CGFloat, fontColor: UIColor = UIColor.white, leading: Int, alignment: SKLabelHorizontalAlignmentMode = .left) {
                 
         self.text = text
         self.labelWidth = labelWidth

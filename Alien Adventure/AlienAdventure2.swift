@@ -294,7 +294,7 @@ extension UDRequestTester {
         
         if(!failed) {
             delegate.inventory = delegate.inventory.filter({
-                if let planetOfOrigin = $0.historicalData["PlanetOfOrigin"] as? String where planetOfOrigin != "Glinda" {
+                if let planetOfOrigin = $0.historicalData["PlanetOfOrigin"] as? String, planetOfOrigin != "Glinda" {
                     return true
                 } else {
                     return false

@@ -20,7 +20,7 @@ class Hero: SKSpriteNode {
     // MARK: Initializers
     
     init(name: String, position: CGPoint, items: [UDItem]) {
-        super.init(texture: UDAnimation.baseFrameForSprite[.Hero], color: UIColor.clear(), size: CGSize(width: 225, height: 175))
+        super.init(texture: UDAnimation.baseFrameForSprite[.Hero], color: UIColor.clear, size: CGSize(width: 225, height: 175))
         
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 225, height: 175))
         if let heroPhysicsBody = self.physicsBody {

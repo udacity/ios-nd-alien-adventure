@@ -21,7 +21,7 @@ class BadgeManager: SKNode {
     
     init(displayPosition: CGPoint, displaySize: CGSize) {
         super.init()
-        badgeDisplay = SKSpriteNode(color: UIColor.clear(), size: CGSize(width: 400, height: 400))
+        badgeDisplay = SKSpriteNode(color: UIColor.clear, size: CGSize(width: 400, height: 400))
         badgeDisplay.position = displayPosition
         badgeDisplay.size = displaySize        
         self.addChild(badgeDisplay)

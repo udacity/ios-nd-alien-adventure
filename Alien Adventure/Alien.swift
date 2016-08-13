@@ -52,7 +52,7 @@ class Alien: SKSpriteNode {
         }
         
         self.colorVariant = variant
-        super.init(texture: UDAnimation.baseFrameForSprite[spriteKey], color: UIColor.blue(), size: CGSize(width: 172.5, height: 254))
+        super.init(texture: UDAnimation.baseFrameForSprite[spriteKey], color: UIColor.blue, size: CGSize(width: 172.5, height: 254))
         
         self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 650.0, height: 254))
         if let alienPhysicsBody = self.physicsBody {

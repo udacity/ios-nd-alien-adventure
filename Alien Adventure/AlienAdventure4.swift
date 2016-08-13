@@ -19,7 +19,7 @@ extension UDRequestTester {
                 throw UDPolicingError.nameContainsLaser
             }
             
-            if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String where planetOfOrigin == "Cunia" {
+            if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String, planetOfOrigin == "Cunia" {
                 throw UDPolicingError.itemFromCunia
             }
             
@@ -79,11 +79,16 @@ extension UDRequestTester {
         
         let inventoryWithLasers = delegate.inventory.filter(hasLaser)
         
-        for item in inventoryWithLasers {
-            if !item.name.lowercased().contains("laser") {
-                print("FindTheLasers FAILED: The method you returned responded true for an item with the name \(item.name) which does not contain the word laser.")
-                return false
+        if inventoryWithLasers.count > 0 {
+            for item in inventoryWithLasers {
+                if !item.name.lowercased().contains("laser") {
+                    print("FindTheLasers FAILED: The method you returned responded true for an item with the name \(item.name) which does not contain the word laser.")
+                    return false
+                }
             }
+        } else {
+            print("FindTheLasers FAILED: The method you returned did not correctly find an item containing the word laser.")
+            return false
         }
         
         return true
@@ -285,7 +290,7 @@ extension UDRequestTester {
                 throw UDPolicingError.nameContainsLaser
             }
             
-            if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String where planetOfOrigin == "Cunia" {
+            if let planetOfOrigin = item.historicalData["PlanetOfOrigin"] as? String, planetOfOrigin == "Cunia" {
                 throw UDPolicingError.itemFromCunia
             }
             

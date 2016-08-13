@@ -34,6 +34,6 @@ class AlienAdventureViewController: UIViewController {
 
     // MARK: UIViewController
     
-    override func shouldAutorotate() -> Bool { return true }
-    override func prefersStatusBarHidden() -> Bool { return true }
+    override var shouldAutorotate: Bool { return true }
+    override var prefersStatusBarHidden: Bool { return true }
 }

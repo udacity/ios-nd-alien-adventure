@@ -31,7 +31,7 @@ class SettingsViewController: UIViewController {
         
         titleLabel.font = UIFont(name: Settings.Common.Font, size: 32)
         showBadgesLabel.font = UIFont(name: Settings.Common.Font, size: 20)
-        showBadgesSwitch.onTintColor = UIColor.magenta()
+        showBadgesSwitch.onTintColor = UIColor.magenta
         levelSegmentedControl.setTitleTextAttributes(attributesDictionary, for: UIControlState())
         Settings.Common.Level = levelSegmentedControl.selectedSegmentIndex
         startGameButton.titleLabel?.font = UIFont(name: Settings.Common.Font, size: 20)

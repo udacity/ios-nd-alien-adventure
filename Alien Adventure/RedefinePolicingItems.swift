@@ -8,7 +8,7 @@
 
 // MARK: - UDPolicingError
 
-enum UDPolicingError: ErrorProtocol {
+enum UDPolicingError: Error {
     case nameContainsLaser
     case itemFromCunia
     case valueLessThan10

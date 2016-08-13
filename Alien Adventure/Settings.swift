@@ -14,10 +14,10 @@ struct Settings {
                 
     // MARK: Common
     
-    struct Common {
-        static let GameDataURL = Bundle.main().urlForResource("GameData", withExtension: "plist")!
+    struct Common {        
+        static let GameDataURL = Bundle.main.url(forResource: "GameData", withExtension: "plist")!
         static let Font = "Superclarendon-Italic"
-        static let FontColor = UIColor.white()
+        static let FontColor = UIColor.white
         static var Level = 0
         static var ShowBadges = false
         static let RequestsToSkip = 0
