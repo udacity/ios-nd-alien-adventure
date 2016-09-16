@@ -105,7 +105,7 @@ class UDAnimation {
         }
     }
     
-    private class func loadAnimation(_ gameDataDictionary: [String:AnyObject], animationKey: UDAnimationKey, spriteKey: UDSpriteKey, animationKeyPrefix: UDAnimationPrefix) throws {
+    fileprivate class func loadAnimation(_ gameDataDictionary: [String:AnyObject], animationKey: UDAnimationKey, spriteKey: UDSpriteKey, animationKeyPrefix: UDAnimationPrefix) throws {
         do {
             let animationFromPList = try UDDataLoader.AnimationFromGameDictionary(gameDataDictionary, spriteKey: spriteKey.rawValue, animationKeyPrefix: animationKeyPrefix.rawValue)
             animations[animationKey] = animationFromPList
@@ -114,7 +114,7 @@ class UDAnimation {
     
     // MARK: Set Base Frames
     
-    private class func setBaseFrameForSpritesWithKey(_ spriteKey: UDSpriteKey, withAnimation: [SKTexture]) {
+    fileprivate class func setBaseFrameForSpritesWithKey(_ spriteKey: UDSpriteKey, withAnimation: [SKTexture]) {
         baseFrameForSprite[spriteKey] = withAnimation[0]
     }
 }

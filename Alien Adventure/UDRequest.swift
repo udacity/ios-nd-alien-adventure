@@ -56,13 +56,13 @@ protocol UDRequestDelegate {
     func handleMatchMoonRocks(_ inventory: [UDItem]) -> [UDItem]
     func handleInscriptionEternalStar(_ inventory: [UDItem]) -> UDItem?
     func handleLeastValuableItem(_ inventory: [UDItem]) -> UDItem?
-    func handleShuffleStrings(s1: String, s2: String, shuffle: String) -> Bool
+    func handleShuffleStrings(_ s1: String, s2: String, shuffle: String) -> Bool
     // Alien Adventure 2
     func handleItemsFromPlanet(_ inventory: [UDItem], planet: String) -> [UDItem]
     func handleOldestItemFromPlanet(_ inventory: [UDItem], planet: String) -> UDItem?
     func handleXORCipherKeySearch(_ encryptedString: [UInt8]) -> UInt8
     func handleRarityOfItems(_ inventory: [UDItem]) -> [UDItemRarity:Int]
-    func handleItemComparison(item1: UDItem, item2: UDItem) -> Bool
+    func handleItemComparison(_ item1: UDItem, item2: UDItem) -> Bool
     func handleBannedItems(_ dataFile: String) -> [Int]
     func handlePlanetData(_ dataFile: String) -> String
     func handleMostCommonCharacter(_ inventory: [UDItem]) -> Character?

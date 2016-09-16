@@ -127,37 +127,37 @@ extension UDRequestTester {
     func testShuffleStrings() -> Bool {
         
         // check 1
-        if !delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "acbd") {
+        if !delegate.handleShuffleStrings("ab", s2: "cd", shuffle: "acbd") {
             print("ShuffleStrings FAILED: The shuffle for the input (\"ab\", \"cd\", \"acbd\") is valid, but false was returned.")
             return false
         }
         
         // check 2
-        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "badc") {
+        if delegate.handleShuffleStrings("ab", s2: "cd", shuffle: "badc") {
             print("ShuffleStrings FAILED: The shuffle for the input (\"ab\", \"cd\", \"badc\") is invalid, but true was returned.")
             return false
         }
         
         // check 3
-        if !delegate.handleShuffleStrings(s1: "", s2: "", shuffle: "") {
+        if !delegate.handleShuffleStrings("", s2: "", shuffle: "") {
             print("ShuffleStrings FAILED: The shuffle for the input (\"\", \"\", \"\") is valid, but false was returned.")
             return false
         }
         
         // check 4
-        if delegate.handleShuffleStrings(s1: "", s2: "", shuffle: "sdf") {
+        if delegate.handleShuffleStrings("", s2: "", shuffle: "sdf") {
             print("ShuffleStrings FAILED: The shuffle for the input (\"\", \"\", \"sdf\") is invalid, but true was returned.")
             return false
         }
         
         // check 5
-        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "abef") {
+        if delegate.handleShuffleStrings("ab", s2: "cd", shuffle: "abef") {
             print("ShuffleStrings FAILED: The shuffle for the input (\"ab\", \"cd\", \"abef\") is invalid, but true was returned.")
             return false
         }
         
         // check 6
-        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "abdc") {
+        if delegate.handleShuffleStrings("ab", s2: "cd", shuffle: "abdc") {
             print("ShuffleStrings FAILED: The shuffle for the input (\"ab\", \"cd\", \"abdc\") is invalid, but true was returned.")
             return false
         }
@@ -240,32 +240,32 @@ extension UDRequestTester {
     func processShuffleStrings(_ failed: Bool) -> String {
         
         // check 1
-        if !delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "acbd") {
+        if !delegate.handleShuffleStrings("ab", s2: "cd", shuffle: "acbd") {
             return "Hero: \"So is (\"ab\", \"cd\", \"acbd\") a valid shuffle? Umm... no?\""
         }
         
         // check 2
-        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "badc") {
+        if delegate.handleShuffleStrings("ab", s2: "cd", shuffle: "badc") {
             return "Hero: \"So is (\"ab\", \"cd\", \"badc\") a valid shuffle? Umm... yes?\""
         }
         
         // check 3
-        if !delegate.handleShuffleStrings(s1: "", s2: "", shuffle: "") {
+        if !delegate.handleShuffleStrings("", s2: "", shuffle: "") {
             return "Hero: \"So is (\"\", \"\", \"\") a valid shuffle? Umm... no?\""
         }
         
         // check 4
-        if delegate.handleShuffleStrings(s1: "", s2: "", shuffle: "sdf") {
+        if delegate.handleShuffleStrings("", s2: "", shuffle: "sdf") {
             return "Hero: \"So is (\"\", \"\", \"sdf\") a valid shuffle? Umm... yes?\""
         }
         
         // check 5
-        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "abef") {
+        if delegate.handleShuffleStrings("ab", s2: "cd", shuffle: "abef") {
             return "Hero: \"So is (\"ab\", \"cd\", \"abef\") a valid shuffle? Umm... yes?\""
         }
         
         // check 6
-        if delegate.handleShuffleStrings(s1: "ab", s2: "cd", shuffle: "abdc") {
+        if delegate.handleShuffleStrings("ab", s2: "cd", shuffle: "abdc") {
             return "Hero: \"So is (\"ab\", \"cd\", \"abdc\") a valid shuffle? Umm... yes?\""
         }
         

@@ -96,9 +96,9 @@ extension UDRequestTester {
         }
         
         // check 3
-        let item1 = UDItem(itemID: 0, itemType: .weapon, name: "Test1", baseValue: 1, inscription: nil, rarity: .common, historicalData: ["CarbonAge": 30, "PlanetOfOrigin": "TestPlanet"])
-        let item2 = UDItem(itemID: 1, itemType: .weapon, name: "Test2", baseValue: 2, inscription: nil, rarity: .common, historicalData: ["PlanetOfOrigin": "TestPlanet"])
-        let item3 = UDItem(itemID: 2, itemType: .weapon, name: "Test3", baseValue: 3, inscription: nil, rarity: .common, historicalData: ["CarbonAge": 1000, "PlanetOfOrigin": "TestPlanet"])
+        let item1 = UDItem(itemID: 0, itemType: .weapon, name: "Test1", baseValue: 1, inscription: nil, rarity: .common, historicalData: ["CarbonAge": 30 as AnyObject, "PlanetOfOrigin": "TestPlanet" as AnyObject])
+        let item2 = UDItem(itemID: 1, itemType: .weapon, name: "Test2", baseValue: 2, inscription: nil, rarity: .common, historicalData: ["PlanetOfOrigin": "TestPlanet" as AnyObject])
+        let item3 = UDItem(itemID: 2, itemType: .weapon, name: "Test3", baseValue: 3, inscription: nil, rarity: .common, historicalData: ["CarbonAge": 1000 as AnyObject, "PlanetOfOrigin": "TestPlanet" as AnyObject])
         let testItems = [item1, item2, item3]
         let checkItem = delegate.handleOldestItemFromPlanet(testItems, planet: "TestPlanet")
         if checkItem != testItems[2] {

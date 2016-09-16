@@ -38,7 +38,7 @@ class Hero: SKSpriteNode {
     
     // Handling Requests Not Seen By Students
     
-    func checkItemComparison(item1: UDItem, item2: UDItem) -> Bool {
+    func checkItemComparison(_ item1: UDItem, item2: UDItem) -> Bool {
         return item1 < item2
     }
 
@@ -71,8 +71,8 @@ extension Hero: UDRequestDelegate {
         return leastValuableItem(inventory)
     }
     
-    func handleShuffleStrings(s1: String, s2: String, shuffle: String) -> Bool {
-        return shuffleStrings(s1: s1, s2: s2, shuffle: shuffle)
+    func handleShuffleStrings(_ s1: String, s2: String, shuffle: String) -> Bool {
+        return shuffleStrings(s1, s2: s2, shuffle: shuffle)
     }
     
     // Alien Adventure 2
@@ -93,8 +93,8 @@ extension Hero: UDRequestDelegate {
         return rarityOfItems(inventory)
     }
     
-    func handleItemComparison(item1: UDItem, item2: UDItem) -> Bool {
-        return checkItemComparison(item1: item1, item2: item2)
+    func handleItemComparison(_ item1: UDItem, item2: UDItem) -> Bool {
+        return checkItemComparison(item1, item2: item2)
     }
     
     func handleBannedItems(_ dataFile: String) -> [Int] {

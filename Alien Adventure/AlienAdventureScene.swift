@@ -233,9 +233,9 @@ extension AlienAdventureScene: SKPhysicsContactDelegate {
             UDAnimation.runAnimationForSprite(hero, animationKey: .HeroCelebrating)
         }
             // hit alien
-        else if contact.bodyA.node!.dynamicType == Alien.self || contact.bodyB.node!.dynamicType == Alien.self {
+        else if type(of: contact.bodyA.node!) == Alien.self || type(of: contact.bodyB.node!) == Alien.self {
             
-            if contact.bodyA.node!.dynamicType == Alien.self {
+            if type(of: contact.bodyA.node!) == Alien.self {
                 currentAlien = contact.bodyA.node as? Alien
             } else {
                 currentAlien = contact.bodyB.node as? Alien

@@ -21,7 +21,7 @@ class Alien: SKSpriteNode {
     
     // MARK: Properties
     
-    private var currentRequestIndex = 0
+    fileprivate var currentRequestIndex = 0
     var requests: [UDRequest]!
     var colorVariant: AlienColor
     var getFirstRequest: UDRequest {

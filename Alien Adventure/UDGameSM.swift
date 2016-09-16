@@ -18,15 +18,15 @@ class UDGameSM {
     
     // MARK: UDInternalGameState
     
-    private enum UDInternalGameState {
+    fileprivate enum UDInternalGameState {
         case notStarted, moving, inRequest
     }
     
     // MARK: Properties
     
-    private var currentState = UDInternalGameState.inRequest
-    private var requestSM: UDRequestSM!
-    private var winningCondition = false
+    fileprivate var currentState = UDInternalGameState.inRequest
+    fileprivate var requestSM: UDRequestSM!
+    fileprivate var winningCondition = false
     var failedRequest: Bool {
         return requestSM.failedRequest
     }

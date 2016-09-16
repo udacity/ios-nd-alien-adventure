@@ -24,9 +24,9 @@ class UDRequestSM {
     
     // MARK: Properties
     
-    private var request: UDRequest!
-    private var delegate: UDRequestDelegate!
-    private var currentState = UDRequestInternalState.notStarted    
+    fileprivate var request: UDRequest!
+    fileprivate var delegate: UDRequestDelegate!
+    fileprivate var currentState = UDRequestInternalState.notStarted    
     var currentLineOfDialogue = UDLineOfDialogue(lineText: "", lineSource: .none)
     var failedRequest = false
     
@@ -108,7 +108,7 @@ class UDRequestSM {
         return externalState
     }
     
-    private func conversationFinished(_ type: UDConversationType) -> Bool {
+    fileprivate func conversationFinished(_ type: UDConversationType) -> Bool {
         guard let request = request else {
             return true
         }
