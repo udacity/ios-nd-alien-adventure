@@ -10,7 +10,7 @@ import Foundation
 
 extension Hero {
     
-    func bannedItems(_ dataFile: String) -> [Int] {
+    func bannedItems(dataFile: String) -> [Int] {
         return [Int]()
     }
 }

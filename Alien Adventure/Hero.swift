@@ -56,41 +56,41 @@ extension Hero: UDRequestDelegate {
     // Alien Adventure 1
     
     func handleReverseLongestName(_ inventory: [UDItem]) -> String {
-        return reverseLongestName(inventory)
+        return reverseLongestName(inventory: inventory)
     }
     
     func handleMatchMoonRocks(_ inventory: [UDItem]) -> [UDItem] {
-        return matchMoonRocks(inventory)
+        return matchMoonRocks(inventory: inventory)
     }
     
     func handleInscriptionEternalStar(_ inventory: [UDItem]) -> UDItem? {
-        return inscriptionEternalStar(inventory)
+        return inscriptionEternalStar(inventory: inventory)
     }
     
     func handleLeastValuableItem(_ inventory: [UDItem]) -> UDItem? {
-        return leastValuableItem(inventory)
+        return leastValuableItem(inventory: inventory)
     }
     
     func handleShuffleStrings(_ s1: String, s2: String, shuffle: String) -> Bool {
-        return shuffleStrings(s1, s2: s2, shuffle: shuffle)
+        return shuffleStrings(s1: s1, s2: s2, shuffle: shuffle)
     }
     
     // Alien Adventure 2
     
     func handleItemsFromPlanet(_ inventory: [UDItem], planet: String) -> [UDItem] {
-        return itemsFromPlanet(inventory, planet: planet)
+        return itemsFromPlanet(inventory: inventory, planet: planet)
     }
     
     func handleOldestItemFromPlanet(_ inventory: [UDItem], planet: String) -> UDItem? {
-        return oldestItemFromPlanet(inventory, planet: planet)
+        return oldestItemFromPlanet(inventory: inventory, planet: planet)
     }
     
     func handleXORCipherKeySearch(_ encryptedString: [UInt8]) -> UInt8 {
-        return xorCipherKeySearch(encryptedString)
+        return xorCipherKeySearch(encryptedString: encryptedString)
     }
     
     func handleRarityOfItems(_ inventory: [UDItem]) -> [UDItemRarity:Int] {
-        return rarityOfItems(inventory)
+        return rarityOfItems(inventory: inventory)
     }
     
     func handleItemComparison(_ item1: UDItem, item2: UDItem) -> Bool {
@@ -98,15 +98,15 @@ extension Hero: UDRequestDelegate {
     }
     
     func handleBannedItems(_ dataFile: String) -> [Int] {
-        return bannedItems(dataFile)
+        return bannedItems(dataFile: dataFile)
     }
     
     func handlePlanetData(_ dataFile: String) -> String {
-        return planetData(dataFile)
+        return planetData(dataFile: dataFile)
     }
     
     func handleMostCommonCharacter(_ inventory: [UDItem]) -> Character? {
-        return mostCommonCharacter(inventory)
+        return mostCommonCharacter(inventory: inventory)
     }
     
     // Alien Adventure 3
@@ -124,13 +124,13 @@ extension Hero: UDRequestDelegate {
     }
     
     func handleCheckBadges(_ badges: [Badge], requestTypes: [UDRequestType]) -> Bool {
-        return checkBadges(badges, requestTypes: requestTypes)
+        return checkBadges(badges: badges, requestTypes: requestTypes)
     }
     
     // Alien Adventure 4
     
     func handlePolicingItems(_ inventory: [UDItem], policingFilter: (UDItem) throws -> Void) -> [UDPolicingError:Int] {
-        return policingItems(inventory, policingFilter: policingFilter)
+        return policingItems(inventory: inventory, policingFilter: policingFilter)
     }
     
     func handleFindTheLasers() -> ((UDItem) -> Bool) {
@@ -142,22 +142,22 @@ extension Hero: UDRequestDelegate {
     }
     
     func handleBoostItemValue(_ inventory: [UDItem]) -> [UDItem] {
-        return boostItemValue(inventory)
+        return boostItemValue(inventory: inventory)
     }
     
     func handleSortLeastToGreatest(_ inventory: [UDItem]) -> [UDItem] {
-        return sortLeastToGreatest(inventory)
+        return sortLeastToGreatest(inventory: inventory)
     }
     
     func handleGetCommonItems(_ inventory: [UDItem]) -> [UDItem] {
-        return getCommonItems(inventory)
+        return getCommonItems(inventory: inventory)
     }
     
     func handleTotalBaseValue(_ inventory: [UDItem]) -> Int {
-        return totalBaseValue(inventory)
+        return totalBaseValue(inventory: inventory)
     }
     
     func handleRemoveDuplicates(_ inventory: [UDItem]) -> [UDItem] {
-        return removeDuplicates(inventory)
+        return removeDuplicates(inventory: inventory)
     }    
 }

@@ -47,11 +47,11 @@ class SettingsViewController: UIViewController {
     
     // MARK: Implementing Actions
     
-    func switchLevel(_ segmentControl: UISegmentedControl) {
+    func switchLevel(segmentControl: UISegmentedControl) {
         print("level control has changed!")
     }
     
-    func showBadges(_ switchControl: UISwitch) {
+    func showBadges(switchControl: UISwitch) {
         print("show badges switch has changed!")
     }
     

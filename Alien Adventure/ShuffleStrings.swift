@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func shuffleStrings(_ s1: String, s2: String, shuffle: String) -> Bool {
+    func shuffleStrings(s1: String, s2: String, shuffle: String) -> Bool {
         return true
     }
 }

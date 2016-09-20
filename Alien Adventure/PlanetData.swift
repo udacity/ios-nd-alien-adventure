@@ -9,7 +9,7 @@ import Foundation
 
 extension Hero {
     
-    func planetData(_ dataFile: String) -> String {
+    func planetData(dataFile: String) -> String {
         return ""
     }
 }

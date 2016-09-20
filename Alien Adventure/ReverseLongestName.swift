@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func reverseLongestName(_ inventory: [UDItem]) -> String {
+    func reverseLongestName(inventory: [UDItem]) -> String {
         return ""
     }
     

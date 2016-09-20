@@ -18,7 +18,7 @@ extension Hero {
     
     func redefinePolicingItems() -> ((UDItem) throws -> Void) {
         
-        func policingFilter(_ item: UDItem) throws -> Void {
+        func policingFilter(item: UDItem) throws -> Void {
             
         }
         

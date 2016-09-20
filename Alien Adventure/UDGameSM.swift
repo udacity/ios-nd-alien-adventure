@@ -93,7 +93,7 @@ class UDGameSM {
                     externalState = .win
                 } else {
                     if let currentAlien = currentAlien, Settings.Common.ShowBadges {
-                        addBadge(hero, alien: currentAlien)
+                        addBadge(hero: hero, alien: currentAlien)
                     }
                     nextState = .moving
                     externalState = .moveHero

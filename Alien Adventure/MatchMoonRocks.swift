@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func matchMoonRocks(_ inventory: [UDItem]) -> [UDItem] {
+    func matchMoonRocks(inventory: [UDItem]) -> [UDItem] {
         return [UDItem]()
     }
 }

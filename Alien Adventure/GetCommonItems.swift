@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func getCommonItems(_ inventory: [UDItem]) -> [UDItem] {
+    func getCommonItems(inventory: [UDItem]) -> [UDItem] {
         return [UDItem]()
     }
     

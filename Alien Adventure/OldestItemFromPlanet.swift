@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func oldestItemFromPlanet(_ inventory: [UDItem], planet: String) -> UDItem? {
+    func oldestItemFromPlanet(inventory: [UDItem], planet: String) -> UDItem? {
         return nil
     }
     

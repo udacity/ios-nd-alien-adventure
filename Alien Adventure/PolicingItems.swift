@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func policingItems(_ inventory: [UDItem], policingFilter: (UDItem) throws -> Void) -> [UDPolicingError:Int] {
+    func policingItems(inventory: [UDItem], policingFilter: (UDItem) throws -> Void) -> [UDPolicingError:Int] {
         return [UDPolicingError:Int]()
     }    
 }

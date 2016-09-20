@@ -8,7 +8,7 @@
 
 extension Hero {
     
-    func mostCommonCharacter(_ inventory: [UDItem]) -> Character? {
+    func mostCommonCharacter(inventory: [UDItem]) -> Character? {
         return nil
     }
 }
