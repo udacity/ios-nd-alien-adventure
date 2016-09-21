@@ -11,39 +11,39 @@
 enum UDRequestType: String {
     
     // Alien Adventure 1
-    case ReverseLongestName = "ReverseLongestName"
-    case MatchMoonRocks = "MatchMoonRocks"
-    case InscriptionEternalStar = "InscriptionEternalStar"
-    case LeastValuableItem = "LeastValuableItem"
-    case ShuffleStrings = "ShuffleStrings"
+    case reverseLongestName = "ReverseLongestName"
+    case matchMoonRocks = "MatchMoonRocks"
+    case inscriptionEternalStar = "InscriptionEternalStar"
+    case leastValuableItem = "LeastValuableItem"
+    case shuffleStrings = "ShuffleStrings"
     
     // Alien Adventure 2
-    case ItemsFromPlanet = "ItemsFromPlanet"
-    case OldestItemFromPlanet = "OldestItemFromPlanet"
-    case XORCipherKeySearch = "XORCipherKeySearch"
-    case RarityOfItems = "RarityOfItems"
-    case ItemComparison = "ItemComparison"
-    case BannedItems = "BannedItems"
-    case PlanetData = "PlanetData"
-    case MostCommonCharacter = "MostCommonCharacter"
+    case itemsFromPlanet = "ItemsFromPlanet"
+    case oldestItemFromPlanet = "OldestItemFromPlanet"
+    case xorCipherKeySearch = "XORCipherKeySearch"
+    case rarityOfItems = "RarityOfItems"
+    case itemComparison = "ItemComparison"
+    case bannedItems = "BannedItems"
+    case planetData = "PlanetData"
+    case mostCommonCharacter = "MostCommonCharacter"
     
     // Alien Adventure 3
-    case BasicCheck = "BasicCheck"
-    case AdvancedCheck = "AdvancedCheck"
-    case ExpertCheck = "ExpertCheck"
-    case CheckBadges = "CheckBadges"
+    case basicCheck = "BasicCheck"
+    case advancedCheck = "AdvancedCheck"
+    case expertCheck = "ExpertCheck"
+    case checkBadges = "CheckBadges"
     
     // Alien Adventure 4
-    case PolicingItems = "PolicingItems"
-    case FindTheLasers = "FindTheLasers"
-    case RedefinePolicingItems = "RedefinePolicingItems"
-    case BoostItemValue = "BoostItemValue"
-    case SortLeastToGreatest = "SortLeastToGreatest"
-    case GetCommonItems = "GetCommonItems"
-    case TotalBaseValue = "TotalBaseValue"
-    case RemoveDuplicates = "RemoveDuplicates"
+    case policingItems = "PolicingItems"
+    case findTheLasers = "FindTheLasers"
+    case redefinePolicingItems = "RedefinePolicingItems"
+    case boostItemValue = "BoostItemValue"
+    case sortLeastToGreatest = "SortLeastToGreatest"
+    case getCommonItems = "GetCommonItems"
+    case totalBaseValue = "TotalBaseValue"
+    case removeDuplicates = "RemoveDuplicates"
     
-    case Undefined = "Undefined"
+    case undefined = "Undefined"
 }
 
 // MARK: - UDRequestDelegate
@@ -96,7 +96,7 @@ struct UDRequest {
     // MARK: Constructor
     
     static func UDRequestWithoutPassFail(_ initialDialogue: [UDLineOfDialogue]) -> UDRequest {
-        return UDRequest(requestType: .Undefined, initialConversation: UDConversation(linesOfDialogue: initialDialogue), passConversation: UDConversation(), failConversation: UDConversation())
+        return UDRequest(requestType: .undefined, initialConversation: UDConversation(linesOfDialogue: initialDialogue), passConversation: UDConversation(), failConversation: UDConversation())
     }
 }
 

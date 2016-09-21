@@ -27,61 +27,61 @@ class UDRequestTester {
     func runTestForRequestType(_ requestType: UDRequestType) -> Bool {
         switch(requestType) {
         // Alien Adventure 1
-        case .ReverseLongestName:
+        case .reverseLongestName:
             return testReverseLongestName()
-        case .MatchMoonRocks:
+        case .matchMoonRocks:
             return testMatchMoonRocks()
-        case .InscriptionEternalStar:
+        case .inscriptionEternalStar:
             return testInscriptionEternalStar()
-        case .LeastValuableItem:
+        case .leastValuableItem:
             return testLeastValuableItem()
-        case .ShuffleStrings:
+        case .shuffleStrings:
             return testShuffleStrings()
         // Alien Adventure 2
-        case .ItemsFromPlanet:
+        case .itemsFromPlanet:
             return testItemsFromPlanet()
-        case .OldestItemFromPlanet:
+        case .oldestItemFromPlanet:
             return testOldestItemFromPlanet()
-        case .XORCipherKeySearch:
+        case .xorCipherKeySearch:
             return testXORCipherKeySearch()
-        case .RarityOfItems:
+        case .rarityOfItems:
             return testRarityOfItems()
-        case .ItemComparison:
+        case .itemComparison:
             return testItemComparison()
-        case .BannedItems:
+        case .bannedItems:
             return testBannedItems()
-        case .PlanetData:
+        case .planetData:
             return testPlanetData()
-        case .MostCommonCharacter:
+        case .mostCommonCharacter:
             return testMostCommonCharacter()
         // Alien Adventure 3
-        case .BasicCheck:
+        case .basicCheck:
             return testBasicCheck()
-        case .AdvancedCheck:
+        case .advancedCheck:
             return testAdvancedCheck()
-        case .ExpertCheck:
+        case .expertCheck:
             return testExpertCheck()
-        case .CheckBadges:
+        case .checkBadges:
             return testCheckBadges()
         // Alien Adventure 4
-        case .PolicingItems:
+        case .policingItems:
             return testPolicingItems()
-        case .FindTheLasers:
+        case .findTheLasers:
             return testFindTheLasers()
-        case .RedefinePolicingItems:
+        case .redefinePolicingItems:
             return testRedefinePolicingItems()
-        case .BoostItemValue:
+        case .boostItemValue:
             return testBoostItemValue()
-        case .SortLeastToGreatest:
+        case .sortLeastToGreatest:
             return testSortLeastToGreatest()
-        case .GetCommonItems:
+        case .getCommonItems:
             return testGetCommonItems()
-        case .TotalBaseValue:
+        case .totalBaseValue:
             return testTotalBaseValue()
-        case .RemoveDuplicates:
+        case .removeDuplicates:
             return testRemoveDuplicates()            
         // Undefined
-        case .Undefined:
+        case .undefined:
             return false
         }
     }
@@ -89,61 +89,61 @@ class UDRequestTester {
     func processRequestType(_ requestType: UDRequestType, failed: Bool) -> String {
         switch(requestType) {
         // Alien Adventure 1
-        case .ReverseLongestName:
+        case .reverseLongestName:
             return processReverseLongestName(failed)
-        case .MatchMoonRocks:
+        case .matchMoonRocks:
             return processMatchMoonRocks(failed)
-        case .InscriptionEternalStar:
+        case .inscriptionEternalStar:
             return processInscriptionEternalStar(failed)
-        case .LeastValuableItem:
+        case .leastValuableItem:
             return processLeastValuableItem(failed)
-        case .ShuffleStrings:
+        case .shuffleStrings:
             return processShuffleStrings(failed)
         // Alien Adventure 2
-        case .ItemsFromPlanet:
+        case .itemsFromPlanet:
             return processItemsFromPlanet(failed)
-        case .OldestItemFromPlanet:
+        case .oldestItemFromPlanet:
             return processOldestItemFromPlanet()
-        case .XORCipherKeySearch:
+        case .xorCipherKeySearch:
             return processXORCipherKeySearch()
-        case .RarityOfItems:
+        case .rarityOfItems:
             return processRarityOfItems()
-        case .ItemComparison:
+        case .itemComparison:
             return processItemComparison()
-        case .BannedItems:
+        case .bannedItems:
             return processBannedItems()
-        case .PlanetData:
+        case .planetData:
             return processPlanetData()
-        case .MostCommonCharacter:
+        case .mostCommonCharacter:
             return processMostCommonCharacter()
         // Alien Adventure 3
-        case .BasicCheck:
+        case .basicCheck:
             return processBasicCheck()
-        case .AdvancedCheck:
+        case .advancedCheck:
             return processAdvancedCheck()
-        case .ExpertCheck:
+        case .expertCheck:
             return processExpertCheck()
-        case .CheckBadges:
+        case .checkBadges:
             return processCheckBadges(failed)
             // Alien Adventure 4
-        case .PolicingItems:
+        case .policingItems:
             return processPolicingItems()
-        case .FindTheLasers:
+        case .findTheLasers:
             return processFindTheLasers()
-        case .RedefinePolicingItems:
+        case .redefinePolicingItems:
             return processRedefinePolicingItems()
-        case .BoostItemValue:
+        case .boostItemValue:
             return processBoostItemValue()
-        case .SortLeastToGreatest:
+        case .sortLeastToGreatest:
             return processSortLeastToGreatest()
-        case .GetCommonItems:
+        case .getCommonItems:
             return processGetCommonItems()
-        case .TotalBaseValue:
+        case .totalBaseValue:
             return processTotalBaseValue()
-        case .RemoveDuplicates:
+        case .removeDuplicates:
             return processRemoveDuplicates()
         // Undefined
-        case .Undefined:
+        case .undefined:
             return ""
         }
     }

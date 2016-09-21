@@ -317,7 +317,7 @@ extension AlienAdventureScene {
         var processAsNormal = true
         
         // if a alien request is encountered and we have a skip left, then skip it!
-        if requestsToSkip > 0 && request.requestType != .Undefined {
+        if requestsToSkip > 0 && request.requestType != .undefined {
             
             let requestTester = UDRequestTester(delegate: hero)
             

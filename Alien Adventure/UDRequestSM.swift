@@ -60,7 +60,7 @@ class UDRequestSM {
             externalState = .finishRequest
         case .initialConvo:
             if conversationFinished(.initial) {
-                if request.requestType == .Undefined {
+                if request.requestType == .undefined {
                     nextState = .notStarted
                     externalState = .finishRequest
                 } else {
